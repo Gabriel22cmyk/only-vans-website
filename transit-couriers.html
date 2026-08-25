@@ -7,518 +7,7 @@
     <meta name="description" content="Ford Transit Couriers in stock and ready to go to work. Compact, economical, and built for business. Call 01235 376044 for viewing or test drive.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* ─── Navigation ─── */
-        header {
-            background: white;
-            padding: 18px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.06);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 26px;
-            font-weight: 800;
-            color: #0891b2;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-
-        .logo span {
-            color: #333;
-        }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-links a {
-            color: #555;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #0891b2;
-        }
-
-        .nav-phone {
-            background: #0891b2;
-            color: white !important;
-            padding: 10px 22px;
-            border-radius: 6px;
-            font-weight: 600 !important;
-            transition: background 0.3s !important;
-        }
-
-        .nav-phone:hover {
-            background: #0570a3 !important;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: #333;
-        }
-
-        /* ─── Hero ─── */
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            padding: 160px 0 100px;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 70% 50%, rgba(8, 145, 178, 0.15) 0%, transparent 60%);
-        }
-
-        .hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(8, 145, 178, 0.2);
-            border: 1px solid rgba(8, 145, 178, 0.4);
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 14px;
-            color: #67e8f9;
-            font-weight: 600;
-            margin-bottom: 24px;
-        }
-
-        .hero h1 {
-            font-size: 52px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -1px;
-            line-height: 1.1;
-        }
-
-        .hero h1 span {
-            color: #0891b2;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #94a3b8;
-            max-width: 650px;
-            margin: 0 auto 36px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: #0891b2;
-            color: white;
-            padding: 14px 36px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: background 0.3s, transform 0.2s;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn-primary:hover {
-            background: #0570a3;
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            color: white;
-            padding: 14px 36px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            border: 2px solid rgba(255,255,255,0.3);
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .btn-secondary:hover {
-            border-color: white;
-            background: rgba(255,255,255,0.05);
-        }
-
-        /* ─── Tagline Banner ─── */
-        .tagline-banner {
-            background: linear-gradient(135deg, #0891b2 0%, #0570a3 100%);
-            padding: 24px 0;
-            text-align: center;
-            color: white;
-        }
-
-        .tagline-banner p {
-            font-size: 18px;
-            font-weight: 600;
-        }
-
-        .tagline-banner span {
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        /* ─── Section Styles ─── */
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            font-weight: 700;
-            color: #1e293b;
-            margin-bottom: 12px;
-        }
-
-        .section-title p {
-            color: #64748b;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ─── Why Benefits Section ─── */
-        .why-section {
-            background: white;
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .why-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: #f8fdfe;
-            border: 1px solid #e0f2fe;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .why-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 30px rgba(8, 145, 178, 0.1);
-        }
-
-        .why-icon {
-            font-size: 44px;
-            margin-bottom: 14px;
-        }
-
-        .why-card h3 {
-            color: #1e293b;
-            font-size: 16px;
-            margin-bottom: 6px;
-        }
-
-        .why-card p {
-            color: #64748b;
-            font-size: 14px;
-        }
-
-        /* ─── What Makes Great Section ─── */
-        .features-section {
-            background: #f8fdfe;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 40px;
-            align-items: center;
-        }
-
-        .feature-item {
-            background: white;
-            border: 1px solid #e0f2fe;
-            border-radius: 12px;
-            padding: 32px;
-            display: flex;
-            gap: 20px;
-        }
-
-        .feature-icon {
-            font-size: 40px;
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .feature-content h3 {
-            color: #1e293b;
-            font-size: 18px;
-            margin-bottom: 8px;
-        }
-
-        .feature-content p {
-            color: #64748b;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-
-        /* ─── Stock Section ─── */
-        .stock-section {
-            background: white;
-        }
-
-        .stock-placeholder {
-            background: linear-gradient(135deg, #e0f2fe 0%, #f8fdfe 100%);
-            border: 2px dashed #0891b2;
-            border-radius: 12px;
-            padding: 60px 40px;
-            text-align: center;
-        }
-
-        .stock-placeholder h3 {
-            color: #1e293b;
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        .stock-placeholder p {
-            color: #64748b;
-            font-size: 16px;
-            margin-bottom: 24px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .stock-placeholder .btn-primary {
-            display: inline-block;
-        }
-
-        /* ─── CTA ─── */
-        .cta-section {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            text-align: center;
-            color: white;
-            padding: 80px 0;
-        }
-
-        .cta-section h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .cta-section p {
-            color: #94a3b8;
-            font-size: 18px;
-            margin-bottom: 30px;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 16px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-bottom: 30px;
-        }
-
-        .cta-contact {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .cta-contact-item {
-            text-align: center;
-        }
-
-        .cta-contact-item strong {
-            display: block;
-            color: #94a3b8;
-            font-size: 14px;
-            margin-bottom: 6px;
-        }
-
-        .cta-contact-link {
-            font-size: 20px;
-            font-weight: 700;
-            color: #0891b2;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .cta-contact-link:hover {
-            color: #67e8f9;
-        }
-
-        /* ─── Footer ─── */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            padding: 30px 0;
-            border-top: 1px solid #1e293b;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            font-size: 22px;
-            font-weight: 800;
-            color: white;
-        }
-
-        .footer-logo span {
-            color: #0891b2;
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-        footer a {
-            color: #0891b2;
-            text-decoration: none;
-        }
-
-        /* ─── Responsive ─── */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-links.active {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 20px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            .hero {
-                padding: 130px 0 70px;
-            }
-
-            .hero h1 {
-                font-size: 34px;
-            }
-
-            .hero p {
-                font-size: 16px;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .cta-contact {
-                flex-direction: column;
-                gap: 16px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .why-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .hero h1 {
-                font-size: 28px;
-            }
-
-            .section-title h2 {
-                font-size: 26px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -542,7 +31,7 @@
     </header>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero-dark">
         <div class="container">
             <div class="hero-badge">🚐 Compact & Ready to Work</div>
             <h1>Brilliant <span>Transit Couriers</span></h1>
@@ -555,36 +44,36 @@
     </section>
 
     <!-- Tagline Banner -->
-    <div class="tagline-banner">
+    <div class="banner-strip">
         <div class="container">
             <p>Ready to go to work TODAY! <span>Drive away in a van that works as hard as you do.</span></p>
         </div>
     </div>
 
     <!-- Why Transit Courier Benefits -->
-    <section class="why-section" id="benefits">
+    <section class="section-white" id="benefits">
         <div class="container">
             <div class="section-title">
                 <h2>Why Transit Couriers?</h2>
                 <p>Reliable | Practical | Economical | Built for Business</p>
             </div>
             <div class="why-grid">
-                <div class="why-card">
+                <div class="glass-card why-card fade-in">
                     <div class="why-icon">🏙️</div>
                     <h3>Compact & Easy to Drive</h3>
                     <p>Ideal for city driving and tight spaces. Navigate busy streets with confidence.</p>
                 </div>
-                <div class="why-card">
+                <div class="glass-card why-card fade-in">
                     <div class="why-icon">⚡</div>
                     <h3>Low Running Costs</h3>
                     <p>Excellent fuel economy and affordability. Maximise your margins.</p>
                 </div>
-                <div class="why-card">
+                <div class="glass-card why-card fade-in">
                     <div class="why-icon">💪</div>
                     <h3>Practical & Hard Working</h3>
                     <p>Built Ford Tough and ready for any job. Dependable day in, day out.</p>
                 </div>
-                <div class="why-card">
+                <div class="glass-card why-card fade-in">
                     <div class="why-icon">✅</div>
                     <h3>Well Maintained & Checked</h3>
                     <p>Quality vans you can rely on. Every vehicle thoroughly inspected.</p>
@@ -594,39 +83,39 @@
     </section>
 
     <!-- What Makes Them Great -->
-    <section class="features-section" id="features">
+    <section class="section-tinted" id="features">
         <div class="container">
             <div class="section-title">
                 <h2>What Makes Them Great</h2>
                 <p>Built for the demands of modern business</p>
             </div>
             <div class="features-grid">
-                <div class="feature-item">
+                <div class="glass-card feature-item fade-in">
                     <div class="feature-icon">🏙️</div>
                     <div class="feature-content">
                         <h3>Compact Size</h3>
-                        <p>The Transit Courier is nimble and manoeuvrable, perfect for navigating congested urban areas, tight delivery routes, and limited parking. No need for a hefty van when a Courier gets the job done.</p>
+                        <p>The Transit Courier is nimble and manoeuvrable, perfect for navigating congested urban areas, tight delivery routes, and limited parking.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="glass-card feature-item fade-in">
                     <div class="feature-icon">⛽</div>
                     <div class="feature-content">
                         <h3>Fuel Economy</h3>
-                        <p>With excellent fuel efficiency, you'll spend less at the pump and more on growing your business. Lower operating costs mean higher profitability.</p>
+                        <p>With excellent fuel efficiency, you'll spend less at the pump and more on growing your business.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="glass-card feature-item fade-in">
                     <div class="feature-icon">🔧</div>
                     <div class="feature-content">
                         <h3>Built Ford Tough</h3>
-                        <p>Ford's reputation for durability means your Transit Courier is built to last. Reliable, robust, and ready to handle the everyday wear and tear of commercial use.</p>
+                        <p>Ford's reputation for durability means your Transit Courier is built to last. Reliable, robust, and ready for commercial use.</p>
                     </div>
                 </div>
-                <div class="feature-item">
+                <div class="glass-card feature-item fade-in">
                     <div class="feature-icon">📦</div>
                     <div class="feature-content">
                         <h3>Payload Capacity</h3>
-                        <p>Don't let the compact size fool you. Transit Couriers offer impressive payload capacity, letting you carry what matters and maximise every trip.</p>
+                        <p>Don't let the compact size fool you. Transit Couriers offer impressive payload capacity for every trip.</p>
                     </div>
                 </div>
             </div>
@@ -634,15 +123,15 @@
     </section>
 
     <!-- Currently in Stock -->
-    <section class="stock-section" id="stock">
+    <section class="section-white" id="stock">
         <div class="container">
             <div class="section-title">
                 <h2>Currently in Stock</h2>
                 <p>We have quality Ford Transit Couriers ready to work for you</p>
             </div>
-            <div class="stock-placeholder">
+            <div class="stock-placeholder fade-in">
                 <h3>📞 Call to Check Availability</h3>
-                <p>We maintain a rotating inventory of well-maintained Transit Couriers. For current stock, pricing, and specifications, please get in touch with our team.</p>
+                <p>We maintain a rotating inventory of well-maintained Transit Couriers. For current stock, pricing, and specifications, please get in touch.</p>
                 <a href="tel:01235376044" class="btn-primary">01235 376044</a>
             </div>
         </div>
@@ -655,7 +144,7 @@
             <p>Book a viewing or test drive today and discover why Transit Couriers are the smart choice for business.</p>
             <div class="cta-buttons">
                 <a href="tel:01235376044" class="btn-primary">📞 Call Today</a>
-                <a href="mailto:Info@onlyvans4u.com" class="btn-secondary">Email Us</a>
+                <a href="mailto:Info@onlyvans4u.com" class="btn-primary">Email Us</a>
             </div>
             <div class="cta-contact">
                 <div class="cta-contact-item">
@@ -668,7 +157,7 @@
                 </div>
                 <div class="cta-contact-item">
                     <strong>Address</strong>
-                    <div class="cta-contact-link" style="font-size: 14px; font-weight: 500;">Unit 6, Lyford Business Centre<br>Lyford, Wantage<br>OX12 0EE</div>
+                    <span class="cta-contact-link" style="font-size: 14px; font-weight: 500;">Unit 6, Lyford Business Centre<br>Lyford, Wantage, OX12 0EE</span>
                 </div>
             </div>
         </div>
@@ -687,30 +176,6 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-
-        window.addEventListener('scroll', function() {
-            var header = document.querySelector('header');
-            if (window.scrollY > 50) {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.boxShadow = '0 1px 10px rgba(0, 0, 0, 0.06)';
-            }
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                var target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
