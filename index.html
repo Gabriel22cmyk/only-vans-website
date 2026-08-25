@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Only Vans - Professional Van Mechanic & Sales</title>
+    <title>Only Vans - Van Sales & Servicing | Wantage, Oxfordshire</title>
+    <meta name="description" content="Only Vans - Quality van sales, servicing and repairs in Lyford, Oxfordshire. Trusted motor vehicle dealer with 5-star Google reviews.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,15 +15,9 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #333;
-        }
-
-        header {
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0f9fc 100%);
-            padding: 20px 0;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
         .container {
@@ -29,11 +26,15 @@
             padding: 0 20px;
         }
 
-        .logo {
-            font-size: 28px;
-            font-weight: 700;
-            color: #0891b2;
-            text-decoration: none;
+        /* ─── Navigation ─── */
+        header {
+            background: white;
+            padding: 18px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.06);
         }
 
         nav {
@@ -42,165 +43,675 @@
             align-items: center;
         }
 
-        nav a {
-            color: #333;
+        .logo {
+            font-size: 26px;
+            font-weight: 800;
+            color: #0891b2;
             text-decoration: none;
-            margin-left: 30px;
-            font-size: 14px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #555;
+            text-decoration: none;
+            font-size: 15px;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: #0891b2;
         }
 
+        .nav-phone {
+            background: #0891b2;
+            color: white !important;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-weight: 600 !important;
+            transition: background 0.3s !important;
+        }
+
+        .nav-phone:hover {
+            background: #0570a3 !important;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* ─── Hero ─── */
         .hero {
-            background: linear-gradient(135deg, #e8f4f8 0%, #f0f9fc 100%);
-            padding: 100px 0;
+            background: linear-gradient(135deg, #e8f4f8 0%, #f0f9fc 50%, #e0f2fe 100%);
+            padding: 160px 0 100px;
             text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #0891b2;
+            font-weight: 600;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .hero-badge span {
+            color: #f59e0b;
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 56px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
             color: #0891b2;
-            margin-bottom: 20px;
-            font-weight: 700;
         }
 
         .hero p {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 30px;
+            font-size: 20px;
+            color: #64748b;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto 36px;
         }
 
-        .cta-button {
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
             display: inline-block;
-            background-color: #0891b2;
+            background: #0891b2;
             color: white;
-            padding: 12px 40px;
-            border-radius: 4px;
+            padding: 14px 36px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s;
+            font-size: 16px;
+            transition: background 0.3s, transform 0.2s;
             border: none;
             cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: #0570a3;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: white;
+            color: #0891b2;
+            padding: 14px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 16px;
+            border: 2px solid #0891b2;
+            transition: all 0.3s;
+            cursor: pointer;
         }
 
-        .cta-button:hover {
-            background-color: #0570a3;
+        .btn-secondary:hover {
+            background: #0891b2;
+            color: white;
         }
 
-        .features {
+        /* ─── Section Styles ─── */
+        section {
             padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 12px;
+        }
+
+        .section-title p {
+            color: #64748b;
+            font-size: 18px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* ─── Services ─── */
+        .services {
             background: white;
         }
 
-        .features-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
-        .feature-card {
+        .service-card {
+            background: #f8fdfe;
+            border: 1px solid #e0f2fe;
+            border-radius: 12px;
+            padding: 36px 28px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(8, 145, 178, 0.1);
+        }
+
+        .service-icon {
+            font-size: 48px;
+            margin-bottom: 18px;
+        }
+
+        .service-card h3 {
+            color: #1e293b;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #64748b;
+            font-size: 15px;
+        }
+
+        /* ─── Vans for Sale ─── */
+        .vans-section {
+            background: #f8fdfe;
+        }
+
+        .vans-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 12px;
+            border: 2px dashed #bae6fd;
+        }
+
+        .vans-placeholder .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .vans-placeholder h3 {
+            color: #1e293b;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .vans-placeholder p {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        /* ─── About ─── */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .about-text p {
+            color: #64748b;
+            font-size: 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: #f8fdfe;
+            border: 1px solid #e0f2fe;
+            border-radius: 12px;
+            padding: 28px;
             text-align: center;
         }
 
-        .feature-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-
-        .feature-card h3 {
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
             color: #0891b2;
-            margin-bottom: 10px;
-            font-size: 20px;
         }
 
-        .feature-card p {
-            color: #666;
+        .stat-card .label {
+            color: #64748b;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 4px;
+        }
+
+        /* ─── Contact ─── */
+        .contact {
+            background: #f8fdfe;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .contact-item .icon {
+            font-size: 28px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .contact-item h3 {
+            color: #1e293b;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item p, .contact-item a {
+            color: #64748b;
+            font-size: 15px;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            color: #0891b2;
+        }
+
+        .hours-table {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .hours-table tr td {
+            padding: 4px 0;
+            color: #64748b;
             font-size: 14px;
         }
 
+        .hours-table tr td:first-child {
+            font-weight: 500;
+            color: #333;
+            width: 120px;
+        }
+
+        .hours-table .closed {
+            color: #e53e3e;
+        }
+
+        .contact-map {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e0f2fe;
+            min-height: 400px;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+            border: none;
+        }
+
+        /* ─── Footer ─── */
         footer {
-            background: #f0f9fc;
-            padding: 30px 0;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #e0f2fe;
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .footer-logo span {
+            color: #0891b2;
         }
 
         footer p {
             font-size: 14px;
         }
 
+        footer a {
+            color: #0891b2;
+            text-decoration: none;
+        }
+
+        /* ─── Responsive ─── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 32px;
+            .nav-links {
+                display: none;
             }
 
-            nav a {
-                margin-left: 15px;
-                font-size: 12px;
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .hero {
+                padding: 130px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
 </head>
 <body>
+
+    <!-- Navigation -->
     <header>
         <div class="container">
             <nav>
-                <a href="#" class="logo">Only Vans</a>
-                <div>
-                    <a href="#about">About</a>
+                <a href="#" class="logo">Only<span>Vans</span></a>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+                <div class="nav-links" id="navLinks">
                     <a href="#services">Services</a>
+                    <a href="#vans">Vans for Sale</a>
+                    <a href="#about">About</a>
                     <a href="#contact">Contact</a>
+                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
                 </div>
             </nav>
         </div>
     </header>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>Only Vans</h1>
-            <p>Professional van mechanics and sales. Quality service, trusted expertise.</p>
-            <button class="cta-button">Get in Touch</button>
+            <div class="hero-badge"><span>★ 5.0</span> &nbsp;Rated on Google</div>
+            <h1>Your Local <span>Van</span> Specialists</h1>
+            <p>Quality van sales, servicing and repairs in Lyford, Oxfordshire. Trusted by drivers across the region.</p>
+            <div class="hero-buttons">
+                <a href="#vans" class="btn-primary">View Vans for Sale</a>
+                <a href="tel:01235376044" class="btn-secondary">Call Us Today</a>
+            </div>
         </div>
     </section>
 
-    <section class="features" id="services">
+    <!-- Services -->
+    <section class="services" id="services">
         <div class="container">
-            <h2 style="text-align: center; color: #0891b2; font-size: 32px; margin-bottom: 10px;">Our Services</h2>
-            <p style="text-align: center; color: #666; margin-bottom: 30px;">Expert van maintenance, repairs, and sales</p>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Van Repair</h3>
-                    <p>Complete mechanical and electrical repairs for all van types</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🛠️</div>
-                    <h3>Maintenance</h3>
-                    <p>Regular servicing and preventative maintenance programs</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚐</div>
+            <div class="section-title">
+                <h2>What We Do</h2>
+                <p>Everything your van needs under one roof</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚐</div>
                     <h3>Van Sales</h3>
-                    <p>Quality used vans, inspected and ready to go</p>
+                    <p>Quality used vans, fully inspected and ready for the road. We hand-pick every vehicle we sell.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Servicing & Repairs</h3>
+                    <p>Full mechanical servicing for all van makes and models. From routine maintenance to complex repairs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>Diagnostics</h3>
+                    <p>Advanced diagnostic equipment to quickly identify and resolve any issues with your van.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>MOT Testing</h3>
+                    <p>MOT testing and pre-MOT checks to keep your van road-legal and running safely.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚙️</div>
+                    <h3>Parts & Accessories</h3>
+                    <p>Genuine and quality aftermarket parts to keep your van in top condition.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📋</div>
+                    <h3>Vehicle Health Checks</h3>
+                    <p>Comprehensive multi-point inspections so you know exactly where your van stands.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Vans for Sale -->
+    <section class="vans-section" id="vans">
+        <div class="container">
+            <div class="section-title">
+                <h2>Vans for Sale</h2>
+                <p>Quality used vans, ready to go</p>
+            </div>
+            <div class="vans-placeholder">
+                <div class="icon">🚐</div>
+                <h3>New Stock Coming Soon</h3>
+                <p>Give us a call to find out what's currently available.</p>
+                <a href="tel:01235376044" class="btn-primary">Call 01235 376044</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Why Choose Only Vans?</h2>
+                    <p>Based at Lyford Business Centre in Oxfordshire, Only Vans is your dedicated van specialist. We live and breathe vans — it's all we do.</p>
+                    <p>Whether you're looking to buy a quality used van or need expert servicing and repairs, our experienced team is here to help. We pride ourselves on honest advice, fair pricing, and getting the job done right first time.</p>
+                    <p>With a 5-star Google rating, our reputation speaks for itself. Come visit us or give us a call — we'd love to help.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="number">5.0</div>
+                        <div class="label">Google Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">★★★★★</div>
+                        <div class="label">Customer Reviews</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">100%</div>
+                        <div class="label">Van Focused</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="number">OX12</div>
+                        <div class="label">Local to Wantage</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Pop in, call us, or find us on the map</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Unit 6, Lyford Business Centre<br>Lyford, Wantage<br>OX12 0EE</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📞</div>
+                        <div>
+                            <h3>Phone</h3>
+                            <a href="tel:01235376044">01235 376044</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">🕐</div>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <table class="hours-table">
+                                <tr><td>Monday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Tuesday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Wednesday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Thursday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Friday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Saturday</td><td>9:00 am – 1:00 pm</td></tr>
+                                <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.5!2d-1.4!3d51.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUnit+6+Lyford+Business+Centre+Lyford+Wantage+OX12+0EE!5e0!3m2!1sen!2suk!4v1"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Only Vans. All rights reserved.</p>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">Only<span>Vans</span></div>
+                    <p style="margin-top: 6px;">Van specialists in Lyford, Oxfordshire</p>
+                </div>
+                <p>&copy; 2025 Only Vans. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.getElementById('navLinks').classList.remove('active');
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 10px rgba(0, 0, 0, 0.06)';
+            }
+        });
+    </script>
 </body>
 </html>
