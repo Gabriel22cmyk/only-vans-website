@@ -1,0 +1,11 @@
+{
+  "name": "only-vans-website",
+  "version": "1.0.0",
+  "description": "Only Vans - Professional van mechanic shop and sales",
+  "scripts": {
+    "dev": "echo 'Open index.html in browser'"
+  },
+  "keywords": ["van", "mechanic", "sales"],
+  "author": "",
+  "license": "MIT"
+}
