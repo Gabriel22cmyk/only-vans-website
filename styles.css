@@ -1092,6 +1092,53 @@ footer a:hover {
 
 /* fade-in disabled — content always visible */
 
+/* ─── Hero Image Background ─── */
+.hero-image-bg {
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(30, 41, 59, 0.8) 100%),
+                url('images/van-yard.jpg') center/cover no-repeat;
+    padding: 160px 0 100px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-bg::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 40%, rgba(8, 145, 178, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.hero-image-bg::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.5) 100%);
+    pointer-events: none;
+}
+
+.hero-image-bg .container { position: relative; z-index: 1; }
+.hero-image-bg h1 { font-size: 52px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; line-height: 1.1; }
+.hero-image-bg h1 span { color: #0891b2; }
+.hero-image-bg p { font-size: 20px; color: #cbd5e1; max-width: 600px; margin: 0 auto 36px; }
+
+.hero-image-bg .hero-badge {
+    background: rgba(8, 145, 178, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(8, 145, 178, 0.3);
+    color: #67e8f9;
+}
+
+@media (max-width: 768px) {
+    .hero-image-bg { padding: 130px 0 70px; }
+    .hero-image-bg h1 { font-size: 34px; }
+    .hero-image-bg p { font-size: 17px; }
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
     .nav-links {
