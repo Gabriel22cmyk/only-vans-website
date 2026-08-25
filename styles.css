@@ -371,9 +371,11 @@ section {
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
-    border: none;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 20px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.08);
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.12),
+        0 2px 4px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -389,8 +391,10 @@ section {
 }
 
 .glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+    box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.16),
+        0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* ─── Service Cards (grid) ─── */
