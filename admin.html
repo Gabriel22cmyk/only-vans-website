@@ -267,7 +267,12 @@
         }
 
         // ─── Init ───
-        checkSession();
+        if (typeof window.supabase === 'undefined') {
+            errorMsg.textContent = 'Failed to load authentication. Please refresh the page.';
+            errorMsg.style.display = 'block';
+        } else {
+            checkSession();
+        }
     </script>
 </body>
 </html>
