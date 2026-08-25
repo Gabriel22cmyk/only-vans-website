@@ -370,20 +370,10 @@ section {
 
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-    border-right: 1px solid rgba(0, 0, 0, 0.04);
-    border-radius: 16px;
-    box-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.04),
-        0 4px 8px rgba(0, 0, 0, 0.04),
-        0 10px 20px rgba(0, 0, 0, 0.06),
-        0 24px 48px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+    background: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -399,14 +389,8 @@ section {
 }
 
 .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 2px 4px rgba(0, 0, 0, 0.04),
-        0 8px 16px rgba(0, 0, 0, 0.06),
-        0 16px 32px rgba(0, 0, 0, 0.08),
-        0 32px 64px rgba(8, 145, 178, 0.08),
-        inset 0 1px 0 rgba(255, 255, 255, 1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.02);
+    transform: translateY(-4px);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04), 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* ─── Service Cards (grid) ─── */
