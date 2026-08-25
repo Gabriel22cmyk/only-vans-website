@@ -1,8 +1,11 @@
-<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Speech bubble -->
-    <path d="M 10 12 L 38 12 Q 40 12 40 14 L 40 28 Q 40 30 38 30 L 16 30 L 12 36 L 14 30 L 12 30 Q 10 30 10 28 L 10 14 Q 10 12 12 12 Z"/>
-    <!-- Heart inside -->
-    <path d="M 25 18 Q 20 16 18 21 Q 18 25 25 30 Q 32 25 32 21 Q 30 16 25 18"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <path d="M6 8h28a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H16l-8 8v-8H6a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z" fill="url(#g)"/>
+  <path d="M20 15l3 3 6-6" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <line x1="14" y1="26" x2="28" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
 </svg>

@@ -1,14 +1,12 @@
-<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Pump nozzle -->
-    <path d="M 16 14 L 20 10 L 22 10 Q 24 10 24 12 L 24 16"/>
-    <!-- Pump handle -->
-    <path d="M 20 16 Q 18 18 18 22"/>
-    <!-- Fuel hose -->
-    <path d="M 18 22 Q 16 24 14 28"/>
-    <!-- Fuel tank -->
-    <rect x="8" y="28" width="14" height="14" rx="2"/>
-    <!-- Liquid level inside -->
-    <line x1="10" y1="35" x2="20" y2="35"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect x="6" y="8" width="22" height="34" rx="3" fill="url(#g)"/>
+  <rect x="10" y="14" width="14" height="10" rx="2" fill="white" opacity="0.3"/>
+  <path d="M28 18h6a4 4 0 0 1 4 4v14a3 3 0 0 0 6 0V20l-4-8" stroke="#0891b2" stroke-width="3" stroke-linecap="round" fill="none"/>
+  <rect x="6" y="40" width="22" height="3" rx="1" fill="#0e7490"/>
 </svg>

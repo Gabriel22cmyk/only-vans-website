@@ -1,15 +1,13 @@
-<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Box/package -->
-    <path d="M 14 18 L 14 32 Q 14 34 16 34 L 32 34 Q 34 34 34 32 L 34 18"/>
-    <!-- Box top -->
-    <path d="M 14 18 L 24 12 L 34 18"/>
-    <!-- Box lid -->
-    <line x1="14" y1="18" x2="34" y2="18"/>
-    <!-- Tape across top -->
-    <line x1="24" y1="12" x2="24" y2="18"/>
-    <!-- Box dimension lines -->
-    <line x1="14" y1="22" x2="20" y2="22"/>
-    <line x1="28" y1="22" x2="34" y2="22"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 2L4 14v20l20 12 20-12V14z" fill="url(#g)"/>
+  <path d="M24 2L4 14l20 12 20-12z" fill="white" opacity="0.2"/>
+  <line x1="24" y1="26" x2="24" y2="46" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <line x1="4" y1="14" x2="24" y2="26" stroke="white" stroke-width="1.5" opacity="0.3"/>
+  <line x1="44" y1="14" x2="24" y2="26" stroke="white" stroke-width="1.5" opacity="0.3"/>
 </svg>

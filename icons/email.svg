@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-  <rect x="4" y="10" width="40" height="28" rx="3"/>
-  <polyline points="4,10 24,28 44,10"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#0891b2"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="10" width="40" height="28" rx="4" fill="url(#g)"/>
+  <path d="M4 14l20 14 20-14" stroke="white" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
 </svg>
