@@ -1,0 +1,16 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Buildings -->
+    <rect x="8" y="18" width="8" height="16"/>
+    <line x1="12" y1="22" x2="12" y2="26"/>
+    <line x1="10" y1="24" x2="14" y2="24"/>
+    <rect x="32" y="20" width="8" height="14"/>
+    <line x1="36" y1="24" x2="36" y2="28"/>
+    <line x1="34" y1="26" x2="38" y2="26"/>
+    <!-- Small van -->
+    <path d="M 18 24 L 19 18 L 28 18 L 29 24 Z"/>
+    <path d="M 18 24 L 18 28 L 29 28 L 29 24"/>
+    <circle cx="21" cy="28" r="1.5"/>
+    <circle cx="26" cy="28" r="1.5"/>
+  </g>
+</svg>

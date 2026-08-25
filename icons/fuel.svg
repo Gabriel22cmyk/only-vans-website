@@ -1,0 +1,14 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Pump nozzle -->
+    <path d="M 16 14 L 20 10 L 22 10 Q 24 10 24 12 L 24 16"/>
+    <!-- Pump handle -->
+    <path d="M 20 16 Q 18 18 18 22"/>
+    <!-- Fuel hose -->
+    <path d="M 18 22 Q 16 24 14 28"/>
+    <!-- Fuel tank -->
+    <rect x="8" y="28" width="14" height="14" rx="2"/>
+    <!-- Liquid level inside -->
+    <line x1="10" y1="35" x2="20" y2="35"/>
+  </g>
+</svg>

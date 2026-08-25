@@ -410,9 +410,15 @@ section {
 }
 
 .service-icon {
-    font-size: 48px;
-    margin-bottom: 18px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 18px;
+    display: block;
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .service-card h3 {
@@ -460,9 +466,15 @@ section {
 }
 
 .why-icon {
-    font-size: 44px;
-    margin-bottom: 14px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 14px;
+    display: block;
+}
+
+.why-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .why-card h3 {
@@ -517,9 +529,15 @@ section {
 }
 
 .sign-icon {
-    font-size: 40px;
-    margin-bottom: 14px;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 14px;
+    display: block;
+}
+
+.sign-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .sign-card h3 {
@@ -547,14 +565,17 @@ section {
 }
 
 .feature-icon {
-    font-size: 40px;
     flex-shrink: 0;
-    width: 60px;
-    height: 60px;
+    width: 48px;
+    height: 48px;
     display: flex;
     align-items: center;
     justify-content: center;
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.feature-icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .feature-content h3 {
@@ -925,8 +946,15 @@ section {
 }
 
 .services-bar-item .icon {
-    font-size: 32px;
-    margin-bottom: 8px;
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 8px;
+    display: block;
+}
+
+.services-bar-item .icon img {
+    width: 100%;
+    height: 100%;
 }
 
 .services-bar-item p {

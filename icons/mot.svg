@@ -1,0 +1,10 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Outer circle -->
+    <circle cx="24" cy="24" r="14"/>
+    <!-- Gear teeth -->
+    <path d="M 24 10 L 26 14 L 28 10 M 38 24 L 34 26 L 38 28 M 24 38 L 22 34 L 20 38 M 10 24 L 14 22 L 10 20"/>
+    <!-- Inner circle -->
+    <circle cx="24" cy="24" r="6"/>
+  </g>
+</svg>

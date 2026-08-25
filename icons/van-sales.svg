@@ -1,0 +1,12 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Van body -->
+    <path d="M 8 20 L 12 12 L 38 12 L 40 20 Z"/>
+    <path d="M 8 20 L 8 32 L 40 32 L 40 20"/>
+    <!-- Side window -->
+    <rect x="14" y="14" width="8" height="6"/>
+    <!-- Wheels -->
+    <circle cx="15" cy="32" r="3"/>
+    <circle cx="33" cy="32" r="3"/>
+  </g>
+</svg>

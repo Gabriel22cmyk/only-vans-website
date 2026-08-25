@@ -1,0 +1,13 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Tow truck body -->
+    <path d="M 10 26 L 11 16 L 22 16 L 24 26 Z"/>
+    <path d="M 10 26 L 10 32 L 24 32 L 24 26"/>
+    <!-- Tow hook arm -->
+    <line x1="24" y1="20" x2="38" y2="20"/>
+    <path d="M 36 18 L 38 20 L 36 22"/>
+    <!-- Wheels -->
+    <circle cx="15" cy="32" r="2.5"/>
+    <circle cx="23" cy="32" r="2.5"/>
+  </g>
+</svg>
