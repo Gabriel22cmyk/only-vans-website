@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Only Vans - Admin</title>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         * {
             margin: 0;
@@ -21,7 +20,6 @@
             justify-content: center;
         }
 
-        /* ─── Login Screen ─── */
         .login-container {
             background: white;
             padding: 40px;
@@ -38,7 +36,7 @@
             text-align: center;
         }
 
-        .login-container p {
+        .login-container .subtitle {
             color: #999;
             font-size: 14px;
             text-align: center;
@@ -98,10 +96,8 @@
             font-size: 13px;
             margin-top: 15px;
             text-align: center;
-            display: none;
         }
 
-        /* ─── Admin Dashboard ─── */
         .dashboard {
             display: none;
             width: 100%;
@@ -170,19 +166,17 @@
     <!-- Login Screen -->
     <div class="login-container" id="loginScreen">
         <h1>Only Vans</h1>
-        <p>Admin Login</p>
-        <form id="loginForm">
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="login-btn" id="loginBtn">Sign In</button>
-            <p class="error-msg" id="errorMsg"></p>
-        </form>
+        <p class="subtitle">Admin Login</p>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button type="button" class="login-btn" id="loginBtn" onclick="handleLogin()">Sign In</button>
+        <p class="error-msg" id="errorMsg" style="display:none;"></p>
     </div>
 
     <!-- Admin Dashboard -->
@@ -192,7 +186,7 @@
                 <h1>🚐 Only Vans Admin</h1>
                 <span class="admin-email" id="adminEmail"></span>
             </div>
-            <button class="logout-btn" id="logoutBtn">Sign Out</button>
+            <button class="logout-btn" id="logoutBtn" onclick="handleLogout()">Sign Out</button>
         </div>
         <div class="dashboard-content">
             <h2>Welcome, Admin</h2>
@@ -200,78 +194,98 @@
         </div>
     </div>
 
+    <!-- Load Supabase AFTER the page content -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // ─── Supabase Setup ───
-        const SUPABASE_URL = 'https://tsorpwmhwbyivltgulaf.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzb3Jwd21od2J5aXZsdGd1bGFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2Njk4MDcsImV4cCI6MjEwMzI0NTgwN30.xLXJN3-BV7vaFkKI6p4j83-ZBd3wB7KH7MCiU2Zuk6o';
+        var sb = null;
 
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-        // ─── DOM Elements ───
-        const loginScreen = document.getElementById('loginScreen');
-        const dashboard = document.getElementById('dashboard');
-        const loginForm = document.getElementById('loginForm');
-        const loginBtn = document.getElementById('loginBtn');
-        const errorMsg = document.getElementById('errorMsg');
-        const adminEmail = document.getElementById('adminEmail');
-        const logoutBtn = document.getElementById('logoutBtn');
-
-        // ─── Check if already logged in ───
-        async function checkSession() {
-            const { data: { session } } = await supabase.auth.getSession();
-            if (session) {
-                showDashboard(session.user);
-            }
+        function showError(msg) {
+            var el = document.getElementById('errorMsg');
+            el.textContent = msg;
+            el.style.display = 'block';
         }
 
-        // ─── Login ───
-        loginForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            loginBtn.disabled = true;
-            loginBtn.textContent = 'Signing in...';
-            errorMsg.style.display = 'none';
+        function hideError() {
+            document.getElementById('errorMsg').style.display = 'none';
+        }
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
+        function showDashboard(user) {
+            document.getElementById('loginScreen').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'block';
+            document.body.style.display = 'block';
+            document.getElementById('adminEmail').textContent = user.email;
+        }
 
-            const { data, error } = await supabase.auth.signInWithPassword({
-                email,
-                password
-            });
+        async function handleLogin() {
+            hideError();
 
-            if (error) {
-                errorMsg.textContent = error.message;
-                errorMsg.style.display = 'block';
-                loginBtn.disabled = false;
-                loginBtn.textContent = 'Sign In';
+            if (!sb) {
+                showError('Authentication not loaded. Please refresh the page.');
                 return;
             }
 
-            showDashboard(data.user);
-        });
+            var email = document.getElementById('email').value.trim();
+            var password = document.getElementById('password').value;
 
-        // ─── Logout ───
-        logoutBtn.addEventListener('click', async () => {
-            await supabase.auth.signOut();
-            dashboard.style.display = 'none';
-            loginScreen.style.display = 'block';
-            document.body.style.display = 'flex';
-        });
+            if (!email || !password) {
+                showError('Please enter your email and password.');
+                return;
+            }
 
-        // ─── Show Dashboard ───
-        function showDashboard(user) {
-            loginScreen.style.display = 'none';
-            dashboard.style.display = 'block';
-            document.body.style.display = 'block';
-            adminEmail.textContent = user.email;
+            var btn = document.getElementById('loginBtn');
+            btn.disabled = true;
+            btn.textContent = 'Signing in...';
+
+            try {
+                var result = await sb.auth.signInWithPassword({ email: email, password: password });
+
+                if (result.error) {
+                    showError(result.error.message);
+                    btn.disabled = false;
+                    btn.textContent = 'Sign In';
+                    return;
+                }
+
+                showDashboard(result.data.user);
+            } catch (err) {
+                showError('Login failed: ' + err.message);
+                btn.disabled = false;
+                btn.textContent = 'Sign In';
+            }
         }
 
-        // ─── Init ───
-        if (typeof window.supabase === 'undefined') {
-            errorMsg.textContent = 'Failed to load authentication. Please refresh the page.';
-            errorMsg.style.display = 'block';
-        } else {
-            checkSession();
+        async function handleLogout() {
+            if (sb) {
+                await sb.auth.signOut();
+            }
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('loginScreen').style.display = 'block';
+            document.body.style.display = 'flex';
+        }
+
+        // Allow pressing Enter to submit
+        document.getElementById('password').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') handleLogin();
+        });
+        document.getElementById('email').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') handleLogin();
+        });
+
+        // Init Supabase
+        try {
+            sb = window.supabase.createClient(
+                'https://tsorpwmhwbyivltgulaf.supabase.co',
+                'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzb3Jwd21od2J5aXZsdGd1bGFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2Njk4MDcsImV4cCI6MjEwMzI0NTgwN30.xLXJN3-BV7vaFkKI6p4j83-ZBd3wB7KH7MCiU2Zuk6o'
+            );
+
+            // Check existing session
+            sb.auth.getSession().then(function(res) {
+                if (res.data.session) {
+                    showDashboard(res.data.session.user);
+                }
+            });
+        } catch (err) {
+            showError('Failed to connect to authentication service.');
         }
     </script>
 </body>
