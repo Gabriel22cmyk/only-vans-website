@@ -1,15 +1,6 @@
-<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
-  <g stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <!-- Upper arm -->
-    <path d="M 12 14 Q 14 14 16 16 L 18 20"/>
-    <!-- Forearm -->
-    <line x1="18" y1="20" x2="22" y2="32"/>
-    <!-- Flexed bicep bulge -->
-    <path d="M 16 16 Q 20 14 24 16 Q 22 18 20 20"/>
-    <!-- Hand -->
-    <path d="M 22 32 L 24 34 L 20 34 Z"/>
-    <!-- Fist lines -->
-    <line x1="21" y1="32" x2="21" y2="34"/>
-    <line x1="23" y1="32" x2="23" y2="34"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none" stroke="#0891b2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M6 28h8v-8h4v-8h12v8h4v8h8"/>
+  <path d="M14 28v8h20v-8"/>
+  <path d="M10 28c0 4 3 8 6 8"/>
+  <path d="M38 28c0 4-3 8-6 8"/>
 </svg>
