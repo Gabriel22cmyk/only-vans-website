@@ -65,11 +65,10 @@
         .login-logo {
             text-align: center; margin-bottom: 8px;
         }
-        .login-logo .logo-text {
-            font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+        .login-logo img {
+            height: 80px; width: auto;
+            filter: brightness(0) invert(1);
         }
-        .login-logo .logo-text .only { color: white; }
-        .login-logo .logo-text .vans { color: #0891b2; }
         .login-container .subtitle { color: #94a3b8; font-size: 14px; text-align: center; margin: 4px 0 36px; }
 
         .login-container .form-group { margin-bottom: 20px; }
@@ -112,9 +111,10 @@
             pointer-events: none;
         }
         .dash-header-left h1 {
+            display: flex; align-items: center; gap: 10px;
             font-size: 22px; font-weight: 800; color: #1e293b; letter-spacing: -0.3px;
         }
-        .dash-header-left h1 span { color: #0891b2; }
+        .dash-header-left h1 img { height: 38px; width: auto; }
         .dash-welcome {
             font-size: 15px; color: #64748b; margin-top: 2px; font-weight: 500;
         }
@@ -392,12 +392,13 @@
         .welcome-splash.fade-out { opacity: 0; pointer-events: none; }
 
         .welcome-logo {
-            font-size: 42px; font-weight: 800; letter-spacing: -0.5px;
             margin-bottom: 16px; position: relative; z-index: 1;
             opacity: 0; animation: welcomeFadeUp 0.6s ease forwards 0.2s;
         }
-        .welcome-logo .w-only { color: white; }
-        .welcome-logo .w-vans { color: #0891b2; }
+        .welcome-logo img {
+            height: 100px; width: auto;
+            filter: brightness(0) invert(1);
+        }
 
         .welcome-text {
             font-size: 28px; font-weight: 300; color: #94a3b8;
@@ -464,7 +465,7 @@
     <div class="login-wrapper" id="loginScreen">
         <div class="login-container">
             <div class="login-logo">
-                <div class="logo-text"><span class="only">Only</span><span class="vans">Vans</span></div>
+                <img src="images/logo.jpg" alt="Only Vans">
             </div>
             <p class="subtitle">Admin Dashboard</p>
             <div class="form-group">
@@ -486,7 +487,7 @@
             <!-- Header -->
             <div class="dash-header">
                 <div class="dash-header-left">
-                    <h1>🚐 Only<span>Vans</span></h1>
+                    <h1><img src="images/logo.jpg" alt="Only Vans"> Admin</h1>
                     <div class="dash-welcome" id="welcomeMsg">Welcome back, <strong>Adam</strong></div>
                 </div>
                 <div class="header-right">
@@ -655,7 +656,7 @@
     <!-- ═══ WELCOME SPLASH ═══ -->
     <div class="welcome-splash" id="welcomeSplash" style="display:none;">
         <div class="welcome-mist"></div>
-        <div class="welcome-logo"><span class="w-only">Only</span><span class="w-vans">Vans</span></div>
+        <div class="welcome-logo"><img src="images/logo.jpg" alt="Only Vans"></div>
         <div class="welcome-text" id="welcomeSplashText">Welcome back, <strong>Adam</strong></div>
         <div class="welcome-line"></div>
     </div>

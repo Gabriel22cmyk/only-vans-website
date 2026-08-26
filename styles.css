@@ -54,16 +54,16 @@ nav {
 }
 
 .logo {
-    font-size: 26px;
-    font-weight: 800;
-    color: #0891b2;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     text-decoration: none;
-    letter-spacing: -0.5px;
     transition: opacity 0.3s;
 }
 
-.logo span {
-    color: #333;
+.logo img {
+    height: 40px;
+    width: auto;
 }
 
 .logo:hover {
@@ -1069,13 +1069,15 @@ footer {
 }
 
 .footer-logo {
-    font-size: 22px;
-    font-weight: 800;
-    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.footer-logo span {
-    color: #0891b2;
+.footer-logo img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
 }
 
 footer p {
