@@ -375,6 +375,66 @@
         .setup-msg p { color: #64748b; font-size: 14px; line-height: 1.7; }
         .setup-msg code { background: #f0f9fc; padding: 2px 8px; border-radius: 6px; font-size: 13px; color: #0891b2; }
 
+        /* ─── Welcome Splash ─── */
+        .welcome-splash {
+            position: fixed; inset: 0; z-index: 9999;
+            display: flex; align-items: center; justify-content: center; flex-direction: column;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            opacity: 1; transition: opacity 0.8s ease;
+        }
+        .welcome-splash::before {
+            content: ''; position: absolute; inset: 0;
+            background:
+                radial-gradient(ellipse at 30% 40%, rgba(8,145,178,0.2) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 60%, rgba(139,92,246,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .welcome-splash.fade-out { opacity: 0; pointer-events: none; }
+
+        .welcome-logo {
+            font-size: 42px; font-weight: 800; letter-spacing: -0.5px;
+            margin-bottom: 16px; position: relative; z-index: 1;
+            opacity: 0; animation: welcomeFadeUp 0.6s ease forwards 0.2s;
+        }
+        .welcome-logo .w-only { color: white; }
+        .welcome-logo .w-vans { color: #0891b2; }
+
+        .welcome-text {
+            font-size: 28px; font-weight: 300; color: #94a3b8;
+            position: relative; z-index: 1;
+            opacity: 0; animation: welcomeFadeUp 0.6s ease forwards 0.5s;
+        }
+        .welcome-text strong {
+            font-weight: 700; color: white;
+        }
+
+        .welcome-line {
+            width: 60px; height: 3px; border-radius: 3px; margin-top: 24px;
+            background: linear-gradient(90deg, #0891b2, #06b6d4);
+            position: relative; z-index: 1;
+            opacity: 0; animation: welcomeLineGrow 0.8s ease forwards 0.8s;
+        }
+
+        .welcome-mist {
+            position: absolute; inset: 0; z-index: 0;
+            background:
+                radial-gradient(ellipse at 50% 50%, rgba(8,145,178,0.08) 0%, transparent 60%);
+            animation: mistPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes welcomeFadeUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes welcomeLineGrow {
+            from { opacity: 0; width: 0; }
+            to { opacity: 1; width: 60px; }
+        }
+        @keyframes mistPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
         /* ─── Back to Site Link ─── */
         .back-link {
             display: inline-flex; align-items: center; gap: 6px;
@@ -592,6 +652,14 @@
         </div>
     </div>
 
+    <!-- ═══ WELCOME SPLASH ═══ -->
+    <div class="welcome-splash" id="welcomeSplash" style="display:none;">
+        <div class="welcome-mist"></div>
+        <div class="welcome-logo"><span class="w-only">Only</span><span class="w-vans">Vans</span></div>
+        <div class="welcome-text" id="welcomeSplashText">Welcome back, <strong>Adam</strong></div>
+        <div class="welcome-line"></div>
+    </div>
+
     <!-- ═══ TOAST ═══ -->
     <div class="toast" id="toast"></div>
 
@@ -653,15 +721,29 @@
 
         function showDashboard(user) {
             document.getElementById('loginScreen').style.display = 'none';
-            document.getElementById('dashboard').style.display = 'block';
             document.getElementById('adminEmail').textContent = user.email;
 
-            // Time-based greeting
             var hour = new Date().getHours();
             var greeting = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
             document.getElementById('welcomeMsg').innerHTML = greeting + ', <strong>Adam</strong>';
 
+            // Show welcome splash
+            var splash = document.getElementById('welcomeSplash');
+            splash.style.display = 'flex';
+            document.getElementById('welcomeSplashText').innerHTML = greeting + ', <strong>Adam</strong>';
+
+            // Reveal dashboard behind splash
+            document.getElementById('dashboard').style.display = 'block';
             loadVans();
+
+            // Fade out splash after 2s
+            setTimeout(function() {
+                splash.classList.add('fade-out');
+                setTimeout(function() {
+                    splash.style.display = 'none';
+                    splash.classList.remove('fade-out');
+                }, 800);
+            }, 2000);
         }
 
         document.getElementById('password').addEventListener('keydown', function(e) { if (e.key === 'Enter') handleLogin(); });
