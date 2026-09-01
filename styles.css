@@ -369,11 +369,11 @@ section {
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(8, 145, 178, 0.12);
     border-radius: 20px;
     box-shadow:
-        0 6px 16px rgba(0, 0, 0, 0.12),
-        0 2px 4px rgba(0, 0, 0, 0.08);
+        0 4px 16px rgba(8, 145, 178, 0.12),
+        0 1px 4px rgba(8, 145, 178, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -391,8 +391,22 @@ section {
 .glass-card:hover {
     transform: translateY(-6px);
     box-shadow:
-        0 12px 28px rgba(0, 0, 0, 0.16),
-        0 4px 8px rgba(0, 0, 0, 0.1);
+        0 12px 28px rgba(8, 145, 178, 0.18),
+        0 4px 8px rgba(8, 145, 178, 0.1);
+}
+
+/* AB Automotive blue shadow variant */
+.ab-glass-card {
+    border-color: rgba(25, 86, 168, 0.12);
+    box-shadow:
+        0 4px 16px rgba(25, 86, 168, 0.12),
+        0 1px 4px rgba(25, 86, 168, 0.08);
+}
+
+.ab-glass-card:hover {
+    box-shadow:
+        0 12px 28px rgba(25, 86, 168, 0.18),
+        0 4px 8px rgba(25, 86, 168, 0.1);
 }
 
 /* ─── Service Cards (grid) ─── */
