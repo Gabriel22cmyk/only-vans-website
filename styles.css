@@ -2209,3 +2209,9 @@ section {
         padding-bottom: 32px;
     }
 }
+
+/* ─── Servicing Hero Photo ─── */
+.hero-servicing {
+    background: linear-gradient(135deg, rgba(8, 15, 28, 0.82) 0%, rgba(15, 23, 42, 0.75) 100%),
+                url('images/tyre-mechanic.jpg') center/cover no-repeat;
+}
