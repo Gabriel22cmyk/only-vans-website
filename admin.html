@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://tsorpwmhwbyivltgulaf.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://tsorpwmhwbyivltgulaf.supabase.co https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
     <title>Only Vans - Admin Dashboard</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap" rel="stylesheet">
     <style>
         /* ═══════════════════════════════════════════
            ONLY VANS — Admin Dashboard
@@ -19,7 +19,7 @@
         /* ─── Reset & Base ─── */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             min-height: 100vh;
             color: #333;
             line-height: 1.6;
@@ -117,6 +117,7 @@
         .dash-header-left h1 {
             display: flex; align-items: center; gap: 10px;
             font-size: 22px; font-weight: 800; color: #1e293b; letter-spacing: -0.3px;
+            font-family: 'Fraunces', Georgia, serif;
         }
         .dash-header-left h1 img { height: 38px; width: auto; }
         .dash-welcome {
@@ -150,8 +151,8 @@
         .stat-icon img { width: 100%; height: 100%; }
         .stat-box .stat-num {
             font-size: 40px; font-weight: 800;
-            background: linear-gradient(135deg, #0891b2, #06b6d4);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            font-family: 'Fraunces', Georgia, serif;
+            color: #0891b2;
         }
         .stat-box .stat-label { color: #64748b; font-size: 14px; font-weight: 500; margin-top: 4px; }
 
@@ -227,8 +228,8 @@
         .van-meta .dot { color: #cbd5e1; }
         .van-price {
             font-size: 26px; font-weight: 800; margin: 12px 0;
-            background: linear-gradient(135deg, #0891b2, #06b6d4);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+            color: #0891b2;
+            font-family: 'Fraunces', Georgia, serif;
         }
         .van-desc { color: #64748b; font-size: 13px; line-height: 1.6; margin-bottom: 16px; max-height: 42px; overflow: hidden; }
 
@@ -281,7 +282,7 @@
             padding: 28px 28px 0; position: sticky; top: 0; background: white; z-index: 1;
             border-radius: 24px 24px 0 0;
         }
-        .modal-header h2 { font-size: 20px; font-weight: 700; color: #1e293b; }
+        .modal-header h2 { font-size: 20px; font-weight: 700; color: #1e293b; font-family: 'Fraunces', Georgia, serif; }
         .modal-close {
             width: 36px; height: 36px; border-radius: 10px; border: none;
             background: #f1f5f9; color: #64748b; font-size: 20px; cursor: pointer;
@@ -448,6 +449,131 @@
         }
         .back-link:hover { color: #0891b2; }
 
+        /* ─── Tab Bar ─── */
+        .tab-bar {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 14px;
+            padding: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: transparent;
+            color: #64748b;
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #0891b2, #06b6d4);
+            color: white;
+            box-shadow: 0 4px 12px rgba(8,145,178,0.25);
+        }
+        .tab-btn:hover:not(.active) {
+            background: #f0f9fc;
+            color: #0891b2;
+        }
+
+        /* ─── Insights Tab ─── */
+        .insights-period { margin-bottom: 24px; }
+
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .insight-card {
+            background: white;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 28px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+        }
+
+        .insight-card h3 {
+            font-family: 'Fraunces', Georgia, serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+
+        .insight-list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f1f5f9;
+            font-size: 14px;
+        }
+
+        .insight-list-item:last-child { border-bottom: none; }
+
+        .insight-list-item .label { color: #475569; font-weight: 500; }
+
+        .insight-list-item .value {
+            font-weight: 700;
+            color: #0891b2;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .insight-bar {
+            height: 6px;
+            border-radius: 3px;
+            background: #f0f9fc;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+
+        .insight-bar-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #0891b2, #06b6d4);
+            transition: width 0.6s ease;
+        }
+
+        .recent-sales-table table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .recent-sales-table th {
+            text-align: left;
+            padding: 10px 12px;
+            color: #64748b;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border-bottom: 2px solid #f1f5f9;
+        }
+
+        .recent-sales-table td {
+            padding: 12px;
+            color: #1e293b;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .recent-sales-table tr:last-child td { border-bottom: none; }
+
+        .no-data-msg {
+            text-align: center;
+            padding: 40px;
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
         /* ─── Responsive ─── */
         @media (max-width: 768px) {
             .dashboard { padding: 16px; }
@@ -460,6 +586,9 @@
             .modal-body .form-row { grid-template-columns: 1fr; }
             .stat-box .stat-num { font-size: 32px; }
             .login-container { padding: 32px 24px; }
+            .insights-grid { grid-template-columns: 1fr; }
+            #insightsTab .stats-row { grid-template-columns: repeat(2, 1fr) !important; }
+            .recent-sales-table { overflow-x: auto; }
         }
     </style>
 </head>
@@ -501,6 +630,14 @@
                 </div>
             </div>
 
+            <!-- Tab Bar -->
+            <div class="tab-bar">
+                <button class="tab-btn active" onclick="switchTab('inventory')">📦 Inventory</button>
+                <button class="tab-btn" onclick="switchTab('insights')">📊 Insights</button>
+            </div>
+
+            <!-- Inventory Tab -->
+            <div id="inventoryTab">
             <!-- Stats -->
             <div class="stats-row">
                 <div class="stat-box">
@@ -543,6 +680,62 @@
 
             <!-- Van Grid -->
             <div id="vanGrid"></div>
+            </div>
+
+            <!-- Insights Tab -->
+            <div id="insightsTab" style="display:none;">
+                <div class="insights-period">
+                    <select class="filter-select" id="insightsPeriod" onchange="renderInsights()">
+                        <option value="thisMonth">This Month</option>
+                        <option value="lastMonth">Last Month</option>
+                        <option value="last3">Last 3 Months</option>
+                        <option value="allTime">All Time</option>
+                    </select>
+                </div>
+
+                <div class="stats-row" style="grid-template-columns: repeat(4, 1fr);">
+                    <div class="stat-box">
+                        <div class="stat-num" id="insightsSold" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">0</div>
+                        <div class="stat-label">Vans Sold</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num" id="insightsRevenue" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">£0</div>
+                        <div class="stat-label">Total Revenue</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num" id="insightsAvgDays" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">0</div>
+                        <div class="stat-label">Avg Days to Sell</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-num" id="insightsAvgPrice" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">£0</div>
+                        <div class="stat-label">Avg Sale Price</div>
+                    </div>
+                </div>
+
+                <div class="insights-grid">
+                    <div class="insight-card">
+                        <h3>🏆 Top Selling Makes</h3>
+                        <div id="topMakes" class="insight-list"></div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>🎨 Popular Colours</h3>
+                        <div id="topColours" class="insight-list"></div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>⛽ Fuel Type Breakdown</h3>
+                        <div id="fuelBreakdown" class="insight-list"></div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>⚡ Speed of Sale</h3>
+                        <div id="speedInsights" class="insight-list"></div>
+                    </div>
+                </div>
+
+                <div class="insight-card" style="margin-top:20px;">
+                    <h3>📋 Recent Sales</h3>
+                    <div id="recentSales" class="recent-sales-table"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -1041,8 +1234,14 @@
             var van = allVans.find(function(v) { return v.id === id; });
             if (!van) return;
             var newStatus = van.status === 'available' ? 'sold' : 'available';
+            var updateData = { status: newStatus };
+            if (newStatus === 'sold') {
+                updateData.sold_at = new Date().toISOString();
+            } else {
+                updateData.sold_at = null;
+            }
             try {
-                var res = await sb.from('vans').update({ status: newStatus }).eq('id', id);
+                var res = await sb.from('vans').update(updateData).eq('id', id);
                 if (res.error) throw res.error;
                 showToast(newStatus === 'sold' ? 'Marked as sold' : 'Relisted as available', 'success');
                 loadVans();
@@ -1073,6 +1272,172 @@
             } catch (e) {
                 showToast('Delete failed: ' + (e.message || 'Unknown error'), 'error');
             } finally { btn.disabled = false; btn.textContent = 'Delete'; }
+        }
+
+        /* ─── Tab Switching ─── */
+        function switchTab(tab) {
+            var invTab = document.getElementById('inventoryTab');
+            var insTab = document.getElementById('insightsTab');
+            var buttons = document.querySelectorAll('.tab-btn');
+            
+            buttons.forEach(function(btn) { btn.classList.remove('active'); });
+            
+            if (tab === 'inventory') {
+                invTab.style.display = 'block';
+                insTab.style.display = 'none';
+                buttons[0].classList.add('active');
+            } else {
+                invTab.style.display = 'none';
+                insTab.style.display = 'block';
+                buttons[1].classList.add('active');
+                renderInsights();
+            }
+        }
+
+        /* ─── Insights Rendering ─── */
+        function renderInsights() {
+            var period = document.getElementById('insightsPeriod').value;
+            var now = new Date();
+            var soldVans = allVans.filter(function(v) { return v.status === 'sold' && v.sold_at; });
+            
+            // Filter by period
+            var filtered = soldVans.filter(function(v) {
+                var soldDate = new Date(v.sold_at);
+                if (period === 'thisMonth') {
+                    return soldDate.getMonth() === now.getMonth() && soldDate.getFullYear() === now.getFullYear();
+                } else if (period === 'lastMonth') {
+                    var lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+                    return soldDate.getMonth() === lastMonth.getMonth() && soldDate.getFullYear() === lastMonth.getFullYear();
+                } else if (period === 'last3') {
+                    var threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, 1);
+                    return soldDate >= threeMonthsAgo;
+                }
+                return true; // allTime
+            });
+            
+            // Stats
+            document.getElementById('insightsSold').textContent = filtered.length;
+            
+            var totalRevenue = filtered.reduce(function(sum, v) { return sum + (v.price || 0); }, 0);
+            document.getElementById('insightsRevenue').textContent = '£' + totalRevenue.toLocaleString();
+            
+            var avgPrice = filtered.length ? Math.round(totalRevenue / filtered.length) : 0;
+            document.getElementById('insightsAvgPrice').textContent = '£' + avgPrice.toLocaleString();
+            
+            // Average days to sell
+            var daysArr = filtered.filter(function(v) { return v.created_at && v.sold_at; }).map(function(v) {
+                return Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
+            });
+            var avgDays = daysArr.length ? Math.round(daysArr.reduce(function(a, b) { return a + b; }, 0) / daysArr.length) : 0;
+            document.getElementById('insightsAvgDays').textContent = avgDays;
+            
+            // Top makes
+            renderGroupedList('topMakes', filtered, 'make');
+            
+            // Top colours
+            renderGroupedList('topColours', filtered, 'colour');
+            
+            // Fuel breakdown
+            renderGroupedList('fuelBreakdown', filtered, 'fuel_type');
+            
+            // Speed insights
+            renderSpeedInsights(filtered);
+            
+            // Recent sales table
+            renderRecentSales(filtered);
+        }
+
+        function renderGroupedList(containerId, vans, field) {
+            var container = document.getElementById(containerId);
+            if (!vans.length) {
+                container.innerHTML = '<div class="no-data-msg">No data yet</div>';
+                return;
+            }
+            
+            var counts = {};
+            vans.forEach(function(v) {
+                var key = v[field] || 'Unknown';
+                counts[key] = (counts[key] || 0) + 1;
+            });
+            
+            var sorted = Object.entries(counts).sort(function(a, b) { return b[1] - a[1]; });
+            var max = sorted[0] ? sorted[0][1] : 1;
+            
+            var html = '';
+            sorted.slice(0, 5).forEach(function(entry) {
+                var pct = Math.round((entry[1] / vans.length) * 100);
+                html += '<div class="insight-list-item">' +
+                    '<span class="label">' + escHtml(entry[0]) + '</span>' +
+                    '<span class="value">' + entry[1] + ' (' + pct + '%)</span>' +
+                '</div>' +
+                '<div class="insight-bar"><div class="insight-bar-fill" style="width:' + Math.round((entry[1] / max) * 100) + '%"></div></div>';
+            });
+            container.innerHTML = html;
+        }
+
+        function renderSpeedInsights(vans) {
+            var container = document.getElementById('speedInsights');
+            var withDays = vans.filter(function(v) { return v.created_at && v.sold_at; }).map(function(v) {
+                v._days = Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
+                return v;
+            });
+            
+            if (!withDays.length) {
+                container.innerHTML = '<div class="no-data-msg">No data yet</div>';
+                return;
+            }
+            
+            // Fastest sale
+            var fastest = withDays.reduce(function(a, b) { return a._days < b._days ? a : b; });
+            // Slowest sale
+            var slowest = withDays.reduce(function(a, b) { return a._days > b._days ? a : b; });
+            
+            // Group by colour to find patterns
+            var colourDays = {};
+            var colourCounts = {};
+            withDays.forEach(function(v) {
+                var c = v.colour || 'Unknown';
+                colourDays[c] = (colourDays[c] || 0) + v._days;
+                colourCounts[c] = (colourCounts[c] || 0) + 1;
+            });
+            
+            var colourAvgs = Object.keys(colourDays).map(function(c) {
+                return { colour: c, avg: Math.round(colourDays[c] / colourCounts[c]), count: colourCounts[c] };
+            }).filter(function(c) { return c.count >= 1; }).sort(function(a, b) { return a.avg - b.avg; });
+            
+            var html = '';
+            html += '<div class="insight-list-item"><span class="label">⚡ Fastest sale</span><span class="value">' + escHtml(fastest.make + ' ' + fastest.model) + ' (' + fastest._days + ' days)</span></div>';
+            html += '<div class="insight-list-item"><span class="label">🐢 Slowest sale</span><span class="value">' + escHtml(slowest.make + ' ' + slowest.model) + ' (' + slowest._days + ' days)</span></div>';
+            
+            if (colourAvgs.length > 1) {
+                html += '<div class="insight-list-item"><span class="label">🏎️ Fastest selling colour</span><span class="value">' + escHtml(colourAvgs[0].colour) + ' (avg ' + colourAvgs[0].avg + ' days)</span></div>';
+            }
+            
+            container.innerHTML = html;
+        }
+
+        function renderRecentSales(vans) {
+            var container = document.getElementById('recentSales');
+            if (!vans.length) {
+                container.innerHTML = '<div class="no-data-msg">No sales in this period</div>';
+                return;
+            }
+            
+            var sorted = vans.slice().sort(function(a, b) { return new Date(b.sold_at) - new Date(a.sold_at); });
+            
+            var html = '<table><thead><tr><th>Van</th><th>Price</th><th>Sold</th><th>Days Listed</th></tr></thead><tbody>';
+            sorted.slice(0, 15).forEach(function(v) {
+                var soldDate = new Date(v.sold_at).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                var days = v.created_at ? Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24)) : '—';
+                html += '<tr>' +
+                    '<td><strong>' + escHtml(v.make + ' ' + v.model) + '</strong> (' + v.year + ')</td>' +
+                    '<td>£' + Number(v.price).toLocaleString() + '</td>' +
+                    '<td>' + soldDate + '</td>' +
+                    '<td>' + days + (typeof days === 'number' ? ' days' : '') + '</td>' +
+                '</tr>';
+            });
+            html += '</tbody></table>';
+            container.innerHTML = html;
         }
     </script>
 </body>
