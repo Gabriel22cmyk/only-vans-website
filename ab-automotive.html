@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+    <title>AB Automotive - Vehicle Repairs & Servicing | Wantage, Oxfordshire</title>
+    <meta name="description" content="AB Automotive - Local vehicle repair specialists. Mechanical repairs, bodywork, servicing and valeting for private and commercial vehicles in Wantage, Oxfordshire.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="ab-nav">
+        <div class="container">
+            <nav>
+                <div class="logo-group">
+                    <a href="index.html" class="logo"><img src="images/logo.png" alt="Only Vans"></a>
+                    <span class="logo-divider"></span>
+                    <a href="ab-automotive.html" class="logo"><img src="images/ab-automotive-logo.jpg" alt="AB Automotive"></a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Only Vans</a>
+                    <a href="ab-automotive.html" class="active">Mechanical</a>
+                    <a href="ab-automotive.html#bodywork">Bodywork</a>
+                    <a href="ab-automotive.html#servicing">Servicing</a>
+                    <a href="ab-automotive.html#contact">Contact</a>
+                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="ab-hero">
+        <div class="container">
+            <div class="hero-badge">Vehicle Repairs | Bodywork | Servicing</div>
+            <h1>Your Local Vehicle <span>Repair</span> Specialists</h1>
+            <p>Whether you have a private or commercial vehicle, AB Automotive are with you every step of the way</p>
+            <div class="hero-buttons">
+                <a href="tel:01235376044" class="ab-btn-primary">Call Us Today — 01235 376044</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="ab-banner-strip">
+        <div class="container">
+            <p>✓ All vehicle types — <span>private and commercial vehicles welcome</span></p>
+        </div>
+    </div>
+
+    <section class="section-white" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Do</h2>
+                <p>Complete vehicle repair and maintenance solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="glass-card service-card">
+                    <div class="service-icon"><img src="icons/servicing.svg" alt="Mechanical Repairs"></div>
+                    <h3>Mechanical Repairs</h3>
+                    <p>Expert mechanical work on all makes and models of both private and commercial vehicles. Fast, reliable repairs you can trust.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon"><img src="icons/bodywork.svg" alt="Bodywork Repairs"></div>
+                    <h3 id="bodywork">Bodywork Repairs</h3>
+                    <p>From minor dents to major resprays. We handle everything with precision and care to restore your vehicle to perfection.</p>
+                </div>
+                <div class="glass-card service-card">
+                    <div class="service-icon"><img src="icons/servicing.svg" alt="Servicing"></div>
+                    <h3 id="servicing">Servicing & Valeting</h3>
+                    <p>Keep your vehicle running perfectly and looking showroom fresh. Annual services, pre-MOT checks, and professional valeting.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ab-section-tinted">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mechanical Repairs</h2>
+                <p>Expert diagnostics and repairs for all vehicle makes and models</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>The highly experienced mechanics at AB Automotive are qualified to work on a wide range of makes and models of both private and commercial vehicles. So if your car or van is a bit poorly get in touch with us now.</p>
+                    <p>We use the latest diagnostic equipment to identify problems quickly and accurately, ensuring your vehicle gets the right fix first time.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="glass-card ab-stat-card">
+                        <div class="number">All Makes</div>
+                        <div class="label">Private & Commercial</div>
+                    </div>
+                    <div class="glass-card ab-stat-card">
+                        <div class="number">Expert</div>
+                        <div class="label">Qualified Mechanics</div>
+                    </div>
+                    <div class="glass-card ab-stat-card">
+                        <div class="number">Advanced</div>
+                        <div class="label">Diagnostics Available</div>
+                    </div>
+                    <div class="glass-card ab-stat-card">
+                        <div class="number">Fast</div>
+                        <div class="label">Turnaround Times</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bodywork Repairs</h2>
+                <p>Restore your vehicle to its former glory</p>
+            </div>
+            <div class="benefits-content">
+                <div class="benefits-text">
+                    <p>Even the most careful driver sometimes has an accident, or suffers from a car park ding and needs the bodywork restoring to its former glory. AB Automotive can accommodate any repair from a minor repair to a commercial respray.</p>
+                    <p>The bodywork staff at AB Automotive can ensure your repair is carried out to the highest standard and if necessary we can deal with your insurance company so you don't have to!</p>
+                </div>
+                <div class="benefits-checklist glass-card">
+                    <h3>Why Choose Our Bodywork Service?</h3>
+                    <ul>
+                        <li>Minor dent removal & repair</li>
+                        <li>Full resprays & custom finishes</li>
+                        <li>Insurance claim handling</li>
+                        <li>Accident damage assessment</li>
+                        <li>Colour matching expertise</li>
+                        <li>Quick turnaround times</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ab-section-tinted">
+        <div class="container">
+            <div class="section-title">
+                <h2>Servicing & Valeting</h2>
+                <p>Keep your vehicle running perfectly and looking pristine</p>
+            </div>
+            <div class="benefits-content">
+                <div class="benefits-checklist glass-card">
+                    <h3>Our Servicing & Valeting Includes:</h3>
+                    <ul>
+                        <li>Annual service & maintenance</li>
+                        <li>Pre-MOT checks & preparation</li>
+                        <li>Oil, filter & fluid changes</li>
+                        <li>Professional exterior valeting</li>
+                        <li>Interior detailing & cleaning</li>
+                        <li>Showroom finish available</li>
+                    </ul>
+                </div>
+                <div class="benefits-text">
+                    <p>Keep your pride and joy on the road and looking good with an annual service. Get the peace of mind that comes from having your car regularly serviced or just a pre-MOT check.</p>
+                    <p>Or if you want that 'showroom finish' but don't have the elbow grease to do it yourself, then get AB Automotive to do the hard work for you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white" id="why">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose AB Automotive?</h2>
+                <p>Your trusted local vehicle repair specialists</p>
+            </div>
+            <div class="why-grid">
+                <div class="glass-card why-card">
+                    <div class="why-icon"><img src="icons/servicing.svg" alt="Experience"></div>
+                    <h3>Experienced Team</h3>
+                    <p>Qualified mechanics with years of expertise in all vehicle types</p>
+                </div>
+                <div class="glass-card why-card">
+                    <div class="why-icon"><img src="icons/mot.svg" alt="Reliability"></div>
+                    <h3>Reliable Service</h3>
+                    <p>We get it right first time with professional diagnostics</p>
+                </div>
+                <div class="glass-card why-card">
+                    <div class="why-icon"><img src="icons/van-sales.svg" alt="Local"></div>
+                    <h3>Local & Accessible</h3>
+                    <p>Based in Wantage, serving Oxfordshire and surrounding areas</p>
+                </div>
+                <div class="glass-card why-card">
+                    <div class="why-icon"><img src="icons/bodywork.svg" alt="Complete Service"></div>
+                    <h3>Complete Service</h3>
+                    <p>Mechanical, bodywork, servicing and more — all in one place</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ab-section-tinted" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Pop in, call us, or find us on the map</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon"><img src="icons/pin.svg" alt="Location" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Unit 6, Lyford Business Centre<br>Lyford, Wantage<br>OX12 0EE</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><img src="icons/phone.svg" alt="Phone" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p><a href="tel:01235376044">01235 376044</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><img src="icons/email.svg" alt="Email" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Email</h3>
+                            <p><a href="mailto:Info@onlyvans4u.com">Info@onlyvans4u.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon"><img src="icons/clock.svg" alt="Hours" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Hours</h3>
+                            <table class="hours-table">
+                                <tr><td>Mon–Fri</td><td>8:30am – 5pm</td></tr>
+                                <tr><td>Saturday</td><td>9am – 1pm</td></tr>
+                                <tr><td class="closed">Sunday</td><td class="closed">Closed</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.5!2d-1.4!3d51.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sUnit+6+Lyford+Business+Centre+Lyford+Wantage+OX12+0EE!5e0!3m2!1sen!2suk!4v1"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ab-cta-section">
+        <div class="container">
+            <h2>Ready to Get Your Vehicle Fixed?</h2>
+            <p>Give us a call today or pop in to see us</p>
+            <a href="tel:01235376044" class="ab-cta-phone">01235 376044</a>
+            <div class="ab-cta-buttons">
+                <a href="tel:01235376044" class="ab-btn-primary">Call Now</a>
+                <a href="mailto:Info@onlyvans4u.com" class="btn-secondary">Email Us</a>
+            </div>
+            <div class="ab-cta-contact">
+                <div class="ab-cta-contact-item">
+                    <strong>Visit Us</strong>
+                    <span style="color: #cbd5e1;">Unit 6, Lyford Business Centre</span>
+                </div>
+                <div class="ab-cta-contact-item">
+                    <strong>Mon–Fri</strong>
+                    <span style="color: #cbd5e1;">8:30am – 5pm</span>
+                </div>
+                <div class="ab-cta-contact-item">
+                    <strong>Saturday</strong>
+                    <span style="color: #cbd5e1;">9am – 1pm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="ab-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo"><img src="images/ab-automotive-logo.jpg" alt="AB Automotive"></div>
+                    <p style="margin-top: 6px;">Vehicle repair specialists in Lyford, Oxfordshire</p>
+                </div>
+                <p>&copy; 2025 AB Automotive. All rights reserved. | <a href="privacy-policy.html">Privacy</a> | <a href="cookie-policy.html">Cookies</a> | <a href="mailto:Info@onlyvans4u.com">Contact</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cookie-banner.js"></script>
+</body>
+</html>

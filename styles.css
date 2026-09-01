@@ -1422,3 +1422,298 @@ footer a:hover {
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+/* ═══════════════════════════════════════════
+   AB AUTOMOTIVE — Blue Brand Variant
+   ═══════════════════════════════════════════ */
+
+/* ─── Logo Group (Dual Brand Header) ─── */
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logo-group .logo-divider {
+    width: 1px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.12);
+}
+
+.logo-group .logo img {
+    height: 36px;
+}
+
+/* ─── AB Automotive Navigation ─── */
+.ab-nav .nav-links a:hover,
+.ab-nav .nav-links a.active {
+    color: #1956a8;
+}
+
+.ab-nav .nav-links a::after {
+    background: linear-gradient(90deg, #1956a8, #2563eb);
+}
+
+.ab-nav .nav-phone {
+    background: linear-gradient(135deg, #1956a8 0%, #2563eb 100%);
+    box-shadow: 0 2px 10px rgba(25, 86, 168, 0.2);
+}
+
+.ab-nav .nav-phone:hover {
+    background: linear-gradient(135deg, #0f3d7a 0%, #1956a8 100%) !important;
+    box-shadow: 0 4px 18px rgba(25, 86, 168, 0.35) !important;
+}
+
+/* ─── AB Hero (Blue Gradient) ─── */
+.ab-hero {
+    background: linear-gradient(135deg, #0f1f3f 0%, #1a2a4f 50%, #0f1f3f 100%);
+    padding: 160px 0 100px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.ab-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 40%, rgba(25, 86, 168, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, rgba(37, 99, 235, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ab-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(15, 31, 63, 0.5) 100%);
+    pointer-events: none;
+}
+
+.ab-hero .container { position: relative; z-index: 1; }
+
+.ab-hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    margin-bottom: 16px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+}
+
+.ab-hero h1 span { color: #2563eb; }
+
+.ab-hero p {
+    font-size: 20px;
+    color: #cbd5e1;
+    max-width: 650px;
+    margin: 0 auto 36px;
+}
+
+.ab-hero .hero-badge {
+    background: rgba(25, 86, 168, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(25, 86, 168, 0.3);
+    color: #60a5fa;
+}
+
+/* ─── AB Buttons ─── */
+.ab-btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #1956a8 0%, #2563eb 100%);
+    color: white;
+    padding: 14px 36px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(25, 86, 168, 0.25), inset 0 1px 0 rgba(255,255,255,0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.ab-btn-primary:hover {
+    background: linear-gradient(135deg, #0f3d7a 0%, #1956a8 100%);
+    box-shadow: 0 8px 25px rgba(25, 86, 168, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+}
+
+.ab-btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(25, 86, 168, 0.2);
+}
+
+/* ─── AB Section Tinted (Blue) ─── */
+.ab-section-tinted {
+    background: linear-gradient(180deg, #f0f6fc 0%, #e8f3ff 50%, #f0f6fc 100%);
+    position: relative;
+}
+
+.ab-section-tinted::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(25, 86, 168, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* ─── AB Stat Cards ─── */
+.ab-stat-card .number {
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1956a8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ─── AB Banner Strip ─── */
+.ab-banner-strip {
+    background: linear-gradient(135deg, #1956a8 0%, #2563eb 50%, #1956a8 100%);
+    background-size: 200% 100%;
+    animation: bannerShift 6s ease-in-out infinite;
+    padding: 24px 0;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.ab-banner-strip::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%; right: 0; bottom: 0;
+    width: 300%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: bannerSheen 4s ease-in-out infinite;
+}
+
+.ab-banner-strip p {
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+}
+
+.ab-banner-strip span {
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+/* ─── AB CTA Section ─── */
+.ab-cta-section {
+    background: linear-gradient(135deg, #0f1f3f 0%, #1a2a4f 50%, #0f1f3f 100%);
+    text-align: center;
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.ab-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 30% 50%, rgba(25, 86, 168, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ab-cta-section .container { position: relative; z-index: 1; }
+
+.ab-cta-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.ab-cta-section p {
+    color: #cbd5e1;
+    font-size: 18px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ab-cta-phone {
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1956a8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 24px;
+    transition: opacity 0.3s;
+}
+
+.ab-cta-phone:hover {
+    opacity: 0.8;
+}
+
+.ab-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.ab-cta-contact {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.ab-cta-contact-item { text-align: center; }
+
+.ab-cta-contact-item strong {
+    display: block;
+    color: #cbd5e1;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.ab-cta-contact-link {
+    font-size: 20px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #1956a8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+}
+
+/* ─── AB Footer ─── */
+.ab-footer {
+    background: #0f1f3f;
+    color: #cbd5e1;
+    padding: 30px 0;
+    border-top: 1px solid rgba(25, 86, 168, 0.3);
+}
+
+.ab-footer a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.ab-footer a:hover {
+    color: #60a5fa;
+}
+
+/* ─── AB Benefits Checklist ─── */
+.ab-benefits-checklist li::before {
+    content: '✓';
+    color: #1956a8;
+    font-weight: 700;
+    font-size: 18px;
+}
