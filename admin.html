@@ -937,7 +937,8 @@
 
         /* ─── Stats ─── */
         function updateStats(vans) {
-            document.getElementById('statTotal').textContent = vans.length;
+            var active = vans.filter(function(v) { return v.status !== 'archived'; });
+            document.getElementById('statTotal').textContent = active.length;
             document.getElementById('statAvailable').textContent = vans.filter(function(v) { return v.status === 'available'; }).length;
             document.getElementById('statSold').textContent = vans.filter(function(v) { return v.status === 'sold'; }).length;
         }
@@ -947,6 +948,8 @@
             var q = document.getElementById('searchInput').value.toLowerCase().trim();
             var status = document.getElementById('statusFilter').value;
             var filtered = allVans.filter(function(v) {
+                // Never show archived vans in inventory
+                if (v.status === 'archived') return false;
                 if (status !== 'all' && v.status !== status) return false;
                 if (q) {
                     var searchable = [v.make, v.model, v.colour, v.description].filter(Boolean).join(' ').toLowerCase();
@@ -1225,10 +1228,19 @@
             var btn = document.getElementById('confirmDeleteBtn');
             btn.disabled = true; btn.textContent = 'Deleting...';
             try {
-                if (deleteTarget.image_url) await deleteStorageImage(deleteTarget.image_url);
-                var res = await sb.from('vans').delete().eq('id', deleteTarget.id);
-                if (res.error) throw res.error;
-                showToast('Van deleted.', 'success');
+                if (deleteTarget.status === 'sold') {
+                    // Archive sold vans — keeps the data for insights
+                    if (deleteTarget.image_url) await deleteStorageImage(deleteTarget.image_url);
+                    var res = await sb.from('vans').update({ status: 'archived', image_url: null }).eq('id', deleteTarget.id);
+                    if (res.error) throw res.error;
+                    showToast('Sold van archived — data kept for insights.', 'info');
+                } else {
+                    // Actually delete unsold/archived vans
+                    if (deleteTarget.image_url) await deleteStorageImage(deleteTarget.image_url);
+                    var res = await sb.from('vans').delete().eq('id', deleteTarget.id);
+                    if (res.error) throw res.error;
+                    showToast('Van deleted.', 'success');
+                }
                 closeDelete();
                 loadVans();
             } catch (e) {
@@ -1260,7 +1272,7 @@
         function renderInsights() {
             var period = document.getElementById('insightsPeriod').value;
             var now = new Date();
-            var soldVans = allVans.filter(function(v) { return v.status === 'sold' && v.sold_at; });
+            var soldVans = allVans.filter(function(v) { return (v.status === 'sold' || v.status === 'archived') && v.sold_at; });
 
             var filtered = soldVans.filter(function(v) {
                 var d = new Date(v.sold_at);
