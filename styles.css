@@ -226,19 +226,21 @@ nav {
 /* ─── Hero Badge ─── */
 .hero-badge {
     display: inline-block;
-    padding: 6px 18px;
-    border-radius: 20px;
+    padding: 8px 22px;
+    border-radius: 25px;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .hero-light .hero-badge {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     color: #0891b2;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255,255,255,0.8);
-    border: 1px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 20px rgba(8, 145, 178, 0.3), inset 0 1px 0 rgba(255,255,255,0.8);
+    border: 1px solid rgba(8, 145, 178, 0.2);
 }
 
 .hero-badge span { color: #f59e0b; }
@@ -277,8 +279,15 @@ nav {
 
 .btn-primary:hover {
     background: linear-gradient(135deg, #0570a3 0%, #0891b2 100%);
-    box-shadow: 0 8px 25px rgba(8, 145, 178, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
+    box-shadow: 0 0 30px rgba(8, 145, 178, 0.4), 0 8px 25px rgba(8, 145, 178, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
     transform: translateY(-2px);
+    animation: buttonPulse 0.6s ease-out;
+}
+
+@keyframes buttonPulse {
+    0% { box-shadow: 0 0 0 0 rgba(8, 145, 178, 0.7), 0 0 0 0 rgba(8, 145, 178, 0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(8, 145, 178, 0), 0 8px 25px rgba(8, 145, 178, 0.35); }
+    100% { box-shadow: 0 0 30px rgba(8, 145, 178, 0.4), 0 8px 25px rgba(8, 145, 178, 0.35); }
 }
 
 .btn-primary:active {
@@ -339,7 +348,22 @@ section {
     font-size: 36px;
     font-weight: 700;
     color: #1e293b;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.section-white .section-title h2::after,
+.section-tinted:not(.ab-section-tinted) .section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0891b2, #06b6d4);
+    border-radius: 2px;
 }
 
 .section-title p {
@@ -352,6 +376,19 @@ section {
 /* Section backgrounds — pearlescent gradient */
 .section-white {
     background: linear-gradient(180deg, #ffffff 0%, #f8fdfe 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-white::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z' fill='%23f8fafb'/%3E%3C/svg%3E") no-repeat center/cover;
+    pointer-events: none;
 }
 
 .section-tinted {
@@ -359,10 +396,23 @@ section {
     position: relative;
 }
 
+.section-tinted::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient(45deg, rgba(8, 145, 178, 0.02) 25%, transparent 25%, transparent 50%, rgba(8, 145, 178, 0.02) 50%, rgba(8, 145, 178, 0.02) 75%, transparent 75%, transparent);
+    background-size: 40px 40px;
+    pointer-events: none;
+}
+
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
     border: 1.5px solid rgba(0, 0, 0, 0.1);
+    border-top: 3px solid #0891b2;
     border-radius: 20px;
     box-shadow:
         0 2px 8px rgba(0, 0, 0, 0.08),
@@ -383,7 +433,7 @@ section {
 }
 
 .glass-card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     box-shadow:
         0 4px 12px rgba(0, 0, 0, 0.1),
         0 12px 32px rgba(8, 145, 178, 0.25),
@@ -393,6 +443,7 @@ section {
 /* AB Automotive blue shadow variant */
 .ab-glass-card {
     border-color: rgba(0, 0, 0, 0.12);
+    border-left: 3px solid #1956a8;
     box-shadow:
         0 4px 20px rgba(25, 86, 168, 0.15),
         0 8px 32px rgba(25, 86, 168, 0.1),
@@ -400,6 +451,7 @@ section {
 }
 
 .ab-glass-card:hover {
+    border-left-color: #2563eb;
     box-shadow:
         0 8px 30px rgba(25, 86, 168, 0.22),
         0 12px 40px rgba(25, 86, 168, 0.14),
@@ -422,12 +474,17 @@ section {
     width: 48px;
     height: 48px;
     margin: 0 auto 18px;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12), rgba(8, 145, 178, 0.08));
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(8, 145, 178, 0.1);
 }
 
 .service-icon img {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 60%;
 }
 
 .service-card h3 {
@@ -511,19 +568,21 @@ section {
 }
 
 .stat-card .number {
-    font-size: 28px;
-    font-weight: 800;
+    font-size: 42px;
+    font-weight: 900;
     background: linear-gradient(135deg, #0891b2, #06b6d4);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 2px 8px rgba(8, 145, 178, 0.15);
+    letter-spacing: -1px;
 }
 
 .stat-card .label {
     color: #64748b;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 8px;
 }
 
 /* ─── Sign Cards (Wet Belts) ─── */
@@ -725,12 +784,21 @@ section {
     display: flex;
     gap: 16px;
     align-items: flex-start;
+    padding-left: 16px;
+    border-left: 3px solid #0891b2;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-left-color: #06b6d4;
+    padding-left: 20px;
 }
 
 .contact-item .icon {
     font-size: 28px;
     min-width: 40px;
     text-align: center;
+    color: #0891b2;
 }
 
 .contact-item h3 {
@@ -976,11 +1044,18 @@ section {
 /* ─── CTA Section ─── */
 .cta-section {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    background-size: 200% 200%;
+    animation: ctaGradientShift 8s ease-in-out infinite;
     text-align: center;
     color: white;
     padding: 80px 0;
     position: relative;
     overflow: hidden;
+}
+
+@keyframes ctaGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 .cta-section::before {
@@ -1067,7 +1142,10 @@ footer {
     background: #0f172a;
     color: #94a3b8;
     padding: 30px 0;
-    border-top: 1px solid rgba(30, 41, 59, 0.5);
+    border-top: 3px solid transparent;
+    background-image: linear-gradient(#0f172a, #0f172a), linear-gradient(90deg, #0891b2, #06b6d4);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 .footer-content {
@@ -1188,6 +1266,38 @@ footer a:hover {
     .hero-image-bg { padding: 130px 0 70px; }
     .hero-image-bg h1 { font-size: 34px; }
     .hero-image-bg p { font-size: 17px; }
+}
+
+/* ─── Section Entrance Animation ─── */
+@keyframes sectionFadeInUp {
+    from {
+        opacity: 0.8;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: sectionFadeInUp 0.8s ease-out forwards;
+}
+
+/* ─── Interactive Hover Lift ─── */
+.why-card,
+.service-card,
+.sign-card,
+.feature-item {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.why-card:hover,
+.service-card:hover,
+.sign-card:hover,
+.feature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(8, 145, 178, 0.12);
 }
 
 /* ─── Responsive ─── */
@@ -1546,7 +1656,7 @@ footer a:hover {
 }
 
 .ab-btn-primary:hover {
-    background: linear-gradient(135deg, #0f3d7a 0%, #1956a8 100%);
+    background: linear-gradient(135deg, #1a5bc0 0%, #1e6ec3 50%, #d97706 50%, #f59e0b 100%);
     box-shadow: 0 8px 25px rgba(25, 86, 168, 0.35), inset 0 1px 0 rgba(255,255,255,0.15);
     transform: translateY(-2px);
 }
@@ -1566,8 +1676,17 @@ footer a:hover {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(25, 86, 168, 0.04) 0%, transparent 70%);
+    background:
+        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(25, 86, 168, 0.03) 35px, rgba(25, 86, 168, 0.03) 70px),
+        radial-gradient(ellipse at 50% 0%, rgba(25, 86, 168, 0.04) 0%, transparent 70%);
     pointer-events: none;
+}
+
+.ab-section-tinted .section-title h2::before {
+    content: '●';
+    color: #1956a8;
+    margin-right: 12px;
+    font-size: 12px;
 }
 
 /* ─── AB Stat Cards ─── */
@@ -1629,7 +1748,9 @@ footer a:hover {
 
 /* ─── AB CTA Section ─── */
 .ab-cta-section {
-    background: linear-gradient(135deg, #0f1f3f 0%, #1a2a4f 50%, #0f1f3f 100%);
+    background: linear-gradient(110deg, #0f1f3f 0%, #1a2a4f 40%, #1956a8 100%);
+    background-size: 200% 200%;
+    animation: abCtaGradientShift 10s ease-in-out infinite;
     text-align: center;
     color: white;
     padding: 80px 0;
@@ -1637,11 +1758,17 @@ footer a:hover {
     overflow: hidden;
 }
 
+@keyframes abCtaGradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
 .ab-cta-section::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background:
+        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(245, 158, 11, 0.02) 40px, rgba(245, 158, 11, 0.02) 80px),
         radial-gradient(ellipse at 30% 50%, rgba(25, 86, 168, 0.1) 0%, transparent 50%),
         radial-gradient(ellipse at 70% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
     pointer-events: none;
@@ -1721,17 +1848,20 @@ footer a:hover {
     background: #0f1f3f;
     color: #cbd5e1;
     padding: 30px 0;
-    border-top: 1px solid rgba(25, 86, 168, 0.3);
+    border-top: 3px solid transparent;
+    background-image: linear-gradient(#0f1f3f, #0f1f3f), linear-gradient(90deg, #1956a8, #2563eb, #f59e0b);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 .ab-footer a {
-    color: #2563eb;
+    color: #60a5fa;
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .ab-footer a:hover {
-    color: #60a5fa;
+    color: #f59e0b;
 }
 
 /* ─── AB Benefits Checklist ─── */
@@ -1740,4 +1870,51 @@ footer a:hover {
     color: #1956a8;
     font-weight: 700;
     font-size: 18px;
+}
+
+/* ─── AB Service Icons (Squared) ─── */
+.ab-service-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(25, 86, 168, 0.1), rgba(37, 99, 235, 0.08));
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(25, 86, 168, 0.08);
+}
+
+.ab-service-icon img {
+    width: 60%;
+    height: 60%;
+}
+
+/* ─── AB Hero Badge Enhancement ─── */
+.ab-hero .hero-badge {
+    padding: 8px 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(25, 86, 168, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    color: #60a5fa;
+    box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
+}
+
+/* ─── AB Geometric Pattern Hero ─── */
+.ab-hero::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+        linear-gradient(45deg, rgba(245, 158, 11, 0.05) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(245, 158, 11, 0.05) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(245, 158, 11, 0.05) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(245, 158, 11, 0.05) 75%);
+    background-size: 60px 60px;
+    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
+    pointer-events: none;
+    z-index: 0;
 }
