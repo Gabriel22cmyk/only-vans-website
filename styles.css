@@ -396,17 +396,7 @@ section {
     position: relative;
 }
 
-.section-tinted::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: linear-gradient(45deg, rgba(8, 145, 178, 0.02) 25%, transparent 25%, transparent 50%, rgba(8, 145, 178, 0.02) 50%, rgba(8, 145, 178, 0.02) 75%, transparent 75%, transparent);
-    background-size: 40px 40px;
-    pointer-events: none;
-}
+
 
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
@@ -1868,15 +1858,7 @@ section {
     position: relative;
 }
 
-.ab-section-tinted::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background:
-        repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(25, 86, 168, 0.03) 35px, rgba(25, 86, 168, 0.03) 70px),
-        radial-gradient(ellipse at 50% 0%, rgba(25, 86, 168, 0.04) 0%, transparent 70%);
-    pointer-events: none;
-}
+
 
 
 
@@ -1959,7 +1941,6 @@ section {
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background:
-        repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(245, 158, 11, 0.02) 40px, rgba(245, 158, 11, 0.02) 80px),
         radial-gradient(ellipse at 30% 50%, rgba(25, 86, 168, 0.1) 0%, transparent 50%),
         radial-gradient(ellipse at 70% 50%, rgba(37, 99, 235, 0.05) 0%, transparent 50%);
     pointer-events: none;
@@ -2079,18 +2060,4 @@ section {
     box-shadow: 0 0 20px rgba(37, 99, 235, 0.2);
 }
 
-/* ─── AB Geometric Pattern Hero ─── */
-.ab-hero::after {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image:
-        linear-gradient(45deg, rgba(245, 158, 11, 0.05) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(245, 158, 11, 0.05) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(245, 158, 11, 0.05) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(245, 158, 11, 0.05) 75%);
-    background-size: 60px 60px;
-    background-position: 0 0, 0 30px, 30px -30px, -30px 0px;
-    pointer-events: none;
-    z-index: 0;
-}
+
