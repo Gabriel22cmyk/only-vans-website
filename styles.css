@@ -509,7 +509,7 @@ section {
 }
 
 .stat-card .number {
-    font-size: 36px;
+    font-size: 28px;
     font-weight: 800;
     background: linear-gradient(135deg, #0891b2, #06b6d4);
     -webkit-background-clip: text;
