@@ -1242,7 +1242,15 @@
             }
             try {
                 var res = await sb.from('vans').update(updateData).eq('id', id);
-                if (res.error) throw res.error;
+                if (res.error) {
+                    // If sold_at column doesn't exist yet, retry without it
+                    if (res.error.message && (res.error.message.indexOf('sold_at') !== -1 || res.error.code === 'PGRST204')) {
+                        var fallback = await sb.from('vans').update({ status: newStatus }).eq('id', id);
+                        if (fallback.error) throw fallback.error;
+                    } else {
+                        throw res.error;
+                    }
+                }
                 showToast(newStatus === 'sold' ? 'Marked as sold' : 'Relisted as available', 'success');
                 loadVans();
             } catch (e) { showToast('Failed to update status.', 'error'); }
