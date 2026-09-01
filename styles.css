@@ -2617,3 +2617,112 @@ section {
     }
     .sponsor-main { padding: 28px 20px; }
 }
+
+/* ─── Racing Compact Sub-Section ─── */
+.racing-compact {
+    background: linear-gradient(135deg, #0a1018 0%, #111b26 100%);
+    padding: 60px 0;
+}
+
+.racing-compact-inner {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.racing-compact-photo {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.racing-compact-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.racing-compact-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #67e8f9;
+    margin-bottom: 8px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.racing-compact-info h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.racing-compact-info p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    line-height: 1.7;
+    margin-bottom: 14px;
+}
+
+.racing-compact-info p strong {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.racing-compact-sponsors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.racing-compact-sponsors span {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.racing-compact-sponsors span:first-child {
+    background: rgba(8, 145, 178, 0.1);
+    border-color: rgba(8, 145, 178, 0.25);
+    color: #67e8f9;
+}
+
+.racing-compact-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #67e8f9;
+    text-decoration: none;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    transition: opacity 0.2s;
+}
+
+.racing-compact-link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .racing-compact-inner {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: center;
+    }
+    .racing-compact-photo {
+        max-width: 260px;
+        margin: 0 auto;
+    }
+    .racing-compact-sponsors {
+        justify-content: center;
+    }
+}
