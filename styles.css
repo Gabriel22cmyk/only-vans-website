@@ -504,8 +504,9 @@ section {
 }
 
 .stat-card {
-    padding: 28px;
+    padding: 20px 16px;
     text-align: center;
+    overflow: hidden;
 }
 
 .stat-card .number {
@@ -1569,13 +1570,27 @@ footer a:hover {
 }
 
 /* ─── AB Stat Cards ─── */
+.ab-stat-card {
+    padding: 20px 16px;
+    text-align: center;
+    overflow: hidden;
+}
+
 .ab-stat-card .number {
-    font-size: 36px;
+    font-size: 22px;
     font-weight: 800;
     background: linear-gradient(135deg, #1956a8, #2563eb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    white-space: nowrap;
+}
+
+.ab-stat-card .label {
+    font-size: 13px;
+    color: #64748b;
+    margin-top: 4px;
+    white-space: nowrap;
 }
 
 /* ─── AB Banner Strip ─── */
