@@ -369,7 +369,7 @@ section {
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
-    border: 1px solid rgba(8, 145, 178, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.12);
     border-radius: 20px;
     box-shadow:
         0 4px 20px rgba(8, 145, 178, 0.15),
@@ -399,7 +399,7 @@ section {
 
 /* AB Automotive blue shadow variant */
 .ab-glass-card {
-    border-color: rgba(25, 86, 168, 0.2);
+    border-color: rgba(0, 0, 0, 0.12);
     box-shadow:
         0 4px 20px rgba(25, 86, 168, 0.15),
         0 8px 32px rgba(25, 86, 168, 0.1),
