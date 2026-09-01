@@ -369,11 +369,12 @@ section {
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
-    border: 1px solid rgba(8, 145, 178, 0.12);
+    border: 1px solid rgba(8, 145, 178, 0.2);
     border-radius: 20px;
     box-shadow:
-        0 4px 16px rgba(8, 145, 178, 0.12),
-        0 1px 4px rgba(8, 145, 178, 0.08);
+        0 4px 20px rgba(8, 145, 178, 0.15),
+        0 8px 32px rgba(8, 145, 178, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -391,22 +392,25 @@ section {
 .glass-card:hover {
     transform: translateY(-6px);
     box-shadow:
-        0 12px 28px rgba(8, 145, 178, 0.18),
-        0 4px 8px rgba(8, 145, 178, 0.1);
+        0 8px 30px rgba(8, 145, 178, 0.22),
+        0 12px 40px rgba(8, 145, 178, 0.14),
+        0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* AB Automotive blue shadow variant */
 .ab-glass-card {
-    border-color: rgba(25, 86, 168, 0.12);
+    border-color: rgba(25, 86, 168, 0.2);
     box-shadow:
-        0 4px 16px rgba(25, 86, 168, 0.12),
-        0 1px 4px rgba(25, 86, 168, 0.08);
+        0 4px 20px rgba(25, 86, 168, 0.15),
+        0 8px 32px rgba(25, 86, 168, 0.1),
+        0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .ab-glass-card:hover {
     box-shadow:
-        0 12px 28px rgba(25, 86, 168, 0.18),
-        0 4px 8px rgba(25, 86, 168, 0.1);
+        0 8px 30px rgba(25, 86, 168, 0.22),
+        0 12px 40px rgba(25, 86, 168, 0.14),
+        0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* ─── Service Cards (grid) ─── */
