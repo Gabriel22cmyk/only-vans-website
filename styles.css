@@ -2438,3 +2438,70 @@ section {
     .racing-photo-overlay { padding: 24px; }
     .racing-drivers { flex-direction: column; gap: 10px; }
 }
+
+/* ─── Rebrand Showcase ─── */
+.rebrand-showcase {
+    background: linear-gradient(135deg, #0a1018 0%, #0f1f2e 100%);
+    padding: 100px 0;
+    overflow: hidden;
+}
+
+.rebrand-content {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.rebrand-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow:
+        0 4px 24px rgba(8, 145, 178, 0.15),
+        0 12px 48px rgba(0, 0, 0, 0.3);
+}
+
+.rebrand-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.rebrand-tag {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, rgba(8, 145, 178, 0.2), rgba(6, 182, 212, 0.1));
+    color: #67e8f9;
+    border: 1px solid rgba(8, 145, 178, 0.35);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.rebrand-text h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+}
+
+.rebrand-text p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+    .rebrand-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}
