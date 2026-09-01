@@ -3,6 +3,9 @@
    Pearlescent / Glassmorphism / 3D
    ═══════════════════════════════════════════ */
 
+/* ─── Google Fonts Import ─── */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&display=swap');
+
 /* ─── Reset & Base ─── */
 * {
     margin: 0;
@@ -16,9 +19,10 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #333;
+    background: #f9fbfb;
+    color: #2d4a52;
     overflow-x: hidden;
 }
 
@@ -82,6 +86,7 @@ nav {
     font-weight: 500;
     transition: color 0.3s;
     position: relative;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .nav-links a::after {
@@ -159,21 +164,23 @@ nav {
 .hero-light .container { position: relative; z-index: 1; }
 
 .hero-light h1 {
-    font-size: 52px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
     font-weight: 800;
-    color: #1e293b;
+    color: #1a2e35;
     margin-bottom: 16px;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
 }
 
 .hero-light h1 span { color: #0891b2; }
 
 .hero-light p {
     font-size: 20px;
-    color: #64748b;
+    color: #5a7a82;
     max-width: 600px;
     margin: 0 auto 36px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ─── Hero — Dark (Sub pages) ─── */
@@ -207,11 +214,12 @@ nav {
 .hero-dark .container { position: relative; z-index: 1; }
 
 .hero-dark h1 {
-    font-size: 52px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
     font-weight: 800;
     margin-bottom: 16px;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
 }
 
 .hero-dark h1 span { color: #0891b2; }
@@ -221,6 +229,7 @@ nav {
     color: #94a3b8;
     max-width: 650px;
     margin: 0 auto 36px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 /* ─── Hero Badge ─── */
@@ -232,7 +241,8 @@ nav {
     font-weight: 700;
     margin-bottom: 24px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .hero-light .hero-badge {
@@ -345,37 +355,32 @@ section {
 }
 
 .section-title h2 {
-    font-size: 36px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
     font-weight: 700;
-    color: #1e293b;
+    color: #1a2e35;
     margin-bottom: 20px;
     position: relative;
     display: inline-block;
+    letter-spacing: -0.01em;
 }
 
 .section-white .section-title h2::after,
 .section-tinted:not(.ab-section-tinted) .section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: linear-gradient(90deg, #0891b2, #06b6d4);
-    border-radius: 2px;
+    display: none;
 }
 
 .section-title p {
-    color: #64748b;
-    font-size: 18px;
+    color: #5a7a82;
+    font-size: 1.1rem;
+    font-family: 'Plus Jakarta Sans', sans-serif;
     max-width: 600px;
     margin: 0 auto;
 }
 
-/* Section backgrounds — pearlescent gradient */
+/* Section backgrounds — tinted warm */
 .section-white {
-    background: linear-gradient(180deg, #ffffff 0%, #f8fdfe 100%);
+    background: #f9fbfb;
     position: relative;
     overflow: hidden;
 }
@@ -387,12 +392,12 @@ section {
     left: 0;
     right: 0;
     height: 40px;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z' fill='%23f8fafb'/%3E%3C/svg%3E") no-repeat center/cover;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120'%3E%3Cpath d='M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z' fill='%23f0f6f7'/%3E%3C/svg%3E") no-repeat center/cover;
     pointer-events: none;
 }
 
 .section-tinted {
-    background: linear-gradient(180deg, #f0f7fa 0%, #e8f4f8 50%, #f0f7fa 100%);
+    background: #f0f6f7;
     position: relative;
 }
 
@@ -476,8 +481,9 @@ section {
 }
 
 .service-card h3 {
-    color: #1e293b;
-    font-size: 21px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1a2e35;
+    font-size: 1.25rem;
     font-weight: 700;
     margin-bottom: 12px;
 }
@@ -572,11 +578,10 @@ section {
 .stat-card .number {
     font-size: 42px;
     font-weight: 900;
-    background: linear-gradient(135deg, #0891b2, #06b6d4);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 2px 8px rgba(8, 145, 178, 0.15);
+    color: #0891b2;
+    background: none;
+    -webkit-text-fill-color: unset;
+    text-shadow: none;
     letter-spacing: -1px;
 }
 
@@ -1230,6 +1235,7 @@ footer {
     color: #94a3b8;
     padding: 30px 0;
     border-top: 1px solid rgba(30, 41, 59, 0.5);
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .footer-content {
@@ -1319,9 +1325,16 @@ footer a:hover {
 }
 
 .hero-image-bg .container { position: relative; z-index: 1; }
-.hero-image-bg h1 { font-size: 52px; font-weight: 800; margin-bottom: 16px; letter-spacing: -1px; line-height: 1.1; }
+.hero-image-bg h1 { 
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw + 1rem, 4rem); 
+    font-weight: 800; 
+    margin-bottom: 16px; 
+    letter-spacing: -0.02em; 
+    line-height: 1.05; 
+}
 .hero-image-bg h1 span { color: #0891b2; }
-.hero-image-bg p { font-size: 20px; color: #cbd5e1; max-width: 600px; margin: 0 auto 36px; }
+.hero-image-bg p { font-size: 20px; color: #cbd5e1; max-width: 600px; margin: 0 auto 36px; font-family: 'Plus Jakarta Sans', sans-serif; }
 
 .hero-image-bg .btn-secondary {
     background: none;
@@ -1687,6 +1700,10 @@ section {
 }
 
 /* ─── AB Automotive Navigation ─── */
+.ab-nav .nav-links a {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
 .ab-nav .nav-links a:hover,
 .ab-nav .nav-links a.active {
     color: #1956a8;
@@ -1737,11 +1754,12 @@ section {
 .ab-hero .container { position: relative; z-index: 1; }
 
 .ab-hero h1 {
-    font-size: 52px;
-    font-weight: 800;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw + 1rem, 3.5rem);
+    font-weight: 700;
     margin-bottom: 16px;
-    letter-spacing: -1px;
-    line-height: 1.1;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
 }
 
 .ab-hero h1 span { color: #2563eb; }
@@ -1751,6 +1769,7 @@ section {
     color: #cbd5e1;
     max-width: 650px;
     margin: 0 auto 36px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .ab-hero .hero-badge {
@@ -1854,8 +1873,29 @@ section {
 
 /* ─── AB Section Tinted (Blue) ─── */
 .ab-section-tinted {
-    background: linear-gradient(180deg, #f0f6fc 0%, #e8f3ff 50%, #f0f6fc 100%);
+    background: #f0f2f8;
     position: relative;
+}
+
+.ab-section-tinted .section-title h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    color: #1a2233;
+    font-weight: 700;
+}
+
+.ab-section-tinted .section-title p {
+    color: #5a6b82;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.ab-glass-card h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #1a2233;
+}
+
+.ab-glass-card p {
+    color: #5a6b82;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 
@@ -1872,10 +1912,9 @@ section {
 .ab-stat-card .number {
     font-size: 22px;
     font-weight: 800;
-    background: linear-gradient(135deg, #1956a8, #2563eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1956a8;
+    background: none;
+    -webkit-text-fill-color: unset;
     white-space: nowrap;
 }
 
@@ -1949,9 +1988,11 @@ section {
 .ab-cta-section .container { position: relative; z-index: 1; }
 
 .ab-cta-section h2 {
-    font-size: 36px;
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
     font-weight: 700;
     margin-bottom: 12px;
+    letter-spacing: -0.01em;
 }
 
 .ab-cta-section p {
@@ -1961,6 +2002,7 @@ section {
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .ab-cta-phone {
@@ -2021,6 +2063,7 @@ section {
     color: #cbd5e1;
     padding: 30px 0;
     border-top: 1px solid rgba(25, 86, 168, 0.3);
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 .ab-footer a {
