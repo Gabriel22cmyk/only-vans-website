@@ -214,8 +214,8 @@ nav {
 
 /* ─── Hero — Dark (Sub pages) ─── */
 .hero-wetbelt {
-    background: linear-gradient(135deg, rgba(8, 15, 28, 0.85) 0%, rgba(15, 23, 42, 0.80) 100%),
-                url('images/engine-belt.jpg') center/cover no-repeat;
+    background: linear-gradient(135deg, rgba(8, 15, 28, 0.82) 0%, rgba(15, 23, 42, 0.78) 100%),
+                url('images/wet-belt-hero.png') center/cover no-repeat;
 }
 
 .hero-dark {
