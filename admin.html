@@ -729,6 +729,14 @@
                         <h3>⚡ Speed of Sale</h3>
                         <div id="speedInsights" class="insight-list"></div>
                     </div>
+                    <div class="insight-card">
+                        <h3>📅 Year Breakdown</h3>
+                        <div id="yearBreakdown" class="insight-list"></div>
+                    </div>
+                    <div class="insight-card">
+                        <h3>🔧 Mileage Insights</h3>
+                        <div id="mileageInsights" class="insight-list"></div>
+                    </div>
                 </div>
 
                 <div class="insight-card" style="margin-top:20px;">
@@ -1351,6 +1359,12 @@
             // Speed insights
             renderSpeedInsights(filtered);
             
+            // Year breakdown
+            renderGroupedList('yearBreakdown', filtered, 'year');
+            
+            // Mileage insights
+            renderMileageInsights(filtered);
+            
             // Recent sales table
             renderRecentSales(filtered);
         }
@@ -1420,6 +1434,57 @@
             if (colourAvgs.length > 1) {
                 html += '<div class="insight-list-item"><span class="label">🏎️ Fastest selling colour</span><span class="value">' + escHtml(colourAvgs[0].colour) + ' (avg ' + colourAvgs[0].avg + ' days)</span></div>';
             }
+            
+            container.innerHTML = html;
+        }
+
+        function renderMileageInsights(vans) {
+            var container = document.getElementById('mileageInsights');
+            var withMileage = vans.filter(function(v) { return v.mileage && v.mileage > 0; });
+            
+            if (!withMileage.length) {
+                container.innerHTML = '<div class="no-data-msg">No mileage data yet</div>';
+                return;
+            }
+            
+            var totalMileage = withMileage.reduce(function(sum, v) { return sum + v.mileage; }, 0);
+            var avgMileage = Math.round(totalMileage / withMileage.length);
+            var lowest = withMileage.reduce(function(a, b) { return a.mileage < b.mileage ? a : b; });
+            var highest = withMileage.reduce(function(a, b) { return a.mileage > b.mileage ? a : b; });
+            
+            // Mileage brackets
+            var brackets = { 'Under 50k': 0, '50k-100k': 0, '100k-150k': 0, '150k+': 0 };
+            withMileage.forEach(function(v) {
+                if (v.mileage < 50000) brackets['Under 50k']++;
+                else if (v.mileage < 100000) brackets['50k-100k']++;
+                else if (v.mileage < 150000) brackets['100k-150k']++;
+                else brackets['150k+']++;
+            });
+            
+            // If we have days data, find which mileage range sells fastest
+            var bracketDays = {};
+            var bracketCounts = {};
+            withMileage.filter(function(v) { return v.created_at && v.sold_at; }).forEach(function(v) {
+                var b = v.mileage < 50000 ? 'Under 50k' : v.mileage < 100000 ? '50k-100k' : v.mileage < 150000 ? '100k-150k' : '150k+';
+                var days = Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
+                bracketDays[b] = (bracketDays[b] || 0) + days;
+                bracketCounts[b] = (bracketCounts[b] || 0) + 1;
+            });
+            
+            var html = '';
+            html += '<div class="insight-list-item"><span class="label">Average mileage sold</span><span class="value">' + avgMileage.toLocaleString() + ' mi</span></div>';
+            html += '<div class="insight-list-item"><span class="label">Lowest mileage sold</span><span class="value">' + escHtml(lowest.make + ' ' + lowest.model) + ' (' + Number(lowest.mileage).toLocaleString() + ' mi)</span></div>';
+            html += '<div class="insight-list-item"><span class="label">Highest mileage sold</span><span class="value">' + escHtml(highest.make + ' ' + highest.model) + ' (' + Number(highest.mileage).toLocaleString() + ' mi)</span></div>';
+            
+            // Show bracket breakdown
+            var maxBracket = Math.max.apply(null, Object.values(brackets));
+            Object.keys(brackets).forEach(function(b) {
+                if (brackets[b] > 0) {
+                    var avg = bracketCounts[b] ? ' — avg ' + Math.round(bracketDays[b] / bracketCounts[b]) + ' days to sell' : '';
+                    html += '<div class="insight-list-item"><span class="label">' + b + '</span><span class="value">' + brackets[b] + ' sold' + avg + '</span></div>';
+                    html += '<div class="insight-bar"><div class="insight-bar-fill" style="width:' + Math.round((brackets[b] / maxBracket) * 100) + '%"></div></div>';
+                }
+            });
             
             container.innerHTML = html;
         }
