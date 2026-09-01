@@ -336,7 +336,7 @@ nav {
 
 /* ─── Sections ─── */
 section {
-    padding: 80px 0;
+    padding: 100px 0;
 }
 
 .section-title {
@@ -392,7 +392,7 @@ section {
 }
 
 .section-tinted {
-    background: #f8fafb;
+    background: linear-gradient(180deg, #f0f7fa 0%, #e8f4f8 50%, #f0f7fa 100%);
     position: relative;
 }
 
@@ -468,15 +468,16 @@ section {
 }
 
 .service-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 18px;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: radial-gradient(ellipse at center, rgba(6, 182, 212, 0.12), rgba(8, 145, 178, 0.08));
+    background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(6, 182, 212, 0.15));
     border-radius: 50%;
     box-shadow: 0 0 20px rgba(8, 145, 178, 0.1);
+    padding: 16px;
 }
 
 .service-icon img {
@@ -486,8 +487,9 @@ section {
 
 .service-card h3 {
     color: #1e293b;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
 .service-card h3 a {
@@ -520,35 +522,48 @@ section {
 .why-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 28px;
 }
 
 .why-card {
     text-align: center;
-    padding: 30px 20px;
+    padding: 36px 24px;
+    background: linear-gradient(180deg, #ffffff 0%, #fcfffe 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .why-icon {
-    width: 44px;
-    height: 44px;
-    margin: 0 auto 14px;
-    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(6, 182, 212, 0.15));
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(8, 145, 178, 0.08);
 }
 
 .why-icon img {
-    width: 100%;
-    height: 100%;
+    width: 70%;
+    height: 70%;
 }
 
 .why-card h3 {
     color: #1e293b;
-    font-size: 16px;
-    margin-bottom: 6px;
+    font-size: 18px;
+    margin: 0;
+    font-weight: 700;
 }
 
 .why-card p {
     color: #64748b;
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* ─── Stat Cards ─── */
@@ -656,12 +671,95 @@ section {
     line-height: 1.7;
 }
 
+/* ─── Stats Banner — dark navy with cyan accents ─── */
+.stats-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    padding: 48px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(8, 145, 178, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.stats-banner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.stats-banner-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #0891b2;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.stats-banner-label {
+    font-size: 15px;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Image Break — full width dark section with texture */
+.image-break {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+    min-height: 280px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-break::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        radial-gradient(ellipse at 20% 50%, rgba(8, 145, 178, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(8, 145, 178, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.image-break-overlay {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.image-break-overlay h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+.image-break-overlay p {
+    font-size: 19px;
+    color: #cbd5e1;
+    font-weight: 500;
+}
+
 /* ─── Banner Strips ─── */
 .banner-strip {
     background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #0891b2 100%);
     background-size: 200% 100%;
     animation: bannerShift 6s ease-in-out infinite;
-    padding: 24px 0;
+    padding: 28px 0;
     text-align: center;
     color: white;
     position: relative;
@@ -678,10 +776,16 @@ section {
 }
 
 .banner-strip p {
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 700;
     position: relative;
     z-index: 1;
+    margin: 0;
+}
+
+.banner-strip strong {
+    font-weight: 800;
+    color: #ffffff;
 }
 
 .banner-strip span {
@@ -1292,6 +1396,31 @@ section {
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
+    .stats-banner-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .stats-banner {
+        padding: 40px 0;
+    }
+
+    .image-break {
+        min-height: 220px;
+    }
+
+    .image-break-overlay {
+        padding: 40px 0;
+    }
+
+    .image-break-overlay h2 {
+        font-size: 28px;
+    }
+
+    .image-break-overlay p {
+        font-size: 16px;
+    }
+
     .nav-links {
         display: none;
     }
@@ -1515,6 +1644,11 @@ section {
 }
 
 @media (max-width: 480px) {
+    .stats-banner-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
     .why-grid {
         grid-template-columns: 1fr;
     }
@@ -1530,6 +1664,14 @@ section {
 
     .services-bar-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-break-overlay h2 {
+        font-size: 24px;
+    }
+
+    .image-break-overlay p {
+        font-size: 15px;
     }
 }
 
@@ -1654,6 +1796,70 @@ section {
 .ab-btn-primary:active {
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(25, 86, 168, 0.2);
+}
+
+/* ─── AB Stats Banner — lighter, premium feel ─── */
+.ab-stats-banner {
+    background: linear-gradient(135deg, #1956a8 0%, #2563eb 100%);
+    padding: 28px 0;
+}
+
+.ab-stats-pills {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+.ab-pill {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    white-space: nowrap;
+}
+
+/* ─── AB Image Break — different treatment, lighter ─── */
+.ab-image-break {
+    background: linear-gradient(135deg, #0f1f3f 0%, #1a3563 50%, #0f1f3f 100%);
+    min-height: 260px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.ab-image-break::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(25, 86, 168, 0.2) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.ab-image-break-overlay {
+    width: 100%;
+    padding: 50px 0;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.ab-image-break-overlay h2 {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.ab-image-break-overlay p {
+    font-size: 18px;
+    color: #a5c4e1;
+    font-weight: 500;
 }
 
 /* ─── AB Section Tinted (Blue) ─── */
@@ -1855,21 +2061,9 @@ section {
 }
 
 /* ─── AB Service Icons (Squared) ─── */
-.ab-service-icon {
-    width: 48px;
-    height: 48px;
-    margin: 0 auto 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(25, 86, 168, 0.1), rgba(37, 99, 235, 0.08));
-    border-radius: 12px;
-    box-shadow: 0 0 20px rgba(25, 86, 168, 0.08);
-}
-
-.ab-service-icon img {
-    width: 60%;
-    height: 60%;
+.ab-glass-card .service-icon {
+    background: linear-gradient(135deg, rgba(25, 86, 168, 0.1), rgba(37, 99, 235, 0.15));
+    border-radius: 16px;
 }
 
 /* ─── AB Hero Badge Enhancement ─── */
