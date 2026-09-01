@@ -484,20 +484,14 @@
         }
 
         /* ─── Insights Tab ─── */
-        .insights-period { margin-bottom: 24px; }
-
-        .insights-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
+        .insights-header { margin-bottom: 24px; }
 
         .insight-card {
             background: white;
             border: 1px solid rgba(0,0,0,0.06);
             border-radius: 20px;
             padding: 28px;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
         }
 
         .insight-card h3 {
@@ -508,39 +502,19 @@
             margin-bottom: 16px;
         }
 
-        .insight-list-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #f1f5f9;
+        .pattern-item {
+            padding: 12px 16px;
+            background: #f8fbfc;
+            border-radius: 10px;
+            margin-bottom: 8px;
             font-size: 14px;
+            color: #334155;
+            line-height: 1.5;
         }
 
-        .insight-list-item:last-child { border-bottom: none; }
+        .pattern-item:last-child { margin-bottom: 0; }
 
-        .insight-list-item .label { color: #475569; font-weight: 500; }
-
-        .insight-list-item .value {
-            font-weight: 700;
-            color: #0891b2;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
-
-        .insight-bar {
-            height: 6px;
-            border-radius: 3px;
-            background: #f0f9fc;
-            margin-top: 6px;
-            overflow: hidden;
-        }
-
-        .insight-bar-fill {
-            height: 100%;
-            border-radius: 3px;
-            background: linear-gradient(90deg, #0891b2, #06b6d4);
-            transition: width 0.6s ease;
-        }
+        .pattern-item strong { color: #0891b2; }
 
         .recent-sales-table table {
             width: 100%;
@@ -586,8 +560,6 @@
             .modal-body .form-row { grid-template-columns: 1fr; }
             .stat-box .stat-num { font-size: 32px; }
             .login-container { padding: 32px 24px; }
-            .insights-grid { grid-template-columns: 1fr; }
-            #insightsTab .stats-row { grid-template-columns: repeat(2, 1fr) !important; }
             .recent-sales-table { overflow-x: auto; }
         }
     </style>
@@ -684,7 +656,7 @@
 
             <!-- Insights Tab -->
             <div id="insightsTab" style="display:none;">
-                <div class="insights-period">
+                <div class="insights-header">
                     <select class="filter-select" id="insightsPeriod" onchange="renderInsights()">
                         <option value="thisMonth">This Month</option>
                         <option value="lastMonth">Last Month</option>
@@ -693,54 +665,28 @@
                     </select>
                 </div>
 
-                <div class="stats-row" style="grid-template-columns: repeat(4, 1fr);">
+                <div class="stats-row">
                     <div class="stat-box">
-                        <div class="stat-num" id="insightsSold" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">0</div>
-                        <div class="stat-label">Vans Sold</div>
+                        <div class="stat-num" id="insightsSold">0</div>
+                        <div class="stat-label">Sold</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-num" id="insightsRevenue" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">£0</div>
-                        <div class="stat-label">Total Revenue</div>
+                        <div class="stat-num" id="insightsRevenue">£0</div>
+                        <div class="stat-label">Revenue</div>
                     </div>
                     <div class="stat-box">
-                        <div class="stat-num" id="insightsAvgDays" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">0</div>
+                        <div class="stat-num" id="insightsAvgDays">—</div>
                         <div class="stat-label">Avg Days to Sell</div>
                     </div>
-                    <div class="stat-box">
-                        <div class="stat-num" id="insightsAvgPrice" style="font-family:'Fraunces',Georgia,serif; color:#0891b2;">£0</div>
-                        <div class="stat-label">Avg Sale Price</div>
-                    </div>
                 </div>
 
-                <div class="insights-grid">
-                    <div class="insight-card">
-                        <h3>🏆 Top Selling Makes</h3>
-                        <div id="topMakes" class="insight-list"></div>
-                    </div>
-                    <div class="insight-card">
-                        <h3>🎨 Popular Colours</h3>
-                        <div id="topColours" class="insight-list"></div>
-                    </div>
-                    <div class="insight-card">
-                        <h3>⛽ Fuel Type Breakdown</h3>
-                        <div id="fuelBreakdown" class="insight-list"></div>
-                    </div>
-                    <div class="insight-card">
-                        <h3>⚡ Speed of Sale</h3>
-                        <div id="speedInsights" class="insight-list"></div>
-                    </div>
-                    <div class="insight-card">
-                        <h3>📅 Year Breakdown</h3>
-                        <div id="yearBreakdown" class="insight-list"></div>
-                    </div>
-                    <div class="insight-card">
-                        <h3>🔧 Mileage Insights</h3>
-                        <div id="mileageInsights" class="insight-list"></div>
-                    </div>
+                <div class="insight-card" id="patternsCard" style="margin-bottom:20px;">
+                    <h3>💡 Patterns</h3>
+                    <div id="smartPatterns" class="patterns-list"></div>
                 </div>
 
-                <div class="insight-card" style="margin-top:20px;">
-                    <h3>📋 Recent Sales</h3>
+                <div class="insight-card">
+                    <h3>Recent Sales</h3>
                     <div id="recentSales" class="recent-sales-table"></div>
                 </div>
             </div>
@@ -1315,178 +1261,81 @@
             var period = document.getElementById('insightsPeriod').value;
             var now = new Date();
             var soldVans = allVans.filter(function(v) { return v.status === 'sold' && v.sold_at; });
-            
-            // Filter by period
+
             var filtered = soldVans.filter(function(v) {
-                var soldDate = new Date(v.sold_at);
-                if (period === 'thisMonth') {
-                    return soldDate.getMonth() === now.getMonth() && soldDate.getFullYear() === now.getFullYear();
-                } else if (period === 'lastMonth') {
-                    var lastMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-                    return soldDate.getMonth() === lastMonth.getMonth() && soldDate.getFullYear() === lastMonth.getFullYear();
-                } else if (period === 'last3') {
-                    var threeMonthsAgo = new Date(now.getFullYear(), now.getMonth() - 3, 1);
-                    return soldDate >= threeMonthsAgo;
-                }
-                return true; // allTime
+                var d = new Date(v.sold_at);
+                if (period === 'thisMonth') return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+                if (period === 'lastMonth') { var lm = new Date(now.getFullYear(), now.getMonth() - 1, 1); return d.getMonth() === lm.getMonth() && d.getFullYear() === lm.getFullYear(); }
+                if (period === 'last3') return d >= new Date(now.getFullYear(), now.getMonth() - 3, 1);
+                return true;
             });
-            
-            // Stats
+
+            // Top stats
             document.getElementById('insightsSold').textContent = filtered.length;
-            
-            var totalRevenue = filtered.reduce(function(sum, v) { return sum + (v.price || 0); }, 0);
-            document.getElementById('insightsRevenue').textContent = '£' + totalRevenue.toLocaleString();
-            
-            var avgPrice = filtered.length ? Math.round(totalRevenue / filtered.length) : 0;
-            document.getElementById('insightsAvgPrice').textContent = '£' + avgPrice.toLocaleString();
-            
-            // Average days to sell
-            var daysArr = filtered.filter(function(v) { return v.created_at && v.sold_at; }).map(function(v) {
-                return Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
+            var revenue = filtered.reduce(function(s, v) { return s + (v.price || 0); }, 0);
+            document.getElementById('insightsRevenue').textContent = '£' + revenue.toLocaleString();
+            var withDays = filtered.filter(function(v) { return v.created_at; }).map(function(v) {
+                v._days = Math.max(0, Math.round((new Date(v.sold_at) - new Date(v.created_at)) / 86400000));
+                return v;
             });
-            var avgDays = daysArr.length ? Math.round(daysArr.reduce(function(a, b) { return a + b; }, 0) / daysArr.length) : 0;
-            document.getElementById('insightsAvgDays').textContent = avgDays;
-            
-            // Top makes
-            renderGroupedList('topMakes', filtered, 'make');
-            
-            // Top colours
-            renderGroupedList('topColours', filtered, 'colour');
-            
-            // Fuel breakdown
-            renderGroupedList('fuelBreakdown', filtered, 'fuel_type');
-            
-            // Speed insights
-            renderSpeedInsights(filtered);
-            
-            // Year breakdown
-            renderGroupedList('yearBreakdown', filtered, 'year');
-            
-            // Mileage insights
-            renderMileageInsights(filtered);
-            
-            // Recent sales table
+            var avgDays = withDays.length ? Math.round(withDays.reduce(function(s, v) { return s + v._days; }, 0) / withDays.length) : null;
+            document.getElementById('insightsAvgDays').textContent = avgDays !== null ? avgDays + 'd' : '—';
+
+            renderPatterns(filtered, withDays);
             renderRecentSales(filtered);
         }
 
-        function renderGroupedList(containerId, vans, field) {
-            var container = document.getElementById(containerId);
-            if (!vans.length) {
-                container.innerHTML = '<div class="no-data-msg">No data yet</div>';
-                return;
-            }
-            
-            var counts = {};
-            vans.forEach(function(v) {
-                var key = v[field] || 'Unknown';
-                counts[key] = (counts[key] || 0) + 1;
-            });
-            
-            var sorted = Object.entries(counts).sort(function(a, b) { return b[1] - a[1]; });
-            var max = sorted[0] ? sorted[0][1] : 1;
-            
-            var html = '';
-            sorted.slice(0, 5).forEach(function(entry) {
-                var pct = Math.round((entry[1] / vans.length) * 100);
-                html += '<div class="insight-list-item">' +
-                    '<span class="label">' + escHtml(entry[0]) + '</span>' +
-                    '<span class="value">' + entry[1] + ' (' + pct + '%)</span>' +
-                '</div>' +
-                '<div class="insight-bar"><div class="insight-bar-fill" style="width:' + Math.round((entry[1] / max) * 100) + '%"></div></div>';
-            });
-            container.innerHTML = html;
-        }
+        function renderPatterns(vans, withDays) {
+            var el = document.getElementById('smartPatterns');
+            if (!vans.length) { el.innerHTML = '<div class="no-data-msg">Mark vans as sold to start seeing patterns here.</div>'; return; }
+            var tips = [];
 
-        function renderSpeedInsights(vans) {
-            var container = document.getElementById('speedInsights');
-            var withDays = vans.filter(function(v) { return v.created_at && v.sold_at; }).map(function(v) {
-                v._days = Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
-                return v;
-            });
-            
-            if (!withDays.length) {
-                container.innerHTML = '<div class="no-data-msg">No data yet</div>';
-                return;
-            }
-            
-            // Fastest sale
-            var fastest = withDays.reduce(function(a, b) { return a._days < b._days ? a : b; });
-            // Slowest sale
-            var slowest = withDays.reduce(function(a, b) { return a._days > b._days ? a : b; });
-            
-            // Group by colour to find patterns
-            var colourDays = {};
-            var colourCounts = {};
-            withDays.forEach(function(v) {
-                var c = v.colour || 'Unknown';
-                colourDays[c] = (colourDays[c] || 0) + v._days;
-                colourCounts[c] = (colourCounts[c] || 0) + 1;
-            });
-            
-            var colourAvgs = Object.keys(colourDays).map(function(c) {
-                return { colour: c, avg: Math.round(colourDays[c] / colourCounts[c]), count: colourCounts[c] };
-            }).filter(function(c) { return c.count >= 1; }).sort(function(a, b) { return a.avg - b.avg; });
-            
-            var html = '';
-            html += '<div class="insight-list-item"><span class="label">⚡ Fastest sale</span><span class="value">' + escHtml(fastest.make + ' ' + fastest.model) + ' (' + fastest._days + ' days)</span></div>';
-            html += '<div class="insight-list-item"><span class="label">🐢 Slowest sale</span><span class="value">' + escHtml(slowest.make + ' ' + slowest.model) + ' (' + slowest._days + ' days)</span></div>';
-            
-            if (colourAvgs.length > 1) {
-                html += '<div class="insight-list-item"><span class="label">🏎️ Fastest selling colour</span><span class="value">' + escHtml(colourAvgs[0].colour) + ' (avg ' + colourAvgs[0].avg + ' days)</span></div>';
-            }
-            
-            container.innerHTML = html;
-        }
+            // What make sells most
+            var makes = {}; vans.forEach(function(v) { makes[v.make] = (makes[v.make]||0)+1; });
+            var topMake = Object.entries(makes).sort(function(a,b){return b[1]-a[1];})[0];
+            if (topMake) tips.push('<strong>' + escHtml(topMake[0]) + '</strong> is your best seller — ' + topMake[1] + ' sold.');
 
-        function renderMileageInsights(vans) {
-            var container = document.getElementById('mileageInsights');
-            var withMileage = vans.filter(function(v) { return v.mileage && v.mileage > 0; });
-            
-            if (!withMileage.length) {
-                container.innerHTML = '<div class="no-data-msg">No mileage data yet</div>';
-                return;
-            }
-            
-            var totalMileage = withMileage.reduce(function(sum, v) { return sum + v.mileage; }, 0);
-            var avgMileage = Math.round(totalMileage / withMileage.length);
-            var lowest = withMileage.reduce(function(a, b) { return a.mileage < b.mileage ? a : b; });
-            var highest = withMileage.reduce(function(a, b) { return a.mileage > b.mileage ? a : b; });
-            
-            // Mileage brackets
-            var brackets = { 'Under 50k': 0, '50k-100k': 0, '100k-150k': 0, '150k+': 0 };
-            withMileage.forEach(function(v) {
-                if (v.mileage < 50000) brackets['Under 50k']++;
-                else if (v.mileage < 100000) brackets['50k-100k']++;
-                else if (v.mileage < 150000) brackets['100k-150k']++;
-                else brackets['150k+']++;
-            });
-            
-            // If we have days data, find which mileage range sells fastest
-            var bracketDays = {};
-            var bracketCounts = {};
-            withMileage.filter(function(v) { return v.created_at && v.sold_at; }).forEach(function(v) {
-                var b = v.mileage < 50000 ? 'Under 50k' : v.mileage < 100000 ? '50k-100k' : v.mileage < 150000 ? '100k-150k' : '150k+';
-                var days = Math.round((new Date(v.sold_at) - new Date(v.created_at)) / (1000 * 60 * 60 * 24));
-                bracketDays[b] = (bracketDays[b] || 0) + days;
-                bracketCounts[b] = (bracketCounts[b] || 0) + 1;
-            });
-            
-            var html = '';
-            html += '<div class="insight-list-item"><span class="label">Average mileage sold</span><span class="value">' + avgMileage.toLocaleString() + ' mi</span></div>';
-            html += '<div class="insight-list-item"><span class="label">Lowest mileage sold</span><span class="value">' + escHtml(lowest.make + ' ' + lowest.model) + ' (' + Number(lowest.mileage).toLocaleString() + ' mi)</span></div>';
-            html += '<div class="insight-list-item"><span class="label">Highest mileage sold</span><span class="value">' + escHtml(highest.make + ' ' + highest.model) + ' (' + Number(highest.mileage).toLocaleString() + ' mi)</span></div>';
-            
-            // Show bracket breakdown
-            var maxBracket = Math.max.apply(null, Object.values(brackets));
-            Object.keys(brackets).forEach(function(b) {
-                if (brackets[b] > 0) {
-                    var avg = bracketCounts[b] ? ' — avg ' + Math.round(bracketDays[b] / bracketCounts[b]) + ' days to sell' : '';
-                    html += '<div class="insight-list-item"><span class="label">' + b + '</span><span class="value">' + brackets[b] + ' sold' + avg + '</span></div>';
-                    html += '<div class="insight-bar"><div class="insight-bar-fill" style="width:' + Math.round((brackets[b] / maxBracket) * 100) + '%"></div></div>';
+            // Fastest vs slowest if we have timing data
+            if (withDays.length >= 2) {
+                var fastest = withDays.reduce(function(a,b){return a._days<b._days?a:b;});
+                var slowest = withDays.reduce(function(a,b){return a._days>b._days?a:b;});
+                if (fastest._days !== slowest._days) {
+                    tips.push('Fastest sale: <strong>' + escHtml(fastest.make+' '+fastest.model) + '</strong> shifted in ' + fastest._days + ' day' + (fastest._days!==1?'s':'') + '.');
+                    tips.push('Slowest to move: <strong>' + escHtml(slowest.make+' '+slowest.model) + '</strong> sat for ' + slowest._days + ' days.');
                 }
-            });
-            
-            container.innerHTML = html;
+            }
+
+            // Price sweet spot
+            if (vans.length >= 3) {
+                var prices = vans.map(function(v){return v.price||0;}).sort(function(a,b){return a-b;});
+                var mid = prices[Math.floor(prices.length/2)];
+                var lo = prices[0], hi = prices[prices.length-1];
+                tips.push('Price range: <strong>£' + lo.toLocaleString() + '</strong> to <strong>£' + hi.toLocaleString() + '</strong>. Most sales around <strong>£' + mid.toLocaleString() + '</strong>.');
+            }
+
+            // Average mileage
+            var withMiles = vans.filter(function(v){return v.mileage && v.mileage > 0;});
+            if (withMiles.length >= 2) {
+                var avgMiles = Math.round(withMiles.reduce(function(s,v){return s+v.mileage;},0) / withMiles.length);
+                tips.push('Average mileage on sold vans: <strong>' + avgMiles.toLocaleString() + ' miles</strong>.');
+            }
+
+            // Year trend
+            var years = {}; vans.forEach(function(v){if(v.year) years[v.year]=(years[v.year]||0)+1;});
+            var topYear = Object.entries(years).sort(function(a,b){return b[1]-a[1];})[0];
+            if (topYear && Object.keys(years).length > 1) tips.push('<strong>' + topYear[0] + '</strong> model year sold the most — ' + topYear[1] + ' units.');
+
+            // Colour pattern (only if enough data)
+            if (withDays.length >= 3) {
+                var colDays = {}, colN = {};
+                withDays.forEach(function(v) { var c=v.colour||'Unknown'; colDays[c]=(colDays[c]||0)+v._days; colN[c]=(colN[c]||0)+1; });
+                var colAvgs = Object.keys(colDays).filter(function(c){return colN[c]>=2;}).map(function(c){return{c:c,avg:Math.round(colDays[c]/colN[c])};}).sort(function(a,b){return a.avg-b.avg;});
+                if (colAvgs.length >= 2) {
+                    tips.push('<strong>' + escHtml(colAvgs[0].c) + '</strong> vans sell fastest — avg ' + colAvgs[0].avg + ' days vs ' + colAvgs[colAvgs.length-1].avg + ' for ' + escHtml(colAvgs[colAvgs.length-1].c) + '.');
+                }
+            }
+
+            el.innerHTML = tips.map(function(t){return '<div class="pattern-item">' + t + '</div>';}).join('');
         }
 
         function renderRecentSales(vans) {
