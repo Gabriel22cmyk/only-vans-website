@@ -411,13 +411,9 @@ section {
 /* ─── Cards — Glass 3D ─── */
 .glass-card {
     background: white;
-    border: 1.5px solid rgba(0, 0, 0, 0.1);
-    border-top: 3px solid #0891b2;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     border-radius: 20px;
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.08),
-        0 8px 24px rgba(8, 145, 178, 0.18),
-        0 16px 48px rgba(8, 145, 178, 0.12);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -433,29 +429,18 @@ section {
 }
 
 .glass-card:hover {
-    transform: translateY(-8px);
-    box-shadow:
-        0 4px 12px rgba(0, 0, 0, 0.1),
-        0 12px 32px rgba(8, 145, 178, 0.25),
-        0 24px 56px rgba(8, 145, 178, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
-/* AB Automotive blue shadow variant */
+/* AB Automotive card variant */
 .ab-glass-card {
-    border-color: rgba(0, 0, 0, 0.12);
-    border-left: 3px solid #1956a8;
-    box-shadow:
-        0 4px 20px rgba(25, 86, 168, 0.15),
-        0 8px 32px rgba(25, 86, 168, 0.1),
-        0 2px 6px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.04);
 }
 
 .ab-glass-card:hover {
-    border-left-color: #2563eb;
-    box-shadow:
-        0 8px 30px rgba(25, 86, 168, 0.22),
-        0 12px 40px rgba(25, 86, 168, 0.14),
-        0 4px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 /* ─── Service Cards (grid) ─── */
@@ -784,14 +769,10 @@ section {
     display: flex;
     gap: 16px;
     align-items: flex-start;
-    padding-left: 16px;
-    border-left: 3px solid #0891b2;
     transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-    border-left-color: #06b6d4;
-    padding-left: 20px;
 }
 
 .contact-item .icon {
@@ -1142,10 +1123,7 @@ footer {
     background: #0f172a;
     color: #94a3b8;
     padding: 30px 0;
-    border-top: 3px solid transparent;
-    background-image: linear-gradient(#0f172a, #0f172a), linear-gradient(90deg, #0891b2, #06b6d4);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border-top: 1px solid rgba(30, 41, 59, 0.5);
 }
 
 .footer-content {
@@ -1682,12 +1660,7 @@ section {
     pointer-events: none;
 }
 
-.ab-section-tinted .section-title h2::before {
-    content: '●';
-    color: #1956a8;
-    margin-right: 12px;
-    font-size: 12px;
-}
+
 
 /* ─── AB Stat Cards ─── */
 .ab-stat-card {
@@ -1848,10 +1821,7 @@ section {
     background: #0f1f3f;
     color: #cbd5e1;
     padding: 30px 0;
-    border-top: 3px solid transparent;
-    background-image: linear-gradient(#0f1f3f, #0f1f3f), linear-gradient(90deg, #1956a8, #2563eb, #f59e0b);
-    background-origin: border-box;
-    background-clip: padding-box, border-box;
+    border-top: 1px solid rgba(25, 86, 168, 0.3);
 }
 
 .ab-footer a {
