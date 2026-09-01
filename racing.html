@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+    <title>Only Vans Racing — MINI Challenge Clubsport</title>
+    <meta name="description" content="Only Vans Racing — competing in the MINI Challenge Clubsport series. Run by Adam Kirkland with drivers Callum Eynstone, Adam Kirkland and Chris Aram.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-group">
+                    <a href="index.html" class="logo"><img src="images/logo.png" alt="Only Vans"></a>
+                    <span class="logo-divider"></span>
+                    <a href="ab-automotive.html" class="logo"><img src="images/ab-automotive-logo.png" alt="AB Automotive"></a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Only Vans</a>
+                    <a href="ab-automotive.html">AB Automotive</a>
+                    <a href="racing.html" class="active">Racing</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero-dark racing-hero">
+        <div class="container">
+            <div class="hero-badge reveal reveal-fade">🏁 MINI Challenge Clubsport</div>
+            <h1 class="reveal reveal-delay-1">Only Vans <span>Racing</span></h1>
+            <p class="reveal reveal-delay-2">More than just vans. We race across the UK in the MINI Challenge Clubsport series — putting the same passion and expertise from our workshop onto the track.</p>
+        </div>
+    </section>
+
+    <!-- About the Team -->
+    <section class="section-white" style="background: #0f1620; padding: 100px 0;">
+        <div class="container">
+            <div class="racing-page-grid">
+                <div class="racing-page-text">
+                    <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">The Team</h2>
+                    <p class="reveal reveal-delay-1" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">Only Vans Racing is run by Adam, the CEO of Only Vans, alongside employees and friends who share a love for motorsport. What started as a passion project has grown into a competitive team racing across UK circuits.</p>
+                    <p class="reveal reveal-delay-2" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">The precision and performance demanded on the track is the same standard we bring to every vehicle in our workshop. When your mechanic races cars for fun, you know your vehicle is in expert hands.</p>
+                    <p class="reveal reveal-delay-3" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8;">We're actively looking for sponsors — if you're interested in getting your brand on the grid, get in touch.</p>
+                </div>
+                <div class="racing-page-image reveal reveal-delay-2">
+                    <img src="images/racing-team.jpg" alt="Only Vans Racing team with all three race cars" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drivers -->
+    <section style="background: #111a24; padding: 80px 0;">
+        <div class="container">
+            <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; text-align: center; margin-bottom: 48px; letter-spacing: -0.02em;">Our Drivers</h2>
+            <div class="drivers-grid">
+                <div class="driver-card reveal reveal-delay-1">
+                    <div class="driver-number">#146</div>
+                    <h3>Callum Eynstone</h3>
+                    <p>Honda Civic Type R</p>
+                </div>
+                <div class="driver-card reveal reveal-delay-2">
+                    <div class="driver-number">#27</div>
+                    <h3>Adam Kirkland</h3>
+                    <p>Honda Civic</p>
+                </div>
+                <div class="driver-card reveal reveal-delay-3">
+                    <div class="driver-number">&nbsp;</div>
+                    <h3>Chris Aram</h3>
+                    <p>Mini</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Paddock Photo -->
+    <section class="mechanic-photo-break" style="height: 420px;">
+        <div class="mechanic-photo-inner">
+            <img src="images/racing-paddock.jpg" alt="Callum Eynstone with the Only Vans Racing Honda Civic Type R in the paddock" loading="lazy">
+            <div class="mechanic-photo-overlay" style="max-width: 100%; background: linear-gradient(0deg, rgba(8,15,28,0.7) 0%, transparent 60%);">
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Season Rebrand -->
+    <section style="background: #0a1018; padding: 100px 0;">
+        <div class="container">
+            <div class="racing-page-grid racing-page-grid-reverse">
+                <div class="racing-page-image reveal">
+                    <img src="images/racing-rebrand.jpg" alt="Only Vans Racing new livery — Mini R50 Challenge #27" loading="lazy">
+                </div>
+                <div class="racing-page-text">
+                    <div class="reveal" style="display:inline-block; padding:6px 16px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px; background:rgba(8,145,178,0.15); color:#67e8f9; border:1px solid rgba(8,145,178,0.3); font-family:'Plus Jakarta Sans',sans-serif;">Coming Next Season</div>
+                    <h2 class="reveal reveal-delay-1" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">New Colours. Same Passion.</h2>
+                    <p class="reveal reveal-delay-2" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">Only Vans Racing is rebranding for the new season — the #27 Mini R50 Challenge car in full Only Vans livery. Same team, same drive, fresh look.</p>
+                    <p class="reveal reveal-delay-3" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8;">Vehicle Repairs • Bodywork • Servicing — on the car, in the workshop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section style="background: #111a24; padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;">Our Sponsors &amp; Partners</h2>
+            <p class="reveal reveal-delay-1" style="color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 40px;">We couldn't do it without them.</p>
+
+            <div class="sponsor-main reveal reveal-delay-1" style="max-width: 520px; margin: 0 auto 40px;">
+                <div class="sponsor-main-badge">Title Sponsor — 2 Seasons Running</div>
+                <h3>Midwinter Landscaping</h3>
+                <p>Our main sponsor for the last two seasons. Make sure to give their page a like and follow to see the amazing work they do!</p>
+            </div>
+
+            <div class="sponsors-grid reveal reveal-delay-2" style="max-width: 740px; margin: 0 auto 40px;">
+                <div class="sponsor-card">Simply Minis</div>
+                <div class="sponsor-card">Only Vans</div>
+                <div class="sponsor-card">APS Hire &amp; Sales</div>
+                <div class="sponsor-card">JCL Precision Autocare</div>
+                <div class="sponsor-card">Chris Aram Racing</div>
+                <div class="sponsor-card">Callum Eynstone Motorsport</div>
+                <div class="sponsor-card">AK Performance Tuning</div>
+            </div>
+
+            <div class="reveal reveal-delay-3" style="margin-top: 32px;">
+                <a href="https://www.facebook.com/p/AT-Motorsport-AT-Automotive-Race-Team-61566146650622/" target="_blank" style="display:inline-block; padding:14px 32px; background:rgba(8,145,178,0.15); border:1px solid rgba(8,145,178,0.3); border-radius:10px; color:#67e8f9; font-weight:600; font-size:0.95rem; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif; transition: all 0.3s;">Follow us on Facebook →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Only Vans &amp; AB Automotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) { header.classList.add('scrolled'); }
+            else { header.classList.remove('scrolled'); }
+        });
+    </script>
+
+</body>
+</html>
