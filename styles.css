@@ -2276,3 +2276,165 @@ section {
         padding-bottom: 32px;
     }
 }
+
+/* ─── Racing Section ─── */
+.section-racing {
+    background: linear-gradient(135deg, #0f172a 0%, #1a2e35 100%);
+    padding: 120px 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-racing::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(8, 145, 178, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.racing-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.racing-content-reverse {
+    direction: rtl;
+}
+
+.racing-content-reverse > * {
+    direction: ltr;
+}
+
+.racing-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: rgba(8, 145, 178, 0.15);
+    color: #67e8f9;
+    border: 1px solid rgba(8, 145, 178, 0.3);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.ab-racing-badge {
+    background: rgba(25, 86, 168, 0.15);
+    color: #93b5e0;
+    border-color: rgba(25, 86, 168, 0.3);
+}
+
+.racing-text h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(2rem, 3vw + 0.5rem, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.section-racing .racing-text h2 {
+    color: white;
+}
+
+.ab-section-tinted .racing-text h2 {
+    color: #1a2233;
+}
+
+.racing-text p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.section-racing .racing-text p {
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.ab-section-tinted .racing-text p {
+    color: #5a6b82;
+}
+
+.racing-image {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.racing-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Racing Photo Break */
+.racing-photo-break {
+    padding: 0;
+    overflow: hidden;
+    height: 400px;
+    position: relative;
+}
+
+.racing-photo-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.racing-photo-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    display: block;
+}
+
+.racing-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(8, 15, 28, 0.9) 0%, rgba(8, 15, 28, 0.3) 50%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 80px;
+}
+
+.racing-drivers {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.driver-tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .racing-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .racing-content-reverse {
+        direction: ltr;
+    }
+    .racing-photo-break { height: 300px; }
+    .racing-photo-overlay { padding: 24px; }
+    .racing-drivers { flex-direction: column; gap: 10px; }
+}
