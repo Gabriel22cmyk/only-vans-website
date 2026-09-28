@@ -3,9 +3,14 @@
    ═══════════════════════════════════════════ */
 
 // Mobile menu toggle
-function toggleMenu() {
-    document.getElementById('navLinks').classList.toggle('active');
-}
+document.addEventListener('DOMContentLoaded', function() {
+    var menuBtn = document.getElementById('menuBtn');
+    if (menuBtn) {
+        menuBtn.addEventListener('click', function() {
+            document.getElementById('navLinks').classList.toggle('active');
+        });
+    }
+});
 
 // Navbar glass effect on scroll
 window.addEventListener('scroll', function() {
