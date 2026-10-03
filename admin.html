@@ -767,7 +767,7 @@
                         <div id="uploadPlaceholder">
                             <div style="margin-bottom:8px;"><img src="icons/camera.svg" alt="" style="width:36px;height:36px;"></div>
                             <p class="upload-text"><strong>Click to upload</strong> or drag a photo here</p>
-                            <p class="upload-text" style="font-size:12px; margin-top:4px; color:#94a3b8;">JPG, PNG — max 5MB</p>
+                            <p class="upload-text" style="font-size:12px; margin-top:4px; color:#94a3b8;">JPG, PNG — max 20MB</p>
                         </div>
                         <img id="imagePreview" class="image-preview" style="display:none;">
                         <button type="button" class="image-remove" id="imageRemoveBtn" style="display:none;" onclick="removeImage(event)">✕</button>
@@ -822,7 +822,7 @@
         var SUPABASE_URL = 'https://tsorpwmhwbyivltgulaf.supabase.co';
         var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRzb3Jwd21od2J5aXZsdGd1bGFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODc2Njk4MDcsImV4cCI6MjEwMzI0NTgwN30.xLXJN3-BV7vaFkKI6p4j83-ZBd3wB7KH7MCiU2Zuk6o';
         var BUCKET = 'van-images';
-        var MAX_FILE_SIZE = 5 * 1024 * 1024;
+        var MAX_FILE_SIZE = 20 * 1024 * 1024;
 
         var sb = null;
         var allVans = [];
