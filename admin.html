@@ -326,6 +326,24 @@
             cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center;
             z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
+        /* Multi-image thumbnails */
+        .image-thumbs {
+            display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px;
+        }
+        .image-thumb {
+            position: relative; width: 100px; height: 100px; border-radius: 10px;
+            overflow: hidden; border: 2px solid #e2e8f0;
+        }
+        .image-thumb img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .image-thumb .thumb-remove {
+            position: absolute; top: 4px; right: 4px; width: 22px; height: 22px;
+            background: rgba(239,68,68,0.9); color: white; border: none; border-radius: 50%;
+            cursor: pointer; font-size: 12px; display: flex; align-items: center; justify-content: center;
+            z-index: 2; box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+        }
+        .image-thumb .thumb-remove:hover { background: #dc2626; }
 
         .modal-footer { padding: 0 28px 28px; display: flex; gap: 10px; justify-content: flex-end; }
         .btn-cancel {
@@ -761,17 +779,16 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Photo</label>
+                    <label>Photos</label>
                     <div class="image-upload-area" id="imageUploadArea">
-                        <input type="file" id="vanImage" accept="image/*" onchange="previewImage(event)">
+                        <input type="file" id="vanImage" accept="image/*" multiple>
                         <div id="uploadPlaceholder">
                             <div style="margin-bottom:8px;"><img src="icons/camera.svg" alt="" style="width:36px;height:36px;"></div>
-                            <p class="upload-text"><strong>Click to upload</strong> or drag a photo here</p>
-                            <p class="upload-text" style="font-size:12px; margin-top:4px; color:#94a3b8;">JPG, PNG — max 20MB</p>
+                            <p class="upload-text"><strong>Click to upload</strong> or drag photos here</p>
+                            <p class="upload-text" style="font-size:12px; margin-top:4px; color:#94a3b8;">JPG, PNG — max 20MB each — up to 10 photos</p>
                         </div>
-                        <img id="imagePreview" class="image-preview" style="display:none;">
-                        <button type="button" class="image-remove" id="imageRemoveBtn" style="display:none;" onclick="removeImage(event)">✕</button>
                     </div>
+                    <div class="image-thumbs" id="imageThumbs"></div>
                 </div>
 
                 <div class="form-group">
@@ -828,8 +845,9 @@
         var allVans = [];
         var editingVan = null;
         var deleteTarget = null;
-        var selectedFile = null;
-        var removeExistingImage = false;
+        var selectedFiles = [];
+        var existingImageUrls = [];
+        var removedImageUrls = [];
 
         /* ─── Init ─── */
         try {
@@ -1032,24 +1050,19 @@
             document.getElementById('vanDesc').value = editingVan ? (editingVan.description || '') : '';
             document.getElementById('vanStatus').value = editingVan ? editingVan.status : 'available';
 
-            var preview = document.getElementById('imagePreview');
-            var placeholder = document.getElementById('uploadPlaceholder');
-            var removeBtn = document.getElementById('imageRemoveBtn');
-            var area = document.getElementById('imageUploadArea');
             document.getElementById('vanImage').value = '';
+            selectedFiles = [];
+            removedImageUrls = [];
 
-            if (editingVan && editingVan.image_url) {
-                preview.src = editingVan.image_url;
-                preview.style.display = 'block';
-                placeholder.style.display = 'none';
-                removeBtn.style.display = 'flex';
-                area.classList.add('has-image');
+            // Load existing images
+            if (editingVan) {
+                existingImageUrls = (editingVan.image_urls && editingVan.image_urls.length)
+                    ? editingVan.image_urls.slice()
+                    : (editingVan.image_url ? [editingVan.image_url] : []);
             } else {
-                preview.style.display = 'none';
-                placeholder.style.display = 'block';
-                removeBtn.style.display = 'none';
-                area.classList.remove('has-image');
+                existingImageUrls = [];
             }
+            renderThumbnails();
 
             document.getElementById('vanModal').style.display = 'flex';
             document.getElementById('vanMake').focus();
@@ -1057,41 +1070,86 @@
 
         function closeModal() {
             document.getElementById('vanModal').style.display = 'none';
-            editingVan = null; selectedFile = null; removeExistingImage = false;
+            editingVan = null; selectedFiles = []; existingImageUrls = []; removedImageUrls = [];
         }
 
-        /* ─── Image Preview ─── */
-        function previewImage(event) {
-            var file = event.target.files[0];
-            if (!file) return;
-            if (file.size > MAX_FILE_SIZE) {
-                showToast('Image too large. Max 5MB.', 'error');
-                event.target.value = '';
-                return;
+        /* ─── Multi-Image Handling ─── */
+        document.addEventListener('DOMContentLoaded', function() {
+            var fileInput = document.getElementById('vanImage');
+            if (fileInput) {
+                fileInput.addEventListener('change', function(event) {
+                    var files = Array.from(event.target.files);
+                    var total = existingImageUrls.length + selectedFiles.length + files.length;
+                    if (total > 10) {
+                        showToast('Maximum 10 photos per van.', 'error');
+                        event.target.value = '';
+                        return;
+                    }
+                    for (var i = 0; i < files.length; i++) {
+                        if (files[i].size > MAX_FILE_SIZE) {
+                            showToast(files[i].name + ' is too large. Max 20MB.', 'error');
+                            continue;
+                        }
+                        selectedFiles.push(files[i]);
+                    }
+                    event.target.value = '';
+                    renderThumbnails();
+                });
             }
-            selectedFile = file;
-            var reader = new FileReader();
-            reader.onload = function(e) {
-                var preview = document.getElementById('imagePreview');
-                preview.src = e.target.result;
-                preview.style.display = 'block';
-                document.getElementById('uploadPlaceholder').style.display = 'none';
-                document.getElementById('imageRemoveBtn').style.display = 'flex';
-                document.getElementById('imageUploadArea').classList.add('has-image');
-            };
-            reader.readAsDataURL(file);
-        }
+        });
 
-        function removeImage(event) {
-            event.stopPropagation();
-            event.preventDefault();
-            selectedFile = null;
-            removeExistingImage = true;
-            document.getElementById('vanImage').value = '';
-            document.getElementById('imagePreview').style.display = 'none';
-            document.getElementById('uploadPlaceholder').style.display = 'block';
-            document.getElementById('imageRemoveBtn').style.display = 'none';
-            document.getElementById('imageUploadArea').classList.remove('has-image');
+        function renderThumbnails() {
+            var container = document.getElementById('imageThumbs');
+            container.innerHTML = '';
+
+            // Show existing uploaded images
+            existingImageUrls.forEach(function(url, idx) {
+                var thumb = document.createElement('div');
+                thumb.className = 'image-thumb';
+                thumb.innerHTML = '<img src="' + url + '" alt="Photo">' +
+                    '<button type="button" class="thumb-remove" data-type="existing" data-idx="' + idx + '">\u2715</button>';
+                container.appendChild(thumb);
+            });
+
+            // Show newly selected files as previews
+            selectedFiles.forEach(function(file, idx) {
+                var thumb = document.createElement('div');
+                thumb.className = 'image-thumb';
+                var img = document.createElement('img');
+                var reader = new FileReader();
+                reader.onload = function(e) { img.src = e.target.result; };
+                reader.readAsDataURL(file);
+                thumb.appendChild(img);
+                var btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'thumb-remove';
+                btn.setAttribute('data-type', 'new');
+                btn.setAttribute('data-idx', idx);
+                btn.textContent = '\u2715';
+                thumb.appendChild(btn);
+                container.appendChild(thumb);
+            });
+
+            // Add click handlers for remove buttons
+            container.querySelectorAll('.thumb-remove').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    var type = this.getAttribute('data-type');
+                    var idx = parseInt(this.getAttribute('data-idx'));
+                    if (type === 'existing') {
+                        removedImageUrls.push(existingImageUrls[idx]);
+                        existingImageUrls.splice(idx, 1);
+                    } else {
+                        selectedFiles.splice(idx, 1);
+                    }
+                    renderThumbnails();
+                });
+            });
+
+            // Update placeholder visibility
+            var total = existingImageUrls.length + selectedFiles.length;
+            document.getElementById('uploadPlaceholder').style.display = total >= 10 ? 'none' : 'block';
         }
 
         /* ─── Save Van ─── */
@@ -1110,17 +1168,21 @@
             btn.disabled = true; btn.textContent = 'Saving...';
 
             try {
-                var imageUrl = editingVan ? editingVan.image_url : null;
-
-                if (removeExistingImage && imageUrl) {
-                    await deleteStorageImage(imageUrl);
-                    imageUrl = null;
+                // Delete removed images from storage
+                for (var r = 0; r < removedImageUrls.length; r++) {
+                    await deleteStorageImage(removedImageUrls[r]);
                 }
 
-                if (selectedFile) {
-                    if (imageUrl) await deleteStorageImage(imageUrl);
-                    imageUrl = await uploadImage(selectedFile);
+                // Upload new files
+                var newUrls = [];
+                for (var u = 0; u < selectedFiles.length; u++) {
+                    btn.textContent = 'Uploading ' + (u+1) + '/' + selectedFiles.length + '...';
+                    var url = await uploadImage(selectedFiles[u]);
+                    if (url) newUrls.push(url);
                 }
+
+                // Combine existing + new
+                var allUrls = existingImageUrls.concat(newUrls);
 
                 var data = {
                     make: make,
@@ -1132,7 +1194,8 @@
                     transmission: document.getElementById('vanTransmission').value,
                     colour: document.getElementById('vanColour').value.trim() || null,
                     description: document.getElementById('vanDesc').value.trim() || null,
-                    image_url: imageUrl || null,
+                    image_url: allUrls.length > 0 ? allUrls[0] : null,
+                    image_urls: allUrls,
                     status: document.getElementById('vanStatus').value
                 };
 
