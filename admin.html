@@ -1034,8 +1034,6 @@
         /* ─── Modal ─── */
         function openModal(id) {
             editingVan = id ? allVans.find(function(v) { return v.id === id; }) : null;
-            selectedFile = null;
-            removeExistingImage = false;
 
             document.getElementById('modalTitle').textContent = editingVan ? 'Edit Van' : 'Add New Van';
             document.getElementById('vanId').value = editingVan ? editingVan.id : '';
