@@ -5,7 +5,14 @@
   "scripts": {
     "dev": "echo 'Open index.html in browser'"
   },
-  "keywords": ["van", "mechanic", "sales"],
+  "keywords": [
+    "van",
+    "mechanic",
+    "sales"
+  ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "sharp": "^0.35.5"
+  }
 }
