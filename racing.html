@@ -8,10 +8,6 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
     <script>
-    if (window.location.hostname === 'onlyvanslimited.com') {
-        window.location.href = 'https://www.' + window.location.hostname + window.location.pathname + window.location.search + window.location.hash;
-    }
-    </script>
     <title>Only Vans Racing — MINI Challenge Clubsport</title>
     <meta name="description" content="Only Vans Racing — competing in the MINI Challenge Clubsport series. Run by Adam Kirkland with drivers Callum Eynstone, Adam Kirkland and Chris Aram.">
     <link rel="icon" type="image/png" href="favicon.png">
@@ -144,16 +140,6 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
-        }
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 50) { header.classList.add('scrolled'); }
-            else { header.classList.remove('scrolled'); }
-        });
-    </script>
 
 </body>
 </html>
