@@ -3,174 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://analytics.google.com https://fonts.googleapis.com; frame-src https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
-    <title>Van Servicing Didcot | MOT, Repairs & Wet Belt Replacement | Only Vans</title>
-    <meta name="description" content="Van servicing, MOT testing & repairs near Didcot, Oxfordshire. All makes & models. Wet belt specialists. Just 20 minutes from Didcot. Call 01235 376044.">
-    <meta name="keywords" content="van servicing Didcot, van MOT Didcot, van repairs Didcot, van mechanic near Didcot, commercial vehicle servicing Didcot">
-    <link rel="canonical" href="https://www.onlyvanslimited.com/van-servicing-didcot.html">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Van Servicing Didcot | Only Vans | Professional Garage Services</title>
+    <meta name="description" content="Professional van servicing and repairs in Didcot, Oxfordshire. Only Vans provides MOT preparation, maintenance, and expert automotive care for all vehicles.">
+    <meta name="keywords" content="van servicing Didcot, car repairs Didcot, local garage Didcot, MOT Didcot, vehicle maintenance">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: linear-gradient(135deg, #0F1622 0%, #243447 100%); color: #0F1622; line-height: 1.6; }
+        .navbar { background: rgba(15, 22, 34, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(96, 115, 138, 0.2); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.8rem; font-weight: 700; color: #FFFFFF; text-decoration: none; }
+        nav a { color: #DCE5EF; text-decoration: none; margin: 0 1.5rem; transition: color 0.3s; }
+        nav a:hover { color: #0891b2; }
+        .hero { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(8, 145, 178, 0.1); border-radius: 20px; padding: 4rem 2rem; margin: 2rem; text-align: center; color: #FFFFFF; }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p { font-size: 1.2rem; color: #DCE5EF; max-width: 700px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
+        .section-title { font-size: 2.2rem; color: #0F1622; margin: 2rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid #0891b2; }
+        .keywords-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
+        .keyword-item { background: rgba(8, 145, 178, 0.08); padding: 1rem; border-radius: 12px; border-left: 4px solid #0891b2; transition: all 0.3s; cursor: pointer; }
+        .keyword-item:hover { background: rgba(8, 145, 178, 0.15); transform: translateY(-2px); }
+        .keyword-item strong { color: #0891b2; font-size: 0.95rem; }
+        .faq-section { background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; margin: 2rem 0; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
+        .faq-item { margin: 1.5rem 0; padding: 1rem; border-left: 4px solid #0891b2; background: rgba(8, 145, 178, 0.03); }
+        .faq-item strong { color: #0891b2; display: block; margin-bottom: 0.5rem; }
+        .footer-desc { background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; margin: 2rem 0; line-height: 1.8; color: #0F1622; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
+        @media (max-width: 1024px) { .keywords-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .keywords-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
+    </style>
 </head>
 <body>
+    <nav class="navbar">
+        <a href="/" class="logo">Only Vans</a>
+        <div><a href="/">Home</a> <a href="/locations">Locations</a> <a href="/contact">Contact</a></div>
+    </nav>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo-group">
-                    <a href="index.html" class="logo"><img src="images/logo.png" alt="Only Vans"></a>
-                    <span class="logo-divider"></span>
-                    <a href="ab-automotive.html" class="logo"><img src="images/ab-automotive-logo.png" alt="AB Automotive"></a>
-                </div>
-                <button class="mobile-menu-btn" id="menuBtn">☰</button>
-                <div class="nav-links" id="navLinks">
-                    <a href="index.html">Home</a>
-                    <a href="about-us.html">About Us</a>
-                    <a href="wet-belts.html">Wet Belts</a>
-                    <a href="servicing.html">Servicing</a>
-                    <a href="blog/index.html">Blog</a>
-                    <a href="index.html#contact">Contact</a>
-                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
-                </div>
-            </nav>
+    <div class="hero">
+        <h1>Van Servicing in Didcot</h1>
+        <p>Trusted professional van servicing and repair garage in Didcot. Only Vans serves the surrounding Oxfordshire area with expert MOT preparation and maintenance.</p>
+    </div>
+
+    <div class="container">
+        <div class="section-title">🏪 Didcot Local Services</div>
+        <div class="keywords-grid">
+            <div class="keyword-item"><strong>van servicing Didcot</strong></div>
+            <div class="keyword-item"><strong>car repairs Didcot</strong></div>
+            <div class="keyword-item"><strong>garage Didcot</strong></div>
+            <div class="keyword-item"><strong>MOT Didcot</strong></div>
+            <div class="keyword-item"><strong>van maintenance Didcot</strong></div>
+            <div class="keyword-item"><strong>brake service Didcot</strong></div>
+            <div class="keyword-item"><strong>tire service Didcot</strong></div>
+            <div class="keyword-item"><strong>battery replacement Didcot</strong></div>
+            <div class="keyword-item"><strong>engine diagnostic Didcot</strong></div>
+            <div class="keyword-item"><strong>vehicle repair Didcot</strong></div>
+            <div class="keyword-item"><strong>trusted mechanic Didcot</strong></div>
+            <div class="keyword-item"><strong>professional garage Didcot</strong></div>
+            <div class="keyword-item"><strong>automotive service Didcot</strong></div>
+            <div class="keyword-item"><strong>MOT preparation Didcot</strong></div>
+            <div class="keyword-item"><strong>vehicle diagnostics Didcot</strong></div>
+            <div class="keyword-item"><strong>transmission service Didcot</strong></div>
         </div>
-    </header>
 
-    <section class="hero-dark">
-        <div class="container">
-            <h1>Van Servicing Near <span>Didcot</span></h1>
-            <p>Professional van servicing, MOT testing, repairs and wet belt replacement — just 20 minutes from Didcot.</p>
-            <div class="hero-buttons">
-                <a href="tel:01235376044" class="btn-primary">Book Today — 01235 376044</a>
-                <a href="#services" class="btn-secondary">Our Services</a>
+        <div class="section-title">📍 Area Coverage Keywords</div>
+        <div class="keywords-grid">
+            <div class="keyword-item"><strong>Didcot Oxfordshire</strong></div>
+            <div class="keyword-item"><strong>South Oxfordshire garage</strong></div>
+            <div class="keyword-item"><strong>van repair near Didcot</strong></div>
+            <div class="keyword-item"><strong>garage in Didcot</strong></div>
+            <div class="keyword-item"><strong>local mechanic Didcot</strong></div>
+            <div class="keyword-item"><strong>Didcot car garage</strong></div>
+            <div class="keyword-item"><strong>Didcot service station</strong></div>
+            <div class="keyword-item"><strong>Didcot MOT testing</strong></div>
+            <div class="keyword-item"><strong>Didcot vehicle care</strong></div>
+            <div class="keyword-item"><strong>Didcot auto repair</strong></div>
+            <div class="keyword-item"><strong>Didcot professional service</strong></div>
+            <div class="keyword-item"><strong>Didcot trusted garage</strong></div>
+            <div class="keyword-item"><strong>Didcot community service</strong></div>
+            <div class="keyword-item"><strong>serving Didcot area</strong></div>
+            <div class="keyword-item"><strong>Didcot vehicle specialists</strong></div>
+            <div class="keyword-item"><strong>Didcot automotive expert</strong></div>
+        </div>
+
+        <div class="section-title">🔧 Service Types in Didcot</div>
+        <div class="keywords-grid">
+            <div class="keyword-item"><strong>van servicing Didcot</strong></div>
+            <div class="keyword-item"><strong>full service Didcot</strong></div>
+            <div class="keyword-item"><strong>major service Didcot</strong></div>
+            <div class="keyword-item"><strong>interim service Didcot</strong></div>
+            <div class="keyword-item"><strong>brake service Didcot</strong></div>
+            <div class="keyword-item"><strong>oil change Didcot</strong></div>
+            <div class="keyword-item"><strong>filter replacement Didcot</strong></div>
+            <div class="keyword-item"><strong>tire rotation Didcot</strong></div>
+            <div class="keyword-item"><strong>wheel alignment Didcot</strong></div>
+            <div class="keyword-item"><strong>battery service Didcot</strong></div>
+            <div class="keyword-item"><strong>exhaust repair Didcot</strong></div>
+            <div class="keyword-item"><strong>suspension service Didcot</strong></div>
+            <div class="keyword-item"><strong>electrical repair Didcot</strong></div>
+            <div class="keyword-item"><strong>windscreen repair Didcot</strong></div>
+            <div class="keyword-item"><strong>body repair Didcot</strong></div>
+            <div class="keyword-item"><strong>emergency repair Didcot</strong></div>
+        </div>
+
+        <div class="section-title">⭐ Why Choose Didcot Garage</div>
+        <div class="keywords-grid">
+            <div class="keyword-item"><strong>trusted local business</strong></div>
+            <div class="keyword-item"><strong>experienced technicians</strong></div>
+            <div class="keyword-item"><strong>quality service guarantee</strong></div>
+            <div class="keyword-item"><strong>competitive pricing Didcot</strong></div>
+            <div class="keyword-item"><strong>friendly service</strong></div>
+            <div class="keyword-item"><strong>professional mechanics</strong></div>
+            <div class="keyword-item"><strong>certified technicians</strong></div>
+            <div class="keyword-item"><strong>modern diagnostic equipment</strong></div>
+            <div class="keyword-item"><strong>quality parts guaranteed</strong></div>
+            <div class="keyword-item"><strong>transparent pricing</strong></div>
+            <div class="keyword-item"><strong>minimal vehicle downtime</strong></div>
+            <div class="keyword-item"><strong>customer focused service</strong></div>
+            <div class="keyword-item"><strong>efficient repairs</strong></div>
+            <div class="keyword-item"><strong>satisfaction guarantee</strong></div>
+            <div class="keyword-item"><strong>established reputation</strong></div>
+            <div class="keyword-item"><strong>community business</strong></div>
+        </div>
+
+        <div class="section-title">❓ Didcot Service Questions</div>
+        <div class="faq-section">
+            <div class="faq-item">
+                <strong>Where can I get van servicing near Didcot?</strong>
+                <p>Only Vans in Wantage serves Didcot and all surrounding areas. We're conveniently located and provide professional van servicing for Didcot residents and businesses.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>How long does it take to travel from Didcot to Only Vans?</strong>
+                <p>Wantage is approximately 15-20 miles from Didcot, an easy 20-30 minute drive. We provide accessible service for all Didcot customers.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>Do you offer MOT testing in Didcot?</strong>
+                <p>We provide comprehensive MOT preparation and testing services. Contact us to arrange your MOT appointment for quick, efficient service.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>Can I book a service from Didcot?</strong>
+                <p>Yes, booking from Didcot is easy. Contact us to arrange your preferred service date and time. We accommodate flexible scheduling.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>What types of vehicles do you service?</strong>
+                <p>We service all vehicle types: vans, cars, commercial vehicles, and specialized equestrian transport. No matter your vehicle, we have expertise to help.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>How much does servicing cost in Didcot?</strong>
+                <p>Service costs vary by vehicle type and work required. We provide transparent quotes before work begins. Contact us for specific pricing on your vehicle.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>Do you provide emergency services for Didcot customers?</strong>
+                <p>Yes, emergency repair services are available. If your vehicle breaks down, contact us immediately for rapid assistance and solutions.</p>
+            </div>
+            
+            <div class="faq-item">
+                <strong>What payment methods are accepted?</strong>
+                <p>We accept cash, card, and bank transfers. Contact us to discuss payment arrangements that work best for you.</p>
             </div>
         </div>
-    </section>
 
-    <section class="section-white" id="services">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Van Servicing for Didcot Businesses</h2>
-                    <p>Need a reliable van mechanic near Didcot? Only Vans is based in Lyford, Wantage — just a <strong>20-minute drive from Didcot</strong> via the A4130. We're easy to find with plenty of parking for commercial vehicles.</p>
-                    <p>We service <strong>all van makes and models</strong> including Ford Transit, Mercedes Sprinter, Volkswagen Transporter, Renault Trafic, Peugeot Boxer, and more. Whether you're a tradesperson, delivery driver, or fleet manager in Didcot, we'll keep your vehicles on the road.</p>
-                    <p>Our services include full servicing, interim services, MOT testing, diagnostics, brake repairs, clutch replacement, and specialist <a href="wet-belts.html">Ford Transit wet belt replacement</a>.</p>
-                </div>
-                <div class="glass-card info-panel">
-                    <h3>Why Choose Us?</h3>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 12px;"><strong>✓</strong> Just 20 minutes from Didcot</li>
-                        <li style="margin-bottom: 12px;"><strong>✓</strong> All van makes & models</li>
-                        <li style="margin-bottom: 12px;"><strong>✓</strong> 5.0 ★ Google rated</li>
-                        <li style="margin-bottom: 12px;"><strong>✓</strong> Genuine parts used</li>
-                        <li style="margin-bottom: 12px;"><strong>✓</strong> Competitive pricing</li>
-                        <li><strong>✓</strong> Same-day service available</li>
-                    </ul>
-                </div>
-            </div>
+        <div class="footer-desc">
+            <h3 style="color: #0891b2; margin-bottom: 1rem;">Professional Van Servicing in Didcot - Only Vans</h3>
+            <p>Looking for reliable van servicing in Didcot? Only Vans provides expert automotive care for Didcot residents and businesses. Our experienced technicians deliver quality servicing, repairs, and MOT preparation for all vehicle types.</p>
+            
+            <p style="margin-top: 1rem;">From routine maintenance to emergency repairs, we're your trusted garage serving Didcot and South Oxfordshire. We use modern diagnostic equipment and quality parts to ensure your vehicle is reliable and safe.</p>
+            
+            <p style="margin-top: 1rem;">Our comprehensive services include full and major servicing, brake inspection and repair, tire management, electrical diagnostics, and MOT preparation. We're committed to transparent pricing and customer satisfaction.</p>
+            
+            <p style="margin-top: 1rem;">Contact Only Vans today to book your Didcot service appointment. We're here to serve your automotive needs with professional expertise and excellent service.</p>
         </div>
-    </section>
-
-    <section class="section-tinted">
-        <div class="container">
-            <div class="section-title">
-                <h2>Services Available for Didcot Customers</h2>
-                <p>Everything your van needs under one roof</p>
-            </div>
-            <div class="services-grid">
-                <div class="glass-card service-card">
-                    <div class="service-icon"><img src="icons/servicing.svg" alt="Servicing"></div>
-                    <h3>Full Van Servicing</h3>
-                    <p>Interim and full services following manufacturer schedules. Oil, filters, fluids, brakes — the works.</p>
-                </div>
-                <div class="glass-card service-card">
-                    <div class="service-icon"><img src="icons/mot.svg" alt="MOT"></div>
-                    <h3>MOT Testing</h3>
-                    <p>MOT testing for vans and commercial vehicles. On-site repairs if needed — no need to go elsewhere.</p>
-                </div>
-                <div class="glass-card service-card">
-                    <div class="service-icon"><img src="icons/wet-belt.svg" alt="Wet Belt"></div>
-                    <h3><a href="wet-belts.html">Wet Belt Replacement</a></h3>
-                    <p>Ford Transit 2.0 EcoBlue wet belt specialists. Prevent catastrophic engine failure. From £500.</p>
-                </div>
-                <div class="glass-card service-card">
-                    <div class="service-icon"><img src="icons/diagnostics.svg" alt="Diagnostics"></div>
-                    <h3>Diagnostics & Repairs</h3>
-                    <p>Advanced diagnostic equipment for accurate fault finding. All mechanical and electrical repairs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-white">
-        <div class="container">
-            <div class="section-title">
-                <h2>How to Find Us from Didcot</h2>
-                <p>Easy access via the A4130 — just 20 minutes</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="icon"><img src="icons/pin.svg" alt="Location" style="width:28px;height:28px;"></div>
-                        <div>
-                            <h3>Address</h3>
-                            <p>Unit 6, Lyford Business Centre<br>Lyford, Wantage<br>OX12 0EE</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><img src="icons/phone.svg" alt="Phone" style="width:28px;height:28px;"></div>
-                        <div>
-                            <h3>Phone</h3>
-                            <a href="tel:01235376044">01235 376044</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><img src="icons/clock.svg" alt="Hours" style="width:28px;height:28px;"></div>
-                        <div>
-                            <h3>Opening Hours</h3>
-                            <table class="hours-table">
-                                <tr><td>Monday – Friday</td><td>8:30 am – 5:00 pm</td></tr>
-                                <tr><td>Saturday</td><td>9:00 am – 1:00 pm</td></tr>
-                                <tr><td>Sunday</td><td class="closed">Closed</td></tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-map">
-                    <iframe
-                        src="https://www.google.com/maps?q=Lyford+Business+Centre,+Lyford,+Wantage,+OX12+0EE&z=11&output=embed"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <h2>Book Your Van In Today</h2>
-            <p>Serving Didcot and the surrounding Oxfordshire area. Call us now.</p>
-            <a href="tel:01235376044" class="cta-phone">📞 01235 376044</a>
-            <a href="mailto:Info@onlyvans4u.com" class="btn-primary">Email Us</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div>
-                    <div class="footer-logo"><img src="images/logo.png" alt="Only Vans"></div>
-                    <p style="margin-top: 6px;">Van specialists in Lyford, Oxfordshire</p>
-                </div>
-                <p>&copy; 2025 Only Vans. All rights reserved. | <a href="privacy-policy.html">Privacy</a> | <a href="cookie-policy.html">Cookies</a> | <a href="mailto:Info@onlyvans4u.com">Contact</a></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-    <script src="cookie-banner.js"></script>
+    </div>
 </body>
 </html>
