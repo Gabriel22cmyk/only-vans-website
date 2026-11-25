@@ -3,178 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Race Vehicle Servicing & Performance | Only Vans | Motorsport Specialists</title>
-    <meta name="description" content="Specialist race vehicle servicing, performance tuning, and motorsport maintenance. Only Vans provides expert automotive support for racing teams and drivers.">
-    <meta name="keywords" content="race vehicle servicing, motorsport mechanics, performance tuning, race car maintenance, automotive racing support">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; background: linear-gradient(135deg, #0F1622 0%, #243447 100%); color: #0F1622; line-height: 1.6; }
-        .navbar { background: rgba(15, 22, 34, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(96, 115, 138, 0.2); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .logo { font-size: 1.8rem; font-weight: 700; color: #FFFFFF; text-decoration: none; }
-        nav a { color: #DCE5EF; text-decoration: none; margin: 0 1.5rem; transition: color 0.3s; }
-        nav a:hover { color: #0891b2; }
-        .hero { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(8, 145, 178, 0.1); border-radius: 20px; padding: 4rem 2rem; margin: 2rem; text-align: center; color: #FFFFFF; }
-        .hero h1 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .hero p { font-size: 1.2rem; color: #DCE5EF; max-width: 700px; margin: 0 auto; }
-        .container { max-width: 1200px; margin: 2rem auto; padding: 0 2rem; }
-        .section-title { font-size: 2.2rem; color: #0F1622; margin: 2rem 0 1.5rem; padding-bottom: 0.5rem; border-bottom: 3px solid #0891b2; }
-        .keywords-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 2rem 0; background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
-        .keyword-item { background: rgba(8, 145, 178, 0.08); padding: 1rem; border-radius: 12px; border-left: 4px solid #0891b2; transition: all 0.3s; cursor: pointer; }
-        .keyword-item:hover { background: rgba(8, 145, 178, 0.15); transform: translateY(-2px); }
-        .keyword-item strong { color: #0891b2; font-size: 0.95rem; }
-        .faq-section { background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; margin: 2rem 0; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
-        .faq-item { margin: 1.5rem 0; padding: 1rem; border-left: 4px solid #0891b2; background: rgba(8, 145, 178, 0.03); }
-        .faq-item strong { color: #0891b2; display: block; margin-bottom: 0.5rem; }
-        .footer-desc { background: rgba(255, 255, 255, 0.95); padding: 2rem; border-radius: 20px; margin: 2rem 0; line-height: 1.8; color: #0F1622; box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1); }
-        @media (max-width: 1024px) { .keywords-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) { .keywords-grid { grid-template-columns: 1fr; } .hero h1 { font-size: 2rem; } }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://analytics.google.com https://fonts.googleapis.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+    <script>
+    <title>Only Vans Racing — MINI Challenge Clubsport</title>
+    <meta name="description" content="Only Vans Racing — competing in the MINI Challenge Clubsport series. Run by Adam Kirkland with drivers Callum Eynstone, Adam Kirkland and Chris Aram.">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/" class="logo">Only Vans</a>
-        <div><a href="/">Home</a> <a href="/racing">Racing</a> <a href="/contact">Contact</a></div>
-    </nav>
 
-    <div class="hero">
-        <h1>Race Vehicle Servicing & Performance</h1>
-        <p>Specialist motorsport mechanics providing race vehicle preparation, performance tuning, and competitive support across Oxfordshire.</p>
-    </div>
-
-    <div class="container">
-        <div class="section-title">🏁 Race Vehicle Core Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>race vehicle servicing</strong></div>
-            <div class="keyword-item"><strong>race car maintenance</strong></div>
-            <div class="keyword-item"><strong>performance tuning</strong></div>
-            <div class="keyword-item"><strong>motorsport mechanics</strong></div>
-            <div class="keyword-item"><strong>race vehicle preparation</strong></div>
-            <div class="keyword-item"><strong>engine tuning</strong></div>
-            <div class="keyword-item"><strong>race car repairs</strong></div>
-            <div class="keyword-item"><strong>performance diagnostics</strong></div>
-            <div class="keyword-item"><strong>racing fuel systems</strong></div>
-            <div class="keyword-item"><strong>race car suspension</strong></div>
-            <div class="keyword-item"><strong>performance brakes</strong></div>
-            <div class="keyword-item"><strong>race vehicle exhaust</strong></div>
-            <div class="keyword-item"><strong>motorsport technical support</strong></div>
-            <div class="keyword-item"><strong>race car dyno testing</strong></div>
-            <div class="keyword-item"><strong>automotive racing service</strong></div>
-            <div class="keyword-item"><strong>competitive vehicle prep</strong></div>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-group">
+                    <a href="index.html" class="logo"><img src="images/logo.png" alt="Only Vans"></a>
+                    <span class="logo-divider"></span>
+                    <a href="ab-automotive.html" class="logo"><img src="images/ab-automotive-logo.png" alt="AB Automotive"></a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn" >☰</button>
+                <div class="nav-links" id="navLinks">
+                    <a href="index.html">Only Vans</a>
+                    <a href="ab-automotive.html">AB Automotive</a>
+                    <a href="racing.html" class="active">Racing</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
+                </div>
+            </nav>
         </div>
+    </header>
 
-        <div class="section-title">📍 Location Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>race vehicle servicing Oxfordshire</strong></div>
-            <div class="keyword-item"><strong>motorsport mechanics Wantage</strong></div>
-            <div class="keyword-item"><strong>race car tuning Abingdon</strong></div>
-            <div class="keyword-item"><strong>performance tuning Didcot</strong></div>
-            <div class="keyword-item"><strong>race vehicle repairs Oxford</strong></div>
-            <div class="keyword-item"><strong>motorsport specialist Vale of White Horse</strong></div>
-            <div class="keyword-item"><strong>racing support Berkshire</strong></div>
-            <div class="keyword-item"><strong>race car mechanics Swindon</strong></div>
-            <div class="keyword-item"><strong>performance mechanics Witney</strong></div>
-            <div class="keyword-item"><strong>race vehicle prep Faringdon</strong></div>
-            <div class="keyword-item"><strong>motorsport tuning Banbury</strong></div>
-            <div class="keyword-item"><strong>racing mechanics near me</strong></div>
-            <div class="keyword-item"><strong>performance specialist Oxfordshire</strong></div>
-            <div class="keyword-item"><strong>race car garage Wantage</strong></div>
-            <div class="keyword-item"><strong>motorsport workshop surrounding areas</strong></div>
-            <div class="keyword-item"><strong>racing support team Oxfordshire</strong></div>
+    <!-- Hero -->
+    <section class="hero-dark racing-hero">
+        <div class="container">
+            <div class="hero-badge reveal reveal-fade">🏁 MINI Challenge Clubsport</div>
+            <h1 class="reveal reveal-delay-1">Only Vans <span>Racing</span></h1>
+            <p class="reveal reveal-delay-2">More than just vans. We race across the UK in the MINI Challenge Clubsport series — putting the same passion and expertise from our workshop onto the track.</p>
         </div>
+    </section>
 
-        <div class="section-title">🔧 Performance Services</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>engine performance tuning</strong></div>
-            <div class="keyword-item"><strong>ECU remapping</strong></div>
-            <div class="keyword-item"><strong>dyno testing</strong></div>
-            <div class="keyword-item"><strong>brake upgrade service</strong></div>
-            <div class="keyword-item"><strong>suspension tuning</strong></div>
-            <div class="keyword-item"><strong>exhaust system upgrade</strong></div>
-            <div class="keyword-item"><strong>fuel injection service</strong></div>
-            <div class="keyword-item"><strong>turbo servicing</strong></div>
-            <div class="keyword-item"><strong>supercharger maintenance</strong></div>
-            <div class="keyword-item"><strong>transmission service</strong></div>
-            <div class="keyword-item"><strong>differential servicing</strong></div>
-            <div class="keyword-item"><strong>performance diagnostics</strong></div>
-            <div class="keyword-item"><strong>brake fluid bleeding</strong></div>
-            <div class="keyword-item"><strong>wheel alignment</strong></div>
-            <div class="keyword-item"><strong>tire fitting racing</strong></div>
-            <div class="keyword-item"><strong>race vehicle preparation</strong></div>
-        </div>
-
-        <div class="section-title">🏎️ Racing-Specific Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>track day preparation</strong></div>
-            <div class="keyword-item"><strong>circuit racing service</strong></div>
-            <div class="keyword-item"><strong>rally car maintenance</strong></div>
-            <div class="keyword-item"><strong>autocross preparation</strong></div>
-            <div class="keyword-item"><strong>hillclimb vehicle prep</strong></div>
-            <div class="keyword-item"><strong>endurance racing support</strong></div>
-            <div class="keyword-item"><strong>race series preparation</strong></div>
-            <div class="keyword-item"><strong>safety inspection service</strong></div>
-            <div class="keyword-item"><strong>brake pad replacement racing</strong></div>
-            <div class="keyword-item"><strong>fluid checks race vehicle</strong></div>
-            <div class="keyword-item"><strong>tire temperature monitoring</strong></div>
-            <div class="keyword-item"><strong>performance clutch install</strong></div>
-            <div class="keyword-item"><strong>racing battery service</strong></div>
-            <div class="keyword-item"><strong>roll cage installation</strong></div>
-            <div class="keyword-item"><strong>safety equipment checks</strong></div>
-            <div class="keyword-item"><strong>competitive vehicle inspection</strong></div>
-        </div>
-
-        <div class="section-title">❓ Question-Based Keywords</div>
-        <div class="faq-section">
-            <div class="faq-item">
-                <strong>How do I prepare my vehicle for track day?</strong>
-                <p>Track day preparation includes brake inspection, fluid checks, tire condition assessment, suspension checking, and safety equipment verification. Our technicians ensure your vehicle meets safety standards and performs optimally on circuit.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>What is ECU tuning and how does it improve performance?</strong>
-                <p>ECU remapping optimizes engine parameters for increased power and torque. Our professional tuning uses dyno testing to safely maximize performance while maintaining reliability and engine longevity.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>How often should racing vehicles be serviced?</strong>
-                <p>Race vehicles require more frequent servicing than road cars. We recommend pre-event inspections, mid-season services, and post-season maintenance depending on racing intensity and vehicle specifications.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>Can you upgrade my braking system for performance?</strong>
-                <p>Yes, we provide complete brake upgrades including high-performance pads, braided lines, and brake fluid servicing. Upgraded braking systems improve stopping power and reduce brake fade during competitive driving.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>What suspension modifications improve handling?</strong>
-                <p>Suspension upgrades include adjustable coilovers, upgraded anti-roll bars, and stiffer bushings. These modifications improve cornering response, reduce body roll, and optimize vehicle dynamics for racing conditions.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>How much horsepower can I gain from tuning?</strong>
-                <p>Power gains depend on your vehicle and tuning approach. ECU remapping typically increases 15-50+ hp depending on engine type. Combined with exhaust and intake modifications, gains can exceed 100 hp on some vehicles.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>What is dyno testing and why is it important?</strong>
-                <p>Dyno testing measures actual power output and allows safe tuning validation. It identifies issues, optimizes performance, and ensures modifications are effective and safe before racing.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>Do you provide technical support during racing events?</strong>
-                <p>Yes, we offer trackside support, pre-event briefings, and post-event analysis. Our team provides technical guidance to help you maximize performance and vehicle reliability during competition.</p>
+    <!-- About the Team -->
+    <section class="section-white" style="background: #0f1620; padding: 100px 0;">
+        <div class="container">
+            <div class="racing-page-grid">
+                <div class="racing-page-text">
+                    <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">The Team</h2>
+                    <p class="reveal reveal-delay-1" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">Only Vans Racing is run by Adam, the CEO of Only Vans, alongside employees and friends who share a love for motorsport. What started as a passion project has grown into a competitive team racing across UK circuits.</p>
+                    <p class="reveal reveal-delay-2" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">The precision and performance demanded on the track is the same standard we bring to every vehicle in our workshop. When your mechanic races cars for fun, you know your vehicle is in expert hands.</p>
+                    <p class="reveal reveal-delay-3" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8;">We're actively looking for sponsors — if you're interested in getting your brand on the grid, get in touch.</p>
+                </div>
+                <div class="racing-page-image reveal reveal-delay-2">
+                    <img src="images/racing-team.jpg" alt="Only Vans Racing team with all three race cars" loading="lazy">
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-desc">
-            <h3 style="color: #0891b2; margin-bottom: 1rem;">Expert Motorsport & Performance Vehicle Specialists</h3>
-            <p>Only Vans provides comprehensive race vehicle servicing and performance tuning for competitive drivers and racing teams across Oxfordshire. We specialize in track day preparation, motorsport mechanics, and performance diagnostics to keep your racing vehicle operating at peak efficiency.</p>
-            
-            <p style="margin-top: 1rem;">Our racing services include pre-event vehicle inspections, brake system upgrades, suspension tuning, ECU remapping, dyno testing, and technical support. We work with track day enthusiasts, rally competitors, and racing series participants to ensure vehicles meet safety standards and performance requirements.</p>
-            
-            <p style="margin-top: 1rem;">Whether you're preparing for circuit racing, rally competitions, or track day events, our experienced technicians provide expert mechanical support. We handle everything from routine maintenance and diagnostics to major performance modifications and competitive vehicle preparation.</p>
-            
-            <p style="margin-top: 1rem;">Located in Wantage, we serve racing teams and drivers throughout Oxfordshire and surrounding regions. Contact Only Vans for race vehicle servicing, performance tuning, or motorsport technical support. We're committed to helping you achieve competitive success.</p>
+    <!-- Drivers -->
+    <section style="background: #111a24; padding: 80px 0;">
+        <div class="container">
+            <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; text-align: center; margin-bottom: 48px; letter-spacing: -0.02em;">Our Drivers</h2>
+            <div class="drivers-grid">
+                <div class="driver-card reveal reveal-delay-1">
+                    <div class="driver-number">#146</div>
+                    <h3>Callum Eynstone</h3>
+                    <p>Honda Civic Type R</p>
+                </div>
+                <div class="driver-card reveal reveal-delay-2">
+                    <div class="driver-number">#27</div>
+                    <h3>Adam Kirkland</h3>
+                    <p>Honda Civic</p>
+                </div>
+                <div class="driver-card reveal reveal-delay-3">
+                    <div class="driver-number">&nbsp;</div>
+                    <h3>Chris Aram</h3>
+                    <p>Mini</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+
+    <!-- Next Season Rebrand -->
+    <section style="background: #0a1018; padding: 100px 0;">
+        <div class="container">
+            <div class="racing-page-grid racing-page-grid-reverse">
+                <div class="racing-page-image reveal">
+                    <img src="images/racing-rebrand.jpg" alt="Only Vans Racing new livery — Mini R50 Challenge #27" loading="lazy">
+                </div>
+                <div class="racing-page-text">
+                    <div class="reveal" style="display:inline-block; padding:6px 16px; border-radius:50px; font-size:12px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:16px; background:rgba(8,145,178,0.15); color:#67e8f9; border:1px solid rgba(8,145,178,0.3); font-family:'Plus Jakarta Sans',sans-serif;">Coming Next Season</div>
+                    <h2 class="reveal reveal-delay-1" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 800; margin-bottom: 20px; letter-spacing: -0.02em;">New Colours. Same Passion.</h2>
+                    <p class="reveal reveal-delay-2" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px;">Only Vans Racing is rebranding for the new season — the #27 Mini R50 Challenge car in full Only Vans livery. Same team, same drive, fresh look.</p>
+                    <p class="reveal reveal-delay-3" style="color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8;">Vehicle Repairs • Bodywork • Servicing — on the car, in the workshop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsors -->
+    <section style="background: #111a24; padding: 80px 0; text-align: center;">
+        <div class="container">
+            <h2 class="reveal" style="color: white; font-family: 'Fraunces', Georgia, serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; margin-bottom: 12px; letter-spacing: -0.02em;">Our Sponsors &amp; Partners</h2>
+            <p class="reveal reveal-delay-1" style="color: rgba(255,255,255,0.5); font-size: 0.95rem; margin-bottom: 40px;">We couldn't do it without them.</p>
+
+            <div class="sponsor-main reveal reveal-delay-1" style="max-width: 520px; margin: 0 auto 40px;">
+                <div class="sponsor-main-badge">Title Sponsor — 2 Seasons Running</div>
+                <h3>Midwinter Landscaping</h3>
+                <p>Our main sponsor for the last two seasons. Make sure to give their page a like and follow to see the amazing work they do!</p>
+            </div>
+
+            <div class="sponsors-grid reveal reveal-delay-2" style="max-width: 740px; margin: 0 auto 40px;">
+                <div class="sponsor-card">Simply Minis</div>
+                <div class="sponsor-card">Only Vans</div>
+                <div class="sponsor-card">APS Hire &amp; Sales</div>
+                <div class="sponsor-card">JCL Precision Autocare</div>
+                <div class="sponsor-card">Chris Aram Racing</div>
+                <div class="sponsor-card">Callum Eynstone Motorsport</div>
+                <div class="sponsor-card">AK Performance Tuning</div>
+            </div>
+
+            <div class="reveal reveal-delay-3" style="margin-top: 32px;">
+                <a href="https://www.facebook.com/p/AT-Motorsport-AT-Automotive-Race-Team-61566146650622/" target="_blank" style="display:inline-block; padding:14px 32px; background:rgba(8,145,178,0.15); border:1px solid rgba(8,145,178,0.3); border-radius:10px; color:#67e8f9; font-weight:600; font-size:0.95rem; text-decoration:none; font-family:'Plus Jakarta Sans',sans-serif; transition: all 0.3s;">Follow us on Facebook →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Only Vans &amp; AB Automotive. All rights reserved.</p>
+        </div>
+    </footer>
+
+
 </body>
 </html>

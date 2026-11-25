@@ -3,329 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horse Box Servicing, MOT & Repairs | Only Vans | Wantage, Oxfordshire</title>
-    <meta name="description" content="Expert horse box servicing, MOT repairs and maintenance for equestrian vehicles in Oxfordshire. Only Vans provides specialised care for horse boxes, trailers and equestrian transport.">
-    <meta name="keywords" content="horse box servicing, horse box MOT, horse box repairs, equestrian vehicle maintenance, trailer servicing, horse vehicle repairs Oxfordshire">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #0F1622 0%, #243447 100%);
-            color: #0F1622;
-            line-height: 1.6;
-        }
-        
-        .navbar {
-            background: rgba(15, 22, 34, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(96, 115, 138, 0.2);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-        
-        nav a {
-            color: #DCE5EF;
-            text-decoration: none;
-            margin: 0 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        nav a:hover {
-            color: #0891b2;
-        }
-        
-        .hero {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(8, 145, 178, 0.1);
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            margin: 2rem;
-            text-align: center;
-            color: #FFFFFF;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            color: #DCE5EF;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            color: #0F1622;
-            margin: 2rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 3px solid #0891b2;
-        }
-        
-        .keywords-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin: 2rem 0;
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1);
-        }
-        
-        .keyword-item {
-            background: rgba(8, 145, 178, 0.08);
-            padding: 1rem;
-            border-radius: 12px;
-            border-left: 4px solid #0891b2;
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-        
-        .keyword-item:hover {
-            background: rgba(8, 145, 178, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        .keyword-item strong {
-            color: #0891b2;
-            font-size: 0.95rem;
-        }
-        
-        .faq-section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1);
-        }
-        
-        .faq-item {
-            margin: 1.5rem 0;
-            padding: 1rem;
-            border-left: 4px solid #0891b2;
-            background: rgba(8, 145, 178, 0.03);
-        }
-        
-        .faq-item strong {
-            color: #0891b2;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .footer-desc {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            margin: 2rem 0;
-            line-height: 1.8;
-            color: #0F1622;
-            box-shadow: 0 8px 32px rgba(8, 145, 178, 0.1);
-        }
-        
-        @media (max-width: 1024px) {
-            .keywords-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .keywords-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://cdn.jsdelivr.net https://fonts.googleapis.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https:; connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://analytics.google.com https://tsorpwmhwbyivltgulaf.supabase.co https://fonts.googleapis.com; frame-src https://www.google.com https://maps.google.com; object-src 'none'; base-uri 'self'; form-action 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=()">
+    <script>
+    <title>Horse Box Servicing & Repairs Oxfordshire | Only Vans, Wantage</title>
+    <meta name="description" content="Horse box servicing, repairs & bodywork in Wantage, Oxfordshire. Insurance repairs, body sprays, courtesy horse lorry available. Expert equestrian vehicle care. Call 01235 376044.">
+    <meta name="keywords" content="horse box servicing, horse box repairs Oxfordshire, horse lorry MOT, equestrian vehicle servicing, horse box bodywork, horse box mechanic near me">
+    <link rel="canonical" href="https://www.onlyvanslimited.com/horse-boxes.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/" class="logo">Only Vans</a>
-        <div>
-            <a href="/">Home</a>
-            <a href="/wet-belts">Wet Belts</a>
-            <a href="/horse-boxes">Horse Boxes</a>
-            <a href="/transit-couriers">Transit Couriers</a>
-            <a href="/contact">Contact</a>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-group">
+                    <a href="index.html" class="logo"><img src="images/logo.png" alt="Only Vans"></a>
+                    <span class="logo-divider"></span>
+                    <a href="ab-automotive.html" class="logo"><img src="images/ab-automotive-logo.png" alt="AB Automotive"></a>
+                </div>
+                <button class="mobile-menu-btn" id="menuBtn" >☰</button>
+                <div class="nav-links" id="navLinks">
+                    <a href="wet-belts.html">Wet Belts</a>
+                    <a href="servicing.html">Servicing</a>
+                    <a href="horse-boxes.html" class="active">Horse Boxes</a>
+                    <a href="racing.html">Racing</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="tel:01235376044" class="nav-phone">01235 376044</a>
+                </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 
-    <div class="hero">
-        <h1>Horse Box Servicing & Repairs</h1>
-        <p>Expert equestrian vehicle maintenance, MOT preparation, and specialist repairs for horse boxes and trailers across Oxfordshire and surrounding areas.</p>
-    </div>
-
-    <div class="container">
-        <!-- PRIMARY KEYWORDS -->
-        <div class="section-title">🎯 Core Horse Box Services Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>horse box servicing</strong></div>
-            <div class="keyword-item"><strong>horse box MOT</strong></div>
-            <div class="keyword-item"><strong>horse box repairs</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle maintenance</strong></div>
-            <div class="keyword-item"><strong>horse trailer servicing</strong></div>
-            <div class="keyword-item"><strong>horse box brake repairs</strong></div>
-            <div class="keyword-item"><strong>horse box electrical repairs</strong></div>
-            <div class="keyword-item"><strong>horse vehicle MOT preparation</strong></div>
-            <div class="keyword-item"><strong>equestrian transport repairs</strong></div>
-            <div class="keyword-item"><strong>horse box maintenance schedule</strong></div>
-            <div class="keyword-item"><strong>horse box ramp repairs</strong></div>
-            <div class="keyword-item"><strong>horse box tyre replacement</strong></div>
-            <div class="keyword-item"><strong>horse vehicle servicing Oxfordshire</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle MOT</strong></div>
-            <div class="keyword-item"><strong>horse box exhaust repairs</strong></div>
-            <div class="keyword-item"><strong>horse box suspension repairs</strong></div>
-        </div>
-
-        <!-- LOCATION KEYWORDS -->
-        <div class="section-title">📍 Local Location Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>horse box servicing Wantage</strong></div>
-            <div class="keyword-item"><strong>horse box repairs Oxfordshire</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle MOT Abingdon</strong></div>
-            <div class="keyword-item"><strong>horse box servicing Didcot</strong></div>
-            <div class="keyword-item"><strong>horse box repairs Oxford</strong></div>
-            <div class="keyword-item"><strong>horse vehicle servicing Vale of White Horse</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle repairs Berkshire</strong></div>
-            <div class="keyword-item"><strong>horse box MOT Swindon</strong></div>
-            <div class="keyword-item"><strong>horse trailer repairs near me</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle servicing Faringdon</strong></div>
-            <div class="keyword-item"><strong>horse box maintenance Wiltshire</strong></div>
-            <div class="keyword-item"><strong>horse vehicle repairs Witney</strong></div>
-            <div class="keyword-item"><strong>equestrian transport MOT Banbury</strong></div>
-            <div class="keyword-item"><strong>horse box servicing East Oxfordshire</strong></div>
-            <div class="keyword-item"><strong>horse vehicle repairs surrounding areas</strong></div>
-            <div class="keyword-item"><strong>equestrian vehicle specialist near Wantage</strong></div>
-        </div>
-
-        <!-- SERVICE TYPES -->
-        <div class="section-title">🔧 Specialized Horse Box Services</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>horse box full service</strong></div>
-            <div class="keyword-item"><strong>horse box MOT check</strong></div>
-            <div class="keyword-item"><strong>horse box brake inspection</strong></div>
-            <div class="keyword-item"><strong>horse box tyre check</strong></div>
-            <div class="keyword-item"><strong>horse box electrical testing</strong></div>
-            <div class="keyword-item"><strong>horse box exhaust inspection</strong></div>
-            <div class="keyword-item"><strong>horse box ramp maintenance</strong></div>
-            <div class="keyword-item"><strong>horse box window repair</strong></div>
-            <div class="keyword-item"><strong>horse box engine diagnostics</strong></div>
-            <div class="keyword-item"><strong>horse box oil change</strong></div>
-            <div class="keyword-item"><strong>horse box air filter replacement</strong></div>
-            <div class="keyword-item"><strong>horse box brake fluid service</strong></div>
-            <div class="keyword-item"><strong>horse box cooling system check</strong></div>
-            <div class="keyword-item"><strong>horse box steering inspection</strong></div>
-            <div class="keyword-item"><strong>horse box suspension check</strong></div>
-            <div class="keyword-item"><strong>horse box bodywork repair</strong></div>
-        </div>
-
-        <!-- LONG-TAIL KEYWORDS -->
-        <div class="section-title">🎪 Long-Tail & Specific Keywords</div>
-        <div class="keywords-grid">
-            <div class="keyword-item"><strong>horse box fails MOT what to do</strong></div>
-            <div class="keyword-item"><strong>how to prepare horse box for MOT</strong></div>
-            <div class="keyword-item"><strong>horse box service cost</strong></div>
-            <div class="keyword-item"><strong>how often to service horse box</strong></div>
-            <div class="keyword-item"><strong>horse box brake noise diagnosis</strong></div>
-            <div class="keyword-item"><strong>horse box electrical problems solutions</strong></div>
-            <div class="keyword-item"><strong>horse box ramp not closing properly</strong></div>
-            <div class="keyword-item"><strong>horse box engine warning light</strong></div>
-            <div class="keyword-item"><strong>horse box tyre replacement cost</strong></div>
-            <div class="keyword-item"><strong>Ford Transit horse box servicing</strong></div>
-            <div class="keyword-item"><strong>Mercedes horsebox repairs</strong></div>
-            <div class="keyword-item"><strong>vintage horse box restoration</strong></div>
-            <div class="keyword-item"><strong>horse box insurance requirements</strong></div>
-            <div class="keyword-item"><strong>horse box roadworthiness checks</strong></div>
-            <div class="keyword-item"><strong>horse box annual maintenance checklist</strong></div>
-            <div class="keyword-item"><strong>horse box brake safety inspection</strong></div>
-        </div>
-
-        <!-- QUESTION-BASED (FEATURED SNIPPETS) -->
-        <div class="section-title">❓ Question-Based Keywords & Featured Snippets</div>
-        <div class="faq-section">
-            <div class="faq-item">
-                <strong>What is included in a horse box service?</strong>
-                <p>A comprehensive horse box service includes oil and filter changes, brake fluid checks, tire inspection and rotation, lighting system testing, brake pad assessment, suspension inspection, and engine diagnostics to ensure your equestrian vehicle is safe for transport.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>How often should I service my horse box?</strong>
-                <p>Horse boxes should be serviced annually or every 10,000 miles, whichever comes first. Regular maintenance prevents mechanical failures, ensures passenger and animal safety, and maintains MOT compliance throughout the year.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>What are the common horse box MOT failures?</strong>
-                <p>Common MOT failures include faulty brakes, worn tires, broken lights, steering problems, suspension issues, engine warning lights, and structural rust. Regular maintenance and pre-MOT inspections can prevent most failures.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>How much does a horse box MOT cost?</strong>
-                <p>MOT testing costs approximately £55-75 depending on your location and vehicle type. Additional repair costs vary based on identified faults, but preventative servicing typically reduces MOT failure rates and overall repair expenses.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>Can you repair horse box electrical issues?</strong>
-                <p>Yes, we provide comprehensive electrical diagnostics and repair services including lighting systems, charging systems, dashboard warning lights, and towing electrics. Modern diagnostic equipment helps identify and resolve issues quickly.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>What should I check before towing my horse box?</strong>
-                <p>Before towing, check tire pressure and tread, brake lights and indicators, brake fluid and pads, steering responsiveness, suspension, mirrors, and ramp safety mechanisms. Our pre-towing inspection service identifies any safety concerns.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>Do you repair horse box ramps?</strong>
-                <p>Yes, we repair and maintain horse box ramps including hinges, springs, hydraulic systems, and locking mechanisms. Proper ramp function is essential for safe horse loading and unloading.</p>
-            </div>
-            
-            <div class="faq-item">
-                <strong>How do I know if my horse box needs brake repairs?</strong>
-                <p>Warning signs include brake noises (squealing, grinding), spongy or soft brake pedal, longer stopping distances, dashboard warning lights, or vibration when braking. These indicate potential brake system issues requiring immediate attention.</p>
+    <section class="hero-image-bg" style="background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.7)), url('images/horse-box-hero.jpg') center/cover no-repeat;">
+        <div class="container">
+            <h1 class="reveal reveal-fade">Horse Box<br><span>Servicing & Repairs</span></h1>
+            <p class="reveal reveal-delay-1">Expert care for you and your horses. Safe, reliable, road-ready.</p>
+            <div class="hero-buttons reveal reveal-delay-2">
+                <a href="#contact" class="btn-primary">Get in Touch</a>
+                <a href="tel:01235376044" class="btn-secondary">Call Us Today</a>
             </div>
         </div>
+    </section>
 
-        <!-- KEYWORD-RICH FOOTER DESCRIPTION -->
-        <div class="footer-desc">
-            <h3 style="color: #0891b2; margin-bottom: 1rem;">Expert Horse Box Servicing & MOT Preparation in Oxfordshire</h3>
-            <p>At Only Vans, we specialize in comprehensive horse box servicing, maintenance, and MOT preparation for equestrian vehicles across Oxfordshire, Berkshire, Wiltshire, and surrounding regions. Our team provides specialized care for horse boxes, trailers, and equestrian transport vehicles, ensuring safety, reliability, and MOT compliance.</p>
-            
-            <p style="margin-top: 1rem;">We understand the unique requirements of horse vehicles. Our equestrian vehicle specialists perform detailed inspections of braking systems, electrical components, ramp mechanisms, and structural integrity. Whether you need routine maintenance, pre-MOT preparation, or emergency brake repairs, we provide expert service with minimal downtime.</p>
-            
-            <p style="margin-top: 1rem;">Our horse box services include annual servicing, oil changes, brake system inspection and repair, tire replacement and balancing, electrical diagnostics, exhaust system repairs, suspension checking, and comprehensive MOT preparation. We work with all horse box manufacturers and vehicle types, from Ford Transit-based boxes to specialist equestrian trailers.</p>
-            
-            <p style="margin-top: 1rem;">Located in Wantage, Only Vans serves Abingdon, Didcot, Oxford, Faringdon, Witney, and surrounding areas. Contact us today to schedule your horse box servicing or MOT preparation appointment. We're committed to keeping your equestrian vehicle in peak condition for safe, reliable transport.</p>
+    <section class="section-white" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Complete horse box servicing and repair solutions</p>
+            </div>
+            <div class="services-grid">
+                <div class="glass-card service-card reveal reveal-delay-1">
+                    <div class="service-icon" style="font-size: 32px;">🔧</div>
+                    <h3>Servicing & Maintenance</h3>
+                    <p>Keep your horse box safe, reliable and road-ready. Regular maintenance prevents costly breakdowns and ensures your horses travel in safety.</p>
+                </div>
+                <div class="glass-card service-card reveal reveal-delay-2">
+                    <div class="service-icon" style="font-size: 32px;">⚙️</div>
+                    <h3>Repairs</h3>
+                    <p>Mechanical, electrical and structural repairs carried out by experienced technicians. We handle everything from engine work to hydraulic systems.</p>
+                </div>
+                <div class="glass-card service-card reveal reveal-delay-3">
+                    <div class="service-icon" style="font-size: 32px;">🛡️</div>
+                    <h3>Insurance & Accident Repairs</h3>
+                    <p>High-quality body and paint repairs working directly with all major insurance companies. Get your horse box back on the road looking its best.</p>
+                </div>
+                <div class="glass-card service-card reveal reveal-delay-4">
+                    <div class="service-icon" style="font-size: 32px;">🎨</div>
+                    <h3>Body Repairs & Sprays</h3>
+                    <p>From minor cosmetic damage to full bodywork restoration. We'll get you back on the road looking brand new—inside and out.</p>
+                </div>
+                <div class="glass-card service-card reveal reveal-delay-5">
+                    <div class="service-icon" style="font-size: 32px;">🐴</div>
+                    <h3>Horse Box Specialists</h3>
+                    <p>We understand the unique needs of horse boxes and the importance of keeping you and your horses moving safely. Expert care, every time.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section class="section-tinted">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Only Vans for Horse Box Care?</h2>
+                <p>Trusted by horse owners across the region</p>
+            </div>
+            <div class="why-grid">
+                <div class="glass-card why-card reveal reveal-delay-1">
+                    <div class="why-icon">✓</div>
+                    <h3>Safe</h3>
+                    <p>Your horse's safety is our priority. Every repair is done to the highest standards.</p>
+                </div>
+                <div class="glass-card why-card reveal reveal-delay-2">
+                    <div class="why-icon">✓</div>
+                    <h3>Reliable</h3>
+                    <p>Work you can depend on. Quality repairs that last, so you can travel with confidence.</p>
+                </div>
+                <div class="glass-card why-card reveal reveal-delay-3">
+                    <div class="why-icon">✓</div>
+                    <h3>Road-Ready</h3>
+                    <p>We get your horse box back on the road quickly—because you've got places to be.</p>
+                </div>
+                <div class="glass-card why-card reveal reveal-delay-4">
+                    <div class="why-icon">✓</div>
+                    <h3>Expert Team</h3>
+                    <p>Years of experience working with horse boxes and equestrian vehicles of all kinds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-white">
+        <div class="container">
+            <div class="section-title section-title-left">
+                <h2>Horse Box Specialist Equipment</h2>
+                <p>We stock specialist equipment for safe horse transport</p>
+            </div>
+            <div class="highlight-card glass-card">
+                <div style="text-align: center;">
+                    <h3 style="font-size: 24px; margin-bottom: 12px;">3.5T Courtesy Horse Lorry Available</h3>
+                    <p style="font-size: 16px; color: #94a3b8; margin-bottom: 16px;"><strong>Subject to availability</strong></p>
+                    <p>Need transport while your horse box is in for repairs? We offer a courtesy horse lorry to keep you and your horses moving.</p>
+                    <a href="tel:01235376044" class="btn-primary" style="display: inline-block; margin-top: 16px;">Call for Availability</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-tinted" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get in Touch</h2>
+                <p>Ready to book your horse box in? Contact us today.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item reveal reveal-delay-1">
+                        <div class="icon"><img src="icons/pin.svg" alt="Location" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Address</h3>
+                            <p>Unit 9, Lyford Business Centre<br>Lyford, Wantage<br>OX12 0EE</p>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal reveal-delay-2">
+                        <div class="icon"><img src="icons/phone.svg" alt="Phone" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Phone</h3>
+                            <a href="tel:01235376044">01235 376044</a>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal reveal-delay-3">
+                        <div class="icon"><img src="icons/email.svg" alt="Email" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:Info@onlyvans4u.com">Info@onlyvans4u.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item reveal reveal-delay-4">
+                        <div class="icon"><img src="icons/clock.svg" alt="Hours" style="width:28px;height:28px;"></div>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <table class="hours-table">
+                                <tr><td>Monday – Friday</td><td>8:30 am – 5:00 pm</td></tr>
+                                <tr><td>Saturday</td><td>9:00 am – 1:00 pm</td></tr>
+                                <tr><td>Sunday</td><td class="closed">Closed</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-map">
+                    <iframe
+                        src="https://www.google.com/maps?q=Lyford+Business+Centre,+Lyford,+Wantage,+OX12+0EE&z=16&output=embed"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo"><img src="images/logo.png" alt="Only Vans"></div>
+                    <p style="margin-top: 6px;">Horse box specialists in Lyford, Oxfordshire</p>
+                </div>
+                <p>&copy; 2025 Only Vans. All rights reserved. | <a href="privacy-policy.html">Privacy</a> | <a href="cookie-policy.html">Cookies</a> | <a href="mailto:Info@onlyvans4u.com">Contact</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="cookie-banner.js"></script>
 </body>
 </html>
+# Horse Boxes Live
